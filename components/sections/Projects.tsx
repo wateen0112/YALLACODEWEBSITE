@@ -2,29 +2,36 @@
 
 import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
-import { projects } from "@/lib/projects";
 import { ProjectCard } from "../ui/ProjectCard";
 import type { Project } from "@/lib/projects";
 
 export function ProjectsSection() {
   const t = useTranslations("home");
   const tProjects = useTranslations("projects");
-  const [projectList, setProjectList] = useState<Project[]>(projects);
+  const [projectList, setProjectList] = useState<Project[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [hasError, setHasError] = useState(false);
 
   useEffect(() => {
     let isMounted = true;
 
     async function loadProjects() {
       try {
+        setHasError(false);
         const response = await fetch("/api/projects", { cache: "no-store" });
-        if (!response.ok) return;
+        if (!response.ok) {
+          setHasError(true);
+          return;
+        }
 
         const data = (await response.json()) as Project[];
-        if (isMounted && Array.isArray(data) && data.length > 0) {
+        if (isMounted && Array.isArray(data)) {
           setProjectList(data);
         }
       } catch {
-        // Keep fallback static projects if API request fails.
+        if (isMounted) setHasError(true);
+      } finally {
+        if (isMounted) setIsLoading(false);
       }
     }
 
@@ -49,6 +56,15 @@ export function ProjectsSection() {
                     <ProjectCard key={project.id} project={project} />
                 ))}
             </div>
+            {isLoading ? (
+              <p className="mt-6 text-center text-text-secondary">Loading projects...</p>
+            ) : null}
+            {!isLoading && hasError ? (
+              <p className="mt-6 text-center text-red-400">Unable to load projects from API.</p>
+            ) : null}
+            {!isLoading && !hasError && projectList.length === 0 ? (
+              <p className="mt-6 text-center text-text-secondary">No projects returned by API.</p>
+            ) : null}
         </div>
     </section>
   );

@@ -63,10 +63,48 @@ function buildBaseEndpoint() {
   return `${base}${endpoint}`;
 }
 
-function buildHeaders() {
+function buildHeaders(requireSecret = false) {
   const headers: HeadersInit = { "Content-Type": "application/json" };
-  if (API_SECRET) headers[API_SECRET_HEADER] = API_SECRET;
+
+  if (requireSecret && !API_SECRET) {
+    throw new Error("API_SECRET is missing for protected request");
+  }
+
+  if (API_SECRET) {
+    // Required by backends that read: req.headers['x-api-secret']
+    headers["x-api-secret"] = API_SECRET;
+    headers[API_SECRET_HEADER] = API_SECRET;
+    // Many APIs also accept bearer tokens; keep both for compatibility.
+    headers.Authorization = `Bearer ${API_SECRET}`;
+  }
+
   return headers;
+}
+
+async function buildApiError(action: string, response: Response) {
+  let details = "";
+
+  try {
+    const contentType = response.headers.get("content-type") || "";
+    if (contentType.includes("application/json")) {
+      const payload = (await response.json()) as UnknownRecord;
+      details =
+        (typeof payload.error === "string" && payload.error) ||
+        (typeof payload.message === "string" && payload.message) ||
+        JSON.stringify(payload);
+    } else {
+      const text = (await response.text()).trim();
+      details = text || "";
+    }
+  } catch {
+    details = "";
+  }
+
+  return new Error(
+    details
+      ? `Failed to ${action} project (${response.status}): ${details}`
+      : `Failed to ${action} project (${response.status})`
+  );
 }
 
 export async function listProjectsFromApi(): Promise<Project[]> {
@@ -74,12 +112,12 @@ export async function listProjectsFromApi(): Promise<Project[]> {
 
   const response = await fetch(buildBaseEndpoint(), {
     method: "GET",
-    headers: buildHeaders(),
+    headers: buildHeaders(false),
     cache: "no-store"
   });
 
   if (!response.ok) {
-    throw new Error(`Failed to fetch projects (${response.status})`);
+    throw await buildApiError("fetch", response);
   }
 
   const data = (await response.json()) as unknown;
@@ -95,13 +133,13 @@ export async function listProjectsFromApi(): Promise<Project[]> {
 export async function createProjectInApi(payload: ProjectPayload): Promise<Project> {
   const response = await fetch(buildBaseEndpoint(), {
     method: "POST",
-    headers: buildHeaders(),
+    headers: buildHeaders(true),
     body: JSON.stringify(payload),
     cache: "no-store"
   });
 
   if (!response.ok) {
-    throw new Error(`Failed to create project (${response.status})`);
+    throw await buildApiError("create", response);
   }
 
   const raw = (await response.json()) as UnknownRecord;
@@ -111,13 +149,13 @@ export async function createProjectInApi(payload: ProjectPayload): Promise<Proje
 export async function updateProjectInApi(id: string, payload: ProjectPayload): Promise<Project> {
   const response = await fetch(`${buildBaseEndpoint()}/${id}`, {
     method: "PUT",
-    headers: buildHeaders(),
+    headers: buildHeaders(true),
     body: JSON.stringify(payload),
     cache: "no-store"
   });
 
   if (!response.ok) {
-    throw new Error(`Failed to update project (${response.status})`);
+    throw await buildApiError("update", response);
   }
 
   const raw = (await response.json()) as UnknownRecord;
@@ -127,12 +165,12 @@ export async function updateProjectInApi(id: string, payload: ProjectPayload): P
 export async function deleteProjectInApi(id: string): Promise<void> {
   const response = await fetch(`${buildBaseEndpoint()}/${id}`, {
     method: "DELETE",
-    headers: buildHeaders(),
+    headers: buildHeaders(true),
     cache: "no-store"
   });
 
   if (!response.ok) {
-    throw new Error(`Failed to delete project (${response.status})`);
+    throw await buildApiError("delete", response);
   }
 }
 

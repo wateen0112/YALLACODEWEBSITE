@@ -11,6 +11,31 @@ type CreateBody = {
   status?: string;
 };
 
+function normalizeImageUrl(value: string) {
+  const trimmed = value.trim();
+  if (!trimmed) return "";
+
+  try {
+    const url = new URL(trimmed);
+    if (url.hostname.includes("google.com") && url.pathname.includes("/imgres")) {
+      const direct = url.searchParams.get("imgurl");
+      if (direct) return decodeURIComponent(direct).trim();
+    }
+    return trimmed;
+  } catch {
+    return trimmed;
+  }
+}
+
+function isHttpUrl(value: string) {
+  try {
+    const parsed = new URL(value);
+    return parsed.protocol === "http:" || parsed.protocol === "https:";
+  } catch {
+    return false;
+  }
+}
+
 function normalizeTags(tags: CreateBody["tags"]) {
   if (Array.isArray(tags)) return tags.map((tag) => String(tag).trim()).filter(Boolean);
   if (typeof tags === "string") {
@@ -43,9 +68,16 @@ export async function POST(request: NextRequest) {
 
   const body = (await request.json().catch(() => ({}))) as CreateBody;
   const title = (body.title ?? "").trim();
+  const coverImage = normalizeImageUrl(body.coverImage ?? "");
 
   if (!title) {
     return NextResponse.json({ error: "Title is required" }, { status: 400 });
+  }
+  if (coverImage && !isHttpUrl(coverImage)) {
+    return NextResponse.json(
+      { error: "coverImage must be a valid http/https URL (direct image URL preferred)." },
+      { status: 400 }
+    );
   }
 
   try {
@@ -53,7 +85,7 @@ export async function POST(request: NextRequest) {
       slug: (body.slug ?? title).trim().toLowerCase(),
       title,
       description: (body.description ?? "").trim(),
-      coverImage: (body.coverImage ?? "").trim(),
+      coverImage,
       tags: normalizeTags(body.tags),
       status: (body.status ?? "Completed").trim()
     });
