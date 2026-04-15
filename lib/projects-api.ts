@@ -6,8 +6,12 @@ type UnknownRecord = Record<string, unknown>;
 export type ProjectPayload = {
   slug: string;
   title: string;
-  description: string;
-  coverImage: string;
+  description?: string;
+  coverImage?: string;
+  shortDescription: string;
+  longDescription: string;
+  image: string;
+  demoLink: string;
   tags: string[];
   status: string;
 };
@@ -23,7 +27,13 @@ function normalizeSlug(value: string) {
 function toProject(raw: UnknownRecord, index: number): Project {
   const title = typeof raw.title === "string" ? raw.title : `Project ${index + 1}`;
   const description =
-    typeof raw.description === "string" ? raw.description : "Project description is not available.";
+    typeof raw.description === "string"
+      ? raw.description
+      : typeof raw.shortDescription === "string"
+        ? raw.shortDescription
+        : typeof raw.longDescription === "string"
+          ? raw.longDescription
+          : "Project description is not available.";
   const slugSource = typeof raw.slug === "string" ? raw.slug : title;
   const coverImage =
     typeof raw.coverImage === "string"

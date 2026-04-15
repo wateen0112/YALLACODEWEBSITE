@@ -6,7 +6,11 @@ type UpdateBody = {
   slug?: string;
   title?: string;
   description?: string;
+  shortDescription?: string;
+  longDescription?: string;
   coverImage?: string;
+  image?: string;
+  demoLink?: string;
   tags?: string[] | string;
   status?: string;
 };
@@ -60,10 +64,22 @@ export async function PUT(
   const { id } = await params;
   const body = (await request.json().catch(() => ({}))) as UpdateBody;
   const title = (body.title ?? "").trim();
-  const coverImage = normalizeImageUrl(body.coverImage ?? "");
+  const coverImage = normalizeImageUrl(body.coverImage ?? body.image ?? "");
+  const shortDescription = (body.shortDescription ?? body.description ?? "").trim();
+  const longDescription = (body.longDescription ?? body.description ?? "").trim();
+  const demoLink = (body.demoLink ?? "#").trim();
 
   if (!title) {
     return NextResponse.json({ error: "Title is required" }, { status: 400 });
+  }
+  if (!shortDescription) {
+    return NextResponse.json({ error: "shortDescription is required" }, { status: 400 });
+  }
+  if (!longDescription) {
+    return NextResponse.json({ error: "longDescription is required" }, { status: 400 });
+  }
+  if (!coverImage) {
+    return NextResponse.json({ error: "image is required" }, { status: 400 });
   }
   if (coverImage && !isHttpUrl(coverImage)) {
     return NextResponse.json(
@@ -76,8 +92,12 @@ export async function PUT(
     const updated = await updateProjectInApi(id, {
       slug: (body.slug ?? title).trim().toLowerCase(),
       title,
-      description: (body.description ?? "").trim(),
-      coverImage,
+      description: shortDescription,
+      coverImage, // Compatibility with older API contracts
+      shortDescription,
+      longDescription,
+      image: coverImage,
+      demoLink: demoLink || "#",
       tags: normalizeTags(body.tags),
       status: (body.status ?? "Completed").trim()
     });
