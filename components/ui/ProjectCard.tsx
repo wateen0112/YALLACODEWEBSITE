@@ -7,11 +7,22 @@ import { useTranslations } from "next-intl";
 
 export function ProjectCard({ project }: { project: Project }) {
   const t = useTranslations("projects");
-  const statusKeyMap: Record<Project["status"], string> = {
+  const statusKeyMap: Record<string, string> = {
     Completed: "completed",
     "In Progress": "in_progress",
-    "Case Study": "case_study"
+    "Case Study": "case_study",
+    completed: "completed",
+    in_progress: "in_progress",
+    "in progress": "in_progress",
+    case_study: "case_study",
+    "case study": "case_study"
   };
+  const statusKey = statusKeyMap[project.status] ?? "";
+  const titleKey = `items.${project.slug}.title`;
+  const descriptionKey = `items.${project.slug}.description`;
+  const translatedTitle = t.has(titleKey) ? t(titleKey) : project.title;
+  const translatedDescription = t.has(descriptionKey) ? t(descriptionKey) : project.description;
+  const translatedStatus = statusKey && t.has(`status.${statusKey}`) ? t(`status.${statusKey}`) : project.status;
 
   return (
     <motion.div 
@@ -32,14 +43,14 @@ export function ProjectCard({ project }: { project: Project }) {
         </div>
         <div className="absolute top-4 left-4">
           <span className="px-3 py-1 text-xs font-semibold bg-surface/80 text-primary-400 rounded-full backdrop-blur-md border border-primary-600/20">
-            {t(`status.${statusKeyMap[project.status]}`)}
+            {translatedStatus}
           </span>
         </div>
       </div>
       
       <div className="p-6">
-        <h3 className="text-2xl font-bold mb-2 text-text-primary">{t(`items.${project.slug}.title`)}</h3>
-        <p className="text-text-secondary text-sm mb-4 line-clamp-2">{t(`items.${project.slug}.description`)}</p>
+        <h3 className="text-2xl font-bold mb-2 text-text-primary">{translatedTitle}</h3>
+        <p className="text-text-secondary text-sm mb-4 line-clamp-2">{translatedDescription}</p>
         
         <div className="flex flex-wrap gap-2">
           {project.tags.map(tag => (

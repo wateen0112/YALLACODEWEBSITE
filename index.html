@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YallaCode - Build Powerful Digital Solutions</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'inter': ['Inter', 'sans-serif'],
+            'mono': ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            navy: {
+              900: '#020617',
+            },
+            purple: {
+              500: '#A855F7',
+              600: '#7C3AED',
+              700: '#5B21B6',
+            }
+          },
+          animation: {
+            'fade-in': 'fadeIn 1s ease-out forwards',
+            'glow': 'glow 2s ease-in-out infinite alternate',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0', transform: 'translateY(20px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            glow: {
+              '0%': { boxShadow: '0 0 20px rgba(168, 85, 247, 0.3)' },
+              '100%': { boxShadow: '0 0 40px rgba(168, 85, 247, 0.6)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .logo-font { font-family: 'JetBrains Mono', monospace; }
+    .glass { backdrop-filter: blur(20px); background: rgba(255, 255, 255, 0.05); }
+    .purple-gradient { 
+      background: linear-gradient(135deg, #A855F7 0%, #7C3AED 50%, #5B21B6 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .purple-glow { 
+      box-shadow: 0 0 30px rgba(168, 85, 247, 0.4);
+    }
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body class="bg-navy-900 text-white font-inter overflow-x-hidden">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 w-full z-50 glass backdrop-blur-xl border-b border-white/10 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16 lg:h-20">
+        <!-- Logo -->
+        <a href="#home" class="logo-font text-2xl font-bold bg-gradient-to-r from-purple-500 to-purple-700 bg-clip-text text-transparent hover:scale-105 transition-transform">
+          <YallaCode/>
+        </a>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="#services" class="text-gray-300 hover:text-white transition-colors duration-200 font-medium">Services</a>
+          <a href="#portfolio" class="text-gray-300 hover:text-white transition-colors duration-200 font-medium">Work</a>
+          <a href="#about" class="text-gray-300 hover:text-white transition-colors duration-200 font-medium">About</a>
+          <a href="#contact" class="text-gray-300 hover:text-white transition-colors duration-200 font-medium">Contact</a>
+        </div>
+
+        <!-- CTA Button -->
+        <a href="#contact" class="hidden md:block bg-gradient-to-r from-purple-500 to-purple-700 hover:from-purple-600 hover:to-purple-800 text-white px-6 py-2 rounded-xl font-medium transition-all duration-200 hover:scale-105 shadow-lg purple-glow">
+          Get Started
+        </a>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 -mr-1 rounded-lg text-gray-300 hover:text-white hover:bg-white/10 transition-all">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="md:hidden hidden origin-top-right mt-2 absolute right-0 w-48 bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10 shadow-2xl py-4">
+        <a href="#services" class="block px-6 py-3 text-gray-300 hover:text-white hover:bg-white/10 rounded-xl mx-2 font-medium transition-all">Services</a>
+        <a href="#portfolio" class="block px-6 py-3 text-gray-300 hover:text-white hover:bg-white/10 rounded-xl mx-2 font-medium transition-all">Work</a>
+        <a href="#about" class="block px-6 py-3 text-gray-300 hover:text-white hover:bg-white/10 rounded-xl mx-2 font-medium transition-all">About</a>
+        <a href="#contact" class="block px-6 py-3 text-gray-300 hover:text-white hover:bg-white/10 rounded-xl mx-2 font-medium transition-all">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="min-h-screen flex items-center justify-center pt-20 pb-32 overflow-hidden relative">
+    <!-- Background Glow -->
+    <div class="absolute inset-0">
+      <div class="absolute -top-40 -right-40 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl animate-glow"></div>
+      <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-600/10 rounded-full blur-3xl animate-pulse"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center relative z-10">
+      <!-- Logo -->
+      <div class="logo-font text-5xl md:text-7xl font-bold purple-gradient mb-8 animate-fade-in">
+        <YallaCode/>
+      </div>
+      
+      <!-- Headline -->
+      <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight animate-fade-in">
+        Build Powerful<br>
+        <span class="purple-gradient">Digital Solutions</span>
+      </h1>
+      
+      <!-- Subheadline -->
+      <p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-12 leading-relaxed animate-fade-in animation-delay-200">
+        We design and develop modern software, websites, and digital systems for growing businesses.
+      </p>
+      
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in animation-delay-400">
+        <a href="#contact" class="bg-gradient-to-r from-purple-500 to-purple-700 hover:from-purple-600 hover:to-purple-800 text-white px-10 py-4 rounded-2xl font-semibold text-lg transition-all duration-200 hover:scale-105 shadow-2xl purple-glow">
+          Get Started
+        </a>
+        <a href="#portfolio" class="border-2 border-white/20 hover:border-white/40 text-white px-10 py-4 rounded-2xl font-semibold text-lg transition-all duration-200 hover:scale-105 hover:bg-white/10 backdrop-blur-sm">
+          View Work
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-32 px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-24 animate-fade-in">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6 purple-gradient">Our Services</h2>
+        <p class="text-xl text-gray-300 max-w-2xl mx-auto">Comprehensive digital solutions tailored for your business growth</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Service Card 1 -->
+        <div class="group relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-10 hover:bg-white/10 transition-all duration-500 hover:scale-105 hover:-translate-y-4 purple-glow cursor-pointer animate-fade-in">
+          <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-700 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold mb-4 group-hover:text-white transition-colors">Web Development</h3>
+          <p class="text-gray-300 group-hover:text-gray-200 transition-colors leading-relaxed">Modern, responsive websites built with cutting-edge technologies and best practices.</p>
+        </div>
+
+        <!-- Service Card 2 -->
+        <div class="group relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-10 hover:bg-white/10 transition-all duration-500 hover:scale-105 hover:-translate-y-4 purple-glow cursor-pointer animate-fade-in animation-delay-200">
+          <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-700 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold mb-4 group-hover:text-white transition-colors">SaaS Development</h3>
+          <p class="text-gray-300 group-hover:text-gray-200 transition-colors leading-relaxed">Scalable SaaS platforms with robust architecture and seamless user experiences.</p>
+        </div>
+
+        <!-- Service Card 3 -->
+        <div class="group relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-10 hover:bg-white/10 transition-all duration-500 hover:scale-105 hover:-translate-y-4 purple-glow cursor-pointer animate-fade-in animation-delay-400">
+          <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-700 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.5h3m1.5-3l3 3L22 9.5m-10 9H4"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold mb-4 group-hover:text-white transition-colors">UI/UX Design</h3>
+          <p class="text-gray-300 group-hover:text-gray-200 transition-colors leading-relaxed">Intuitive, beautiful interfaces designed with your users in mind.</p>
+        </div>
+
+        <!-- Service Card 4 -->
+        <div class="group relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-10 hover:bg-white/10 transition-all duration-500 hover:scale-105 hover:-translate-y-4 purple-glow cursor-pointer animate-fade-in animation-delay-600">
+          <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-700 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold mb-4 group-hover:text-white transition-colors">Digital Solutions</h3>
+          <p class="text-gray-300 group-hover:text-gray-200 transition-colors leading-relaxed">Custom solutions that solve real business problems with modern technology.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-32 px-6 lg:px-8 bg-white/5 backdrop-blur-xl">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid lg:grid-cols-2 gap-16 items-center animate-fade-in">
+        <div>
+          <h2 class="text-4xl md:text-5xl font-bold mb-8 purple-gradient">Why Choose YallaCode?</h2>
+          <p class="text-xl text-gray-300 mb-12 leading-relaxed max-w-lg">
+            YallaCode is a software company focused on building scalable and modern digital solutions that drive business growth.
+          </p>
+          
+          <div class="space-y-6">
+            <div class="flex items-start space-x-4">
+              <div class="w-10 h-10 bg-gradient-to-r from-purple-500 to-purple-700 rounded-xl flex items-center justify-center flex-shrink-0 mt-1">
+                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-semibold text-lg mb-1">Clean Code</h4>
+                <p class="text-gray-300">Maintainable, well-structured code that scales with your business.</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start space-x-4">
+              <div class="w-10 h-10 bg-gradient-to-r from-purple-500 to-purple-700 rounded-xl flex items-center justify-center flex-shrink-0 mt-1">
+                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-semibold text-lg mb-1">Scalable Systems</h4>
+                <p class="text-gray-300">Architecture designed for growth and high performance.</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start space-x-4">
+              <div class="w-10 h-10 bg-gradient-to-r from-purple-500 to-purple-700 rounded-xl flex items-center justify-center flex-shrink-0 mt-1">
+                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-semibold text-lg mb-1">Fast Delivery</h4>
+                <p class="text-gray-300">Rapid development without compromising on quality.</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start space-x-4">
+              <div class="w-10 h-10 bg-gradient-to-r from-purple-500 to-purple-700 rounded-xl flex items-center justify-center flex-shrink-0 mt-1">
+                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42

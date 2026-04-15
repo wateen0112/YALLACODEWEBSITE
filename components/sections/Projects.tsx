@@ -1,12 +1,38 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import { projects } from "@/lib/projects";
 import { ProjectCard } from "../ui/ProjectCard";
+import type { Project } from "@/lib/projects";
 
 export function ProjectsSection() {
   const t = useTranslations("home");
   const tProjects = useTranslations("projects");
+  const [projectList, setProjectList] = useState<Project[]>(projects);
+
+  useEffect(() => {
+    let isMounted = true;
+
+    async function loadProjects() {
+      try {
+        const response = await fetch("/api/projects", { cache: "no-store" });
+        if (!response.ok) return;
+
+        const data = (await response.json()) as Project[];
+        if (isMounted && Array.isArray(data) && data.length > 0) {
+          setProjectList(data);
+        }
+      } catch {
+        // Keep fallback static projects if API request fails.
+      }
+    }
+
+    loadProjects();
+    return () => {
+      isMounted = false;
+    };
+  }, []);
 
   return (
     <section id="projects" className="py-24 bg-surface/30 border-y border-primary-600/10">
@@ -19,7 +45,7 @@ export function ProjectsSection() {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {projects.map(project => (
+                {projectList.map(project => (
                     <ProjectCard key={project.id} project={project} />
                 ))}
             </div>

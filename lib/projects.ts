@@ -5,7 +5,7 @@ export interface Project {
   description: string;
   coverImage: string;
   tags: string[];
-  status: "Completed" | "In Progress" | "Case Study";
+  status: "Completed" | "In Progress" | "Case Study" | string;
 }
 
 export const projects: Project[] = [
