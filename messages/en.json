@@ -1,0 +1,155 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "projects": "Projects",
+    "about": "About",
+    "contact": "Contact",
+    "toggle_menu": "Toggle menu"
+  },
+  "hero": {
+    "title": "We Build the Future, One Line at a Time",
+    "subtitle": "Full-stack software & AI solutions for visionary companies",
+    "view_projects": "View Projects ↗",
+    "contact_us": "Contact Us"
+  },
+  "home": {
+    "marquee": "Technologies We Target:",
+    "services_title": "Our Services",
+    "projects_title": "Virtual Projects Showcase",
+    "stats_title": "Key Numbers",
+    "globe_title": "Trusted by teams around the world",
+    "testimonials_title": "Testimonials",
+    "process_title": "How We Work",
+    "cta_banner": "Ready to Build Something Amazing?",
+    "cta_subtitle": "Bring your vision to life with our expert team of engineers and designers.",
+    "start_project": "Start a Project",
+    "stats": {
+      "projects_delivered": "Projects Delivered",
+      "happy_clients": "Happy Clients",
+      "years_experience": "Years Experience",
+      "client_satisfaction": "Client Satisfaction"
+    },
+    "process_steps": {
+      "1": "Discovery & Planning",
+      "2": "Design & Prototype",
+      "3": "Development & Testing",
+      "4": "Launch & Support"
+    },
+    "testimonials_items": {
+      "1": {
+        "name": "Ahmed R.",
+        "role": "CTO",
+        "company": "FinTech ME",
+        "quote": "Working with YallaCode completely transformed our payment infrastructure."
+      },
+      "2": {
+        "name": "Sarah J.",
+        "role": "Product Manager",
+        "company": "Health Plus",
+        "quote": "The AI team delivered exactly what we needed, ahead of schedule."
+      },
+      "3": {
+        "name": "Tariq M.",
+        "role": "CEO",
+        "company": "Urban Navigators",
+        "quote": "Professional, scalable, and beautifully designed solutions."
+      },
+      "4": {
+        "name": "Emma W.",
+        "role": "Director",
+        "company": "EduGlobal",
+        "quote": "They brought our vision to life with bleeding-edge web technologies."
+      }
+    }
+  },
+  "services": {
+    "subtitle": "We provide comprehensive solutions leveraging the latest technologies to accelerate your business growth and digital transformation.",
+    "items": {
+      "web-mobile": {
+        "title": "Web & Mobile Development",
+        "description": "Scalable, high-performance applications built with modern frameworks."
+      },
+      "ai-ml": {
+        "title": "AI & Machine Learning",
+        "description": "Intelligent systems tailored to automate and optimize workflows."
+      },
+      "cloud": {
+        "title": "Cloud Architecture",
+        "description": "Resilient and secure cloud infrastructure designed for global scale."
+      },
+      "ui-ux": {
+        "title": "UI/UX Design Systems",
+        "description": "Beautiful, intuitive interfaces that enhance user engagement."
+      },
+      "api": {
+        "title": "API & Microservices",
+        "description": "Modular backend solutions ensuring seamless data connectivity."
+      },
+      "devops": {
+        "title": "DevOps & Automation",
+        "description": "Streamlined deployment pipelines and infrastructure as code."
+      }
+    }
+  },
+  "projects": {
+    "subtitle": "Explore our showcase of  high-impact projects combining world-class design with scalable engineering and cutting-edge intelligence.",
+    "view_project": "View Project",
+    "status": {
+      "completed": "Completed",
+      "in_progress": "In Progress",
+      "case_study": "Case Study"
+    },
+    "items": {
+      "novapay": {
+        "title": "NovaPay",
+        "description": "Fintech payment platform with secure transactions."
+      },
+      "healthai": {
+        "title": "HealthAI",
+        "description": "Medical diagnosis assistant powered by deep learning."
+      },
+      "urbannav": {
+        "title": "UrbanNav",
+        "description": "Smart city navigation with real-time traffic updates."
+      },
+      "eduflow": {
+        "title": "EduFlow",
+        "description": "LMS platform for modern decentralized education."
+      },
+      "stocksense": {
+        "title": "StockSense",
+        "description": "AI trading insights and market predictions."
+      },
+      "cloudops": {
+        "title": "CloudOps",
+        "description": "DevOps dashboard for global infrastructure monitoring."
+      }
+    }
+  },
+  "footer": {
+    "description": "Full-stack software & AI solutions for visionary companies.",
+    "pages_title": "Pages",
+    "services": {
+      "web_mobile": "Web & Mobile",
+      "ai_ml": "AI & Machine Learning",
+      "cloud_architecture": "Cloud Architecture"
+    },
+    "pages": {
+      "home": "Home",
+      "projects": "Projects",
+      "about": "About"
+    },
+    "rights_reserved": "All rights reserved.",
+    "privacy_policy": "Privacy Policy",
+    "terms_of_service": "Terms of Service"
+  },
+  "language": {
+    "button_aria_label": "Select language",
+    "dialog_title": "Select Your Language",
+    "close_aria_label": "Close language dialog",
+    "search_placeholder": "Search languages...",
+    "suggested_title": "Suggested For You",
+    "all_languages_title": "All Languages"
+  }
+}

@@ -1,0 +1,155 @@
+{
+  "nav": {
+    "home": "Domů",
+    "services": "Služby",
+    "projects": "Projekty",
+    "about": "O nás",
+    "contact": "Kontakt",
+    "toggle_menu": "Přepnout menu"
+  },
+  "hero": {
+    "title": "Budujeme budoucnost, řádek po řádku",
+    "subtitle": "Komplexní softwarová a AI řešení pro vizionářské společnosti",
+    "view_projects": "Zobrazit projekty \u0002197",
+    "contact_us": "Kontaktujte nás"
+  },
+  "home": {
+    "marquee": "Technologie, na které se zaměřujeme:",
+    "services_title": "Naše služby",
+    "projects_title": "Virtuální přehlídka projektů",
+    "stats_title": "Klíčová čísla",
+    "globe_title": "Důvěra týmů po celém světě",
+    "testimonials_title": "Reference",
+    "process_title": "Jak pracujeme",
+    "cta_banner": "Připraveni vytvořit něco úžasného?",
+    "cta_subtitle": "Uveďte svou vizi do života s naším odborným týmem inženýrů a designérů.",
+    "start_project": "Začít projekt",
+    "stats": {
+      "projects_delivered": "Dodané projekty",
+      "happy_clients": "Spokojení klienti",
+      "years_experience": "Let zkušeností",
+      "client_satisfaction": "Spokojenost klientů"
+    },
+    "process_steps": {
+      "1": "Objevování a plánování",
+      "2": "Návrh a prototyp",
+      "3": "Vývoj a testování",
+      "4": "Zavedení a podpora"
+    },
+    "testimonials_items": {
+      "1": {
+        "name": "Ahmed R.",
+        "role": "CTO",
+        "company": "FinTech ME",
+        "quote": "Spolupráce s YallaCode kompletně proměnila naši platební infrastrukturu."
+      },
+      "2": {
+        "name": "Sarah J.",
+        "role": "Produktová manažerka",
+        "company": "Health Plus",
+        "quote": "Tým AI dodal přesně to, co jsme potřebovali, dříve než bylo plánováno."
+      },
+      "3": {
+        "name": "Tariq M.",
+        "role": "CEO",
+        "company": "Urban Navigators",
+        "quote": "Profesionální, škálovatelná a nádherně navržená řešení."
+      },
+      "4": {
+        "name": "Emma W.",
+        "role": "Ředitelka",
+        "company": "EduGlobal",
+        "quote": "Přivedli naši vizi k životu pomocí nejmodernějších webových technologií."
+      }
+    }
+  },
+  "services": {
+    "subtitle": "Nabízíme komplexní řešení využívající nejnovější technologie, která urychlí růst vašeho podnikání a digitální transformaci.",
+    "items": {
+      "web-mobile": {
+        "title": "Webový a mobilní vývoj",
+        "description": "Škálovatelné a vysoce výkonné aplikace postavené na moderních rámcích."
+      },
+      "ai-ml": {
+        "title": "Umělá inteligence a strojové učení",
+        "description": "Inteligentní systémy na míru pro automatizaci a optimalizaci pracovních postupů."
+      },
+      "cloud": {
+        "title": "Cloudová architektura",
+        "description": "Odolná a bezpečná cloudová infrastruktura navržená pro globální rozsah."
+      },
+      "ui-ux": {
+        "title": "UI/UX designové systémy",
+        "description": "Krásné, intuitivní rozhraní, která zvyšují zapojení uživatelů."
+      },
+      "api": {
+        "title": "API a mikroservisy",
+        "description": "Modulární backendová řešení zajišťující bezproblémovou konektivitu dat."
+      },
+      "devops": {
+        "title": "DevOps a automatizace",
+        "description": "Zefektivněné nasazovací procesy a infrastruktura jako kód."
+      }
+    }
+  },
+  "projects": {
+    "subtitle": "Prozkoumejte naši přehlídku vysoce působivých projektů spojujících špičkový design se škálovatelným inženýrstvím a nejmodernější inteligencí.",
+    "view_project": "Zobrazit projekt",
+    "status": {
+      "completed": "Dokončeno",
+      "in_progress": "Probíhá",
+      "case_study": "Případová studie"
+    },
+    "items": {
+      "novapay": {
+        "title": "NovaPay",
+        "description": "Finančně-technologická platební platforma se zabezpečenými transakcemi."
+      },
+      "healthai": {
+        "title": "HealthAI",
+        "description": "Asistent lékařské diagnostiky poháněný hlubokým učením."
+      },
+      "urbannav": {
+        "title": "UrbanNav",
+        "description": "Navigace ve městech s aktuálními dopravními informacemi."
+      },
+      "eduflow": {
+        "title": "EduFlow",
+        "description": "LMS platforma pro moderní decentralizované vzdělávání."
+      },
+      "stocksense": {
+        "title": "StockSense",
+        "description": "AI obchodní poznatky a predikce trhu."
+      },
+      "cloudops": {
+        "title": "CloudOps",
+        "description": "DevOps panel pro monitoring globální infrastruktury."
+      }
+    }
+  },
+  "footer": {
+    "description": "Komplexní softwarová a AI řešení pro vizionářské společnosti.",
+    "pages_title": "Stránky",
+    "services": {
+      "web_mobile": "Web a mobil",
+      "ai_ml": "Umělá inteligence a strojové učení",
+      "cloud_architecture": "Cloudová architektura"
+    },
+    "pages": {
+      "home": "Domů",
+      "projects": "Projekty",
+      "about": "O nás"
+    },
+    "rights_reserved": "Všechna práva vyhrazena.",
+    "privacy_policy": "Zásady ochrany osobních údajů",
+    "terms_of_service": "Podmínky služby"
+  },
+  "language": {
+    "button_aria_label": "Vyberte jazyk",
+    "dialog_title": "Vyberte svůj jazyk",
+    "close_aria_label": "Zavřít dialog jazyka",
+    "search_placeholder": "Hledat jazyky...",
+    "suggested_title": "Doporučeno pro vás",
+    "all_languages_title": "Všechny jazyky"
+  }
+}

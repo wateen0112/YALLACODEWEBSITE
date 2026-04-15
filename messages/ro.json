@@ -1,0 +1,155 @@
+{
+  "nav": {
+    "home": "Acasă",
+    "services": "Servicii",
+    "projects": "Proiecte",
+    "about": "Despre",
+    "contact": "Contact",
+    "toggle_menu": "Comută meniul"
+  },
+  "hero": {
+    "title": "Construim Viitorul, Linia cu Linia",
+    "subtitle": "Soluții software full-stack & AI pentru companii vizionare",
+    "view_projects": "Vezi Proiectele \n439",
+    "contact_us": "Contactează-ne"
+  },
+  "home": {
+    "marquee": "Tehnologii pe care le țintim:",
+    "services_title": "Serviciile Noastre",
+    "projects_title": "Expoziție Virtuală de Proiecte",
+    "stats_title": "Cifre Cheie",
+    "globe_title": "De încredere pentru echipe din întreaga lume",
+    "testimonials_title": "Testimoniale",
+    "process_title": "Cum Lucrăm",
+    "cta_banner": "Gata să construiești ceva uimitor?",
+    "cta_subtitle": "Dă viață viziunii tale cu echipa noastră expertă de ingineri și designeri.",
+    "start_project": "Începe un Proiect",
+    "stats": {
+      "projects_delivered": "Proiecte Livrate",
+      "happy_clients": "Clienți Mulțumiți",
+      "years_experience": "Ani de Experiență",
+      "client_satisfaction": "Satisfacția Clienților"
+    },
+    "process_steps": {
+      "1": "Descoperire & Planificare",
+      "2": "Design & Prototip",
+      "3": "Dezvoltare & Testare",
+      "4": "Lansare & Suport"
+    },
+    "testimonials_items": {
+      "1": {
+        "name": "Ahmed R.",
+        "role": "CTO",
+        "company": "FinTech ME",
+        "quote": "Colaborarea cu YallaCode a transformat complet infrastructura noastră de plăți."
+      },
+      "2": {
+        "name": "Sarah J.",
+        "role": "Manager de Produs",
+        "company": "Health Plus",
+        "quote": "Echipa AI a livrat exact ce aveam nevoie, înainte de termen."
+      },
+      "3": {
+        "name": "Tariq M.",
+        "role": "CEO",
+        "company": "Urban Navigators",
+        "quote": "Soluții profesionale, scalabile și frumos proiectate."
+      },
+      "4": {
+        "name": "Emma W.",
+        "role": "Director",
+        "company": "EduGlobal",
+        "quote": "Au dat viață viziunii noastre cu tehnologii web de ultimă generație."
+      }
+    }
+  },
+  "services": {
+    "subtitle": "Oferim soluții cuprinzătoare care valorifică cele mai recente tehnologii pentru a accelera creșterea afacerii și transformarea digitală.",
+    "items": {
+      "web-mobile": {
+        "title": "Dezvoltare Web & Mobil",
+        "description": "Aplicații scalabile și performante construite cu framework-uri moderne."
+      },
+      "ai-ml": {
+        "title": "Inteligență Artificială & Machine Learning",
+        "description": "Sisteme inteligente adaptate pentru automatizarea și optimizarea fluxurilor de lucru."
+      },
+      "cloud": {
+        "title": "Arhitectură Cloud",
+        "description": "Infrastructură cloud rezilientă și securizată, proiectată pentru scară globală."
+      },
+      "ui-ux": {
+        "title": "Sisteme de Design UI/UX",
+        "description": "Interfețe frumoase și intuitive care sporesc implicarea utilizatorilor."
+      },
+      "api": {
+        "title": "API & Microservicii",
+        "description": "Soluții modulare backend care asigură conectivitate fără probleme a datelor."
+      },
+      "devops": {
+        "title": "DevOps & Automatizare",
+        "description": "Pipeline-uri de implementare simplificate și infrastructură ca cod."
+      }
+    }
+  },
+  "projects": {
+    "subtitle": "Explorează expoziția noastră de proiecte cu impact major, care combină design de clasă mondială cu inginerie scalabilă și inteligență de ultimă generație.",
+    "view_project": "Vezi Proiectul",
+    "status": {
+      "completed": "Finalizat",
+      "in_progress": "În Curs",
+      "case_study": "Studiu de Caz"
+    },
+    "items": {
+      "novapay": {
+        "title": "NovaPay",
+        "description": "Platformă fintech pentru plăți securizate."
+      },
+      "healthai": {
+        "title": "HealthAI",
+        "description": "Asistent pentru diagnostic medical bazat pe învățare profundă."
+      },
+      "urbannav": {
+        "title": "UrbanNav",
+        "description": "Navigație inteligentă pentru orașe cu actualizări de trafic în timp real."
+      },
+      "eduflow": {
+        "title": "EduFlow",
+        "description": "Platformă LMS pentru educație modernă descentralizată."
+      },
+      "stocksense": {
+        "title": "StockSense",
+        "description": "Informații AI pentru tranzacționare și predicții de piață."
+      },
+      "cloudops": {
+        "title": "CloudOps",
+        "description": "Tablou de bord DevOps pentru monitorizarea infrastructurii globale."
+      }
+    }
+  },
+  "footer": {
+    "description": "Soluții software full-stack & AI pentru companii vizionare.",
+    "pages_title": "Pagini",
+    "services": {
+      "web_mobile": "Web & Mobil",
+      "ai_ml": "Inteligență Artificială & Machine Learning",
+      "cloud_architecture": "Arhitectură Cloud"
+    },
+    "pages": {
+      "home": "Acasă",
+      "projects": "Proiecte",
+      "about": "Despre"
+    },
+    "rights_reserved": "Toate drepturile rezervate.",
+    "privacy_policy": "Politica de Confidențialitate",
+    "terms_of_service": "Termeni și Condiții"
+  },
+  "language": {
+    "button_aria_label": "Selectează limba",
+    "dialog_title": "Selectează Limba Ta",
+    "close_aria_label": "Închide dialogul de limbă",
+    "search_placeholder": "Caută limbi...",
+    "suggested_title": "Sugerat Pentru Tine",
+    "all_languages_title": "Toate Limbile"
+  }
+}

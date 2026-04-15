@@ -1,0 +1,155 @@
+{
+  "nav": {
+    "home": "Hjem",
+    "services": "Tjenester",
+    "projects": "Projekter",
+    "about": "Om",
+    "contact": "Kontakt",
+    "toggle_menu": "Skift menu"
+  },
+  "hero": {
+    "title": "Vi bygger fremtiden, én linje ad gangen",
+    "subtitle": "Full-stack software & AI-løsninger til visionære virksomheder",
+    "view_projects": "Se Projekter \u000397",
+    "contact_us": "Kontakt Os"
+  },
+  "home": {
+    "marquee": "Teknologier Vi Målretter:",
+    "services_title": "Vores Tjenester",
+    "projects_title": "Virtuelt Projektudstilling",
+    "stats_title": "Nøgletal",
+    "globe_title": "Betroet af teams verden over",
+    "testimonials_title": "Udtaielser",
+    "process_title": "Sådan Arbejder Vi",
+    "cta_banner": "Klar til at bygge noget fantastisk?",
+    "cta_subtitle": "Få din vision til at leve med vores ekspertteam af ingeniører og designere.",
+    "start_project": "Start et Projekt",
+    "stats": {
+      "projects_delivered": "Leverede Projekter",
+      "happy_clients": "Glade Kunder",
+      "years_experience": "Års Erfaring",
+      "client_satisfaction": "Kundetilfredshed"
+    },
+    "process_steps": {
+      "1": "Opdagelse & Planlægning",
+      "2": "Design & Prototype",
+      "3": "Udvikling & Test",
+      "4": "Lancering & Support"
+    },
+    "testimonials_items": {
+      "1": {
+        "name": "Ahmed R.",
+        "role": "CTO",
+        "company": "FinTech ME",
+        "quote": "At arbejde med YallaCode har fuldstændigt transformeret vores betalingsinfrastruktur."
+      },
+      "2": {
+        "name": "Sarah J.",
+        "role": "Produktchef",
+        "company": "Health Plus",
+        "quote": "AI-teamet leverede præcis det, vi havde brug for, før tid."
+      },
+      "3": {
+        "name": "Tariq M.",
+        "role": "CEO",
+        "company": "Urban Navigators",
+        "quote": "Professionelle, skalerbare og smukt designede løsninger."
+      },
+      "4": {
+        "name": "Emma W.",
+        "role": "Direktør",
+        "company": "EduGlobal",
+        "quote": "De realiserede vores vision med banebrydende webteknologier."
+      }
+    }
+  },
+  "services": {
+    "subtitle": "Vi leverer omfattende løsninger ved at udnytte de nyeste teknologier til at fremskynde din forretningsvækst og digitale transformation.",
+    "items": {
+      "web-mobile": {
+        "title": "Web- & Mobiludvikling",
+        "description": "Skalerbare, højtydende applikationer bygget med moderne frameworks."
+      },
+      "ai-ml": {
+        "title": "AI & Maskinlæring",
+        "description": "Intelligente systemer tilpasset til at automatisere og optimere arbejdsgange."
+      },
+      "cloud": {
+        "title": "Cloud Arkitektur",
+        "description": "Robust og sikker cloud-infrastruktur designet til global skala."
+      },
+      "ui-ux": {
+        "title": "UI/UX Designsystemer",
+        "description": "Smukke, intuitive interfaces der øger brugerengagement."
+      },
+      "api": {
+        "title": "API & Mikrotjenester",
+        "description": "Modulære backend-løsninger der sikrer problemfri datatilslutning."
+      },
+      "devops": {
+        "title": "DevOps & Automation",
+        "description": "Strømlinede deployments-pipelines og infrastruktur som kode."
+      }
+    }
+  },
+  "projects": {
+    "subtitle": "Udforsk vores udstilling af højffektive projekter, der kombinerer verdensklasse design med skalerbar ingeniørkunst og banebrydende intelligens.",
+    "view_project": "Se Projekt",
+    "status": {
+      "completed": "Afsluttet",
+      "in_progress": "I Gang",
+      "case_study": "Casestudie"
+    },
+    "items": {
+      "novapay": {
+        "title": "NovaPay",
+        "description": "Fintech betalingsplatform med sikre transaktioner."
+      },
+      "healthai": {
+        "title": "HealthAI",
+        "description": "Medicinsk diagnoseassistent drevet af dyb læring."
+      },
+      "urbannav": {
+        "title": "UrbanNav",
+        "description": "Smart by-navigation med realtids trafikopdateringer."
+      },
+      "eduflow": {
+        "title": "EduFlow",
+        "description": "LMS platform for moderne decentraliseret uddannelse."
+      },
+      "stocksense": {
+        "title": "StockSense",
+        "description": "AI handelsindsigt og markedsprediktioner."
+      },
+      "cloudops": {
+        "title": "CloudOps",
+        "description": "DevOps dashboard til overvågning af global infrastruktur."
+      }
+    }
+  },
+  "footer": {
+    "description": "Full-stack software & AI-løsninger til visionære virksomheder.",
+    "pages_title": "Sider",
+    "services": {
+      "web_mobile": "Web & Mobil",
+      "ai_ml": "AI & Maskinlæring",
+      "cloud_architecture": "Cloud Arkitektur"
+    },
+    "pages": {
+      "home": "Hjem",
+      "projects": "Projekter",
+      "about": "Om"
+    },
+    "rights_reserved": "Alle rettigheder forbeholdes.",
+    "privacy_policy": "Privatlivspolitik",
+    "terms_of_service": "Servicevilkår"
+  },
+  "language": {
+    "button_aria_label": "Vælg sprog",
+    "dialog_title": "Vælg dit sprog",
+    "close_aria_label": "Luk sprogdialog",
+    "search_placeholder": "Søg efter sprog...",
+    "suggested_title": "Foreslået Til Dig",
+    "all_languages_title": "Alle Sprog"
+  }
+}

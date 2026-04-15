@@ -1,0 +1,155 @@
+{
+  "nav": {
+    "home": "Hem",
+    "services": "Tjänster",
+    "projects": "Projekt",
+    "about": "Om oss",
+    "contact": "Kontakt",
+    "toggle_menu": "Växla meny"
+  },
+  "hero": {
+    "title": "Vi bygger framtiden, en rad i taget",
+    "subtitle": "Fullstack-programvara & AI-lösningar för visionära företag",
+    "view_projects": "Visa projekt \n9",
+    "contact_us": "Kontakta oss"
+  },
+  "home": {
+    "marquee": "Teknologier vi satsar på:",
+    "services_title": "Våra tjänster",
+    "projects_title": "Virtuell projektutställning",
+    "stats_title": "Viktiga siffror",
+    "globe_title": "Betrodd av team runt om i världen",
+    "testimonials_title": "Omdömen",
+    "process_title": "Så här arbetar vi",
+    "cta_banner": "Redo att bygga något fantastiskt?",
+    "cta_subtitle": "Förverkliga din vision med vårt expertteam av ingenjörer och designers.",
+    "start_project": "Starta ett projekt",
+    "stats": {
+      "projects_delivered": "Levererade projekt",
+      "happy_clients": "Nöjda kunder",
+      "years_experience": "Erfarenhetsår",
+      "client_satisfaction": "Kundnöjdhet"
+    },
+    "process_steps": {
+      "1": "Uppdagande & planering",
+      "2": "Design & prototyp",
+      "3": "Utveckling & testning",
+      "4": "Lansering & support"
+    },
+    "testimonials_items": {
+      "1": {
+        "name": "Ahmed R.",
+        "role": "CTO",
+        "company": "FinTech ME",
+        "quote": "Att arbeta med YallaCode förändrade helt vår betalningsinfrastruktur."
+      },
+      "2": {
+        "name": "Sarah J.",
+        "role": "Produktchef",
+        "company": "Health Plus",
+        "quote": "AI-teamet levererade precis vad vi behövde, före schemat."
+      },
+      "3": {
+        "name": "Tariq M.",
+        "role": "VD",
+        "company": "Urban Navigators",
+        "quote": "Professionella, skalbara och vackert designade lösningar."
+      },
+      "4": {
+        "name": "Emma W.",
+        "role": "Direktör",
+        "company": "EduGlobal",
+        "quote": "De förverkligade vår vision med banbrytande webteknologier."
+      }
+    }
+  },
+  "services": {
+    "subtitle": "Vi erbjuder omfattande lösningar med de senaste teknologierna för att påskynda din företagsutveckling och digitala transformation.",
+    "items": {
+      "web-mobile": {
+        "title": "Webb- & mobilutveckling",
+        "description": "Skalbara, högpresterande applikationer byggda med moderna ramverk."
+      },
+      "ai-ml": {
+        "title": "AI & maskininlärning",
+        "description": "Intelligenta system anpassade för att automatisera och optimera arbetsflöden."
+      },
+      "cloud": {
+        "title": "Molnarkitektur",
+        "description": "Robust och säker molninfrastruktur designad för global skala."
+      },
+      "ui-ux": {
+        "title": "UI/UX-designsystem",
+        "description": "Vackra, intuitiva gränssnitt som ökar användarengagemanget."
+      },
+      "api": {
+        "title": "API & mikrotjänster",
+        "description": "Modulära backend-lösningar som säkerställer sömlös datakoppling."
+      },
+      "devops": {
+        "title": "DevOps & automation",
+        "description": "Effektiva distributionspipelines och infrastruktur som kod."
+      }
+    }
+  },
+  "projects": {
+    "subtitle": "Utforska vår utställning av högpåverkande projekt som kombinerar världsberömd design med skalbar teknik och banbrytande intelligens.",
+    "view_project": "Visa projekt",
+    "status": {
+      "completed": "Slutförd",
+      "in_progress": "Pågående",
+      "case_study": "Fallstudie"
+    },
+    "items": {
+      "novapay": {
+        "title": "NovaPay",
+        "description": "Fintech-betalningsplattform med säkra transaktioner."
+      },
+      "healthai": {
+        "title": "HealthAI",
+        "description": "Medicinsk diagnosassistent driven av djupinlärning."
+      },
+      "urbannav": {
+        "title": "UrbanNav",
+        "description": "Smart stadsnavigering med trafikuppdateringar i realtid."
+      },
+      "eduflow": {
+        "title": "EduFlow",
+        "description": "LMS-plattform för modern decentraliserad utbildning."
+      },
+      "stocksense": {
+        "title": "StockSense",
+        "description": "AI-handelinsikter och marknadsprognoser."
+      },
+      "cloudops": {
+        "title": "CloudOps",
+        "description": "DevOps-instrumentpanel för global infrastrukturövervakning."
+      }
+    }
+  },
+  "footer": {
+    "description": "Fullstack-programvara & AI-lösningar för visionära företag.",
+    "pages_title": "Sidor",
+    "services": {
+      "web_mobile": "Webb & mobil",
+      "ai_ml": "AI & maskininlärning",
+      "cloud_architecture": "Molnarkitektur"
+    },
+    "pages": {
+      "home": "Hem",
+      "projects": "Projekt",
+      "about": "Om oss"
+    },
+    "rights_reserved": "Alla rättigheter förbehållna.",
+    "privacy_policy": "Integritetspolicy",
+    "terms_of_service": "Användarvillkor"
+  },
+  "language": {
+    "button_aria_label": "Välj språk",
+    "dialog_title": "Välj ditt språk",
+    "close_aria_label": "Stäng språkdialog",
+    "search_placeholder": "Sök språk...",
+    "suggested_title": "Föreslaget för dig",
+    "all_languages_title": "Alla språk"
+  }
+}

@@ -1,0 +1,155 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Diensten",
+    "projects": "Projecten",
+    "about": "Over",
+    "contact": "Contact",
+    "toggle_menu": "Menu wisselen"
+  },
+  "hero": {
+    "title": "Wij Bouwen de Toekomst, Één Regel Tegelijk",
+    "subtitle": "Full-stack software & AI-oplossingen voor visionaire bedrijven",
+    "view_projects": "Bekijk Projecten \n9",
+    "contact_us": "Neem Contact Op"
+  },
+  "home": {
+    "marquee": "Technologieën waarop wij ons richten:",
+    "services_title": "Onze Diensten",
+    "projects_title": "Virtuele Projecten Showcase",
+    "stats_title": "Belangrijke Cijfers",
+    "globe_title": "Vertrouwd door teams over de hele wereld",
+    "testimonials_title": "Getuigenissen",
+    "process_title": "Hoe Wij Werken",
+    "cta_banner": "Klaar om Iets Geweldigs te Bouwen?",
+    "cta_subtitle": "Breng uw visie tot leven met ons deskundige team van ingenieurs en ontwerpers.",
+    "start_project": "Start een Project",
+    "stats": {
+      "projects_delivered": "Geleverde Projecten",
+      "happy_clients": "Tevreden Klanten",
+      "years_experience": "Jaren Ervaring",
+      "client_satisfaction": "Klanttevredenheid"
+    },
+    "process_steps": {
+      "1": "Ontdekking & Planning",
+      "2": "Ontwerp & Prototype",
+      "3": "Ontwikkeling & Testen",
+      "4": "Lancering & Ondersteuning"
+    },
+    "testimonials_items": {
+      "1": {
+        "name": "Ahmed R.",
+        "role": "CTO",
+        "company": "FinTech ME",
+        "quote": "Samenwerken met YallaCode heeft onze betalingsinfrastructuur compleet getransformeerd."
+      },
+      "2": {
+        "name": "Sarah J.",
+        "role": "Product Manager",
+        "company": "Health Plus",
+        "quote": "Het AI-team leverde precies wat we nodig hadden, vóór de planning."
+      },
+      "3": {
+        "name": "Tariq M.",
+        "role": "CEO",
+        "company": "Urban Navigators",
+        "quote": "Professionele, schaalbare en prachtig ontworpen oplossingen."
+      },
+      "4": {
+        "name": "Emma W.",
+        "role": "Directeur",
+        "company": "EduGlobal",
+        "quote": "Ze hebben onze visie tot leven gebracht met de allernieuwste webtechnologieën."
+      }
+    }
+  },
+  "services": {
+    "subtitle": "Wij bieden uitgebreide oplossingen die gebruik maken van de nieuwste technologieën om uw bedrijfs groei en digitale transformatie te versnellen.",
+    "items": {
+      "web-mobile": {
+        "title": "Web & Mobiele Ontwikkeling",
+        "description": "Schaalbare, krachtige applicaties gebouwd met moderne frameworks."
+      },
+      "ai-ml": {
+        "title": "AI & Machine Learning",
+        "description": "Intelligente systemen op maat gemaakt om workflows te automatiseren en optimaliseren."
+      },
+      "cloud": {
+        "title": "Cloud Architectuur",
+        "description": "Veerkrachtige en veilige cloudinfrastructuur ontworpen voor wereldwijde schaal."
+      },
+      "ui-ux": {
+        "title": "UI/UX Ontwerpsystemen",
+        "description": "Prachtige, intuïtieve interfaces die de gebruikersbetrokkenheid verhogen."
+      },
+      "api": {
+        "title": "API & Microservices",
+        "description": "Modulaire backend-oplossingen die naadloze dataverbinding garanderen."
+      },
+      "devops": {
+        "title": "DevOps & Automatisering",
+        "description": "Gestroomlijnde deployment pipelines en infrastructuur als code."
+      }
+    }
+  },
+  "projects": {
+    "subtitle": "Ontdek onze showcase van projecten met grote impact, die eersteklas ontwerp combineren met schaalbare engineering en baanbrekende intelligentie.",
+    "view_project": "Bekijk Project",
+    "status": {
+      "completed": "Voltooid",
+      "in_progress": "Bezig",
+      "case_study": "Casestudy"
+    },
+    "items": {
+      "novapay": {
+        "title": "NovaPay",
+        "description": "Fintech betalingsplatform met veilige transacties."
+      },
+      "healthai": {
+        "title": "HealthAI",
+        "description": "Medische diagnose-assistent aangedreven door deep learning."
+      },
+      "urbannav": {
+        "title": "UrbanNav",
+        "description": "Slimme stadsnavigatie met realtime verkeersupdates."
+      },
+      "eduflow": {
+        "title": "EduFlow",
+        "description": "LMS-platform voor moderne gedecentraliseerde educatie."
+      },
+      "stocksense": {
+        "title": "StockSense",
+        "description": "AI-handelinzichten en marktvoorspellingen."
+      },
+      "cloudops": {
+        "title": "CloudOps",
+        "description": "DevOps-dashboard voor wereldwijde infrastructuurmonitoring."
+      }
+    }
+  },
+  "footer": {
+    "description": "Full-stack software & AI oplossingen voor visionaire bedrijven.",
+    "pages_title": "Pagina's",
+    "services": {
+      "web_mobile": "Web & Mobiel",
+      "ai_ml": "AI & Machine Learning",
+      "cloud_architecture": "Cloud Architectuur"
+    },
+    "pages": {
+      "home": "Home",
+      "projects": "Projecten",
+      "about": "Over"
+    },
+    "rights_reserved": "Alle rechten voorbehouden.",
+    "privacy_policy": "Privacybeleid",
+    "terms_of_service": "Servicevoorwaarden"
+  },
+  "language": {
+    "button_aria_label": "Selecteer taal",
+    "dialog_title": "Selecteer Uw Taal",
+    "close_aria_label": "Sluit taalvenster",
+    "search_placeholder": "Zoek talen...",
+    "suggested_title": "Aanbevolen Voor U",
+    "all_languages_title": "Alle Talen"
+  }
+}

@@ -1,0 +1,155 @@
+{
+  "nav": {
+    "home": "ホーム",
+    "services": "サービス",
+    "projects": "プロジェクト",
+    "about": "私たちについて",
+    "contact": "お問い合わせ",
+    "toggle_menu": "メニュー切替"
+  },
+  "hero": {
+    "title": "一行ずつ未来を創造する",
+    "subtitle": "先見の明のある企業のためのフルスタックソフトウェア＆AIソリューション",
+    "view_projects": "プロジェクトを見る \u000397",
+    "contact_us": "お問い合わせ"
+  },
+  "home": {
+    "marquee": "対象技術：",
+    "services_title": "私たちのサービス",
+    "projects_title": "バーチャルプロジェクトショーケース",
+    "stats_title": "主要な数字",
+    "globe_title": "世界中のチームから信頼されています",
+    "testimonials_title": "お客様の声",
+    "process_title": "私たちの仕事の流れ",
+    "cta_banner": "素晴らしいものを一緒に作りませんか？",
+    "cta_subtitle": "経験豊富なエンジニアとデザイナーのチームと共に、あなたのビジョンを実現しましょう。",
+    "start_project": "プロジェクトを始める",
+    "stats": {
+      "projects_delivered": "納品したプロジェクト数",
+      "happy_clients": "満足したクライアント",
+      "years_experience": "経験年数",
+      "client_satisfaction": "顧客満足度"
+    },
+    "process_steps": {
+      "1": "発見と計画",
+      "2": "デザインとプロトタイプ",
+      "3": "開発とテスト",
+      "4": "リリースとサポート"
+    },
+    "testimonials_items": {
+      "1": {
+        "name": "アーメド R.",
+        "role": "CTO",
+        "company": "FinTech ME",
+        "quote": "YallaCodeと一緒に仕事をして、我々の決済インフラが完全に変革されました。"
+      },
+      "2": {
+        "name": "サラ J.",
+        "role": "プロダクトマネージャー",
+        "company": "Health Plus",
+        "quote": "AIチームは必要なものを予定より早く正確に提供してくれました。"
+      },
+      "3": {
+        "name": "タリク M.",
+        "role": "CEO",
+        "company": "Urban Navigators",
+        "quote": "プロフェッショナルでスケーラブル、そして美しく設計されたソリューションです。"
+      },
+      "4": {
+        "name": "エマ W.",
+        "role": "ディレクター",
+        "company": "EduGlobal",
+        "quote": "最先端のウェブ技術で、私たちのビジョンを形にしてくれました。"
+      }
+    }
+  },
+  "services": {
+    "subtitle": "最新技術を駆使した包括的なソリューションを提供し、ビジネスの成長とデジタルトランスフォーメーションを加速します。",
+    "items": {
+      "web-mobile": {
+        "title": "ウェブ＆モバイル開発",
+        "description": "最新フレームワークで構築された拡張性と高性能のアプリケーション。"
+      },
+      "ai-ml": {
+        "title": "AI＆機械学習",
+        "description": "ワークフローの自動化と最適化に特化したインテリジェントシステム。"
+      },
+      "cloud": {
+        "title": "クラウドアーキテクチャ",
+        "description": "グローバル規模で設計された堅牢で安全なクラウドインフラストラクチャ。"
+      },
+      "ui-ux": {
+        "title": "UI/UXデザインシステム",
+        "description": "ユーザーエンゲージメントを高める美しく直感的なインターフェース。"
+      },
+      "api": {
+        "title": "API＆マイクロサービス",
+        "description": "シームレスなデータ接続を保証するモジュール化されたバックエンドソリューション。"
+      },
+      "devops": {
+        "title": "DevOps＆自動化",
+        "description": "効率化されたデプロイパイプラインとコードによるインフラ管理。"
+      }
+    }
+  },
+  "projects": {
+    "subtitle": "世界クラスのデザインとスケーラブルなエンジニアリング、最先端のインテリジェンスを組み合わせた高影響力プロジェクトのショーケースをご覧ください。",
+    "view_project": "プロジェクトを見る",
+    "status": {
+      "completed": "完了",
+      "in_progress": "進行中",
+      "case_study": "ケーススタディ"
+    },
+    "items": {
+      "novapay": {
+        "title": "NovaPay",
+        "description": "安全な取引を実現するフィンテック決済プラットフォーム。"
+      },
+      "healthai": {
+        "title": "HealthAI",
+        "description": "深層学習による医療診断アシスタント。"
+      },
+      "urbannav": {
+        "title": "UrbanNav",
+        "description": "リアルタイムの交通情報を提供するスマートシティナビゲーション。"
+      },
+      "eduflow": {
+        "title": "EduFlow",
+        "description": "現代の分散型教育向けLMSプラットフォーム。"
+      },
+      "stocksense": {
+        "title": "StockSense",
+        "description": "AIによる取引インサイトと市場予測。"
+      },
+      "cloudops": {
+        "title": "CloudOps",
+        "description": "グローバルインフラ監視のためのDevOpsダッシュボード。"
+      }
+    }
+  },
+  "footer": {
+    "description": "先見の明のある企業のためのフルスタックソフトウェア＆AIソリューション。",
+    "pages_title": "ページ",
+    "services": {
+      "web_mobile": "ウェブ＆モバイル",
+      "ai_ml": "AI＆機械学習",
+      "cloud_architecture": "クラウドアーキテクチャ"
+    },
+    "pages": {
+      "home": "ホーム",
+      "projects": "プロジェクト",
+      "about": "私たちについて"
+    },
+    "rights_reserved": "全著作権所有。",
+    "privacy_policy": "プライバシーポリシー",
+    "terms_of_service": "利用規約"
+  },
+  "language": {
+    "button_aria_label": "言語を選択",
+    "dialog_title": "言語を選択してください",
+    "close_aria_label": "言語ダイアログを閉じる",
+    "search_placeholder": "言語を検索...",
+    "suggested_title": "おすすめ",
+    "all_languages_title": "すべての言語"
+  }
+}

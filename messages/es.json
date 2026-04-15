@@ -1,0 +1,155 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "services": "Servicios",
+    "projects": "Proyectos",
+    "about": "Acerca de",
+    "contact": "Contacto",
+    "toggle_menu": "Alternar menú"
+  },
+  "hero": {
+    "title": "Construimos el futuro, una línea a la vez",
+    "subtitle": "Soluciones de software full-stack e IA para empresas visionarias",
+    "view_projects": "Ver Proyectos \n\u00027",
+    "contact_us": "Contáctanos"
+  },
+  "home": {
+    "marquee": "Tecnologías que Apuntamos:",
+    "services_title": "Nuestros Servicios",
+    "projects_title": "Exhibición Virtual de Proyectos",
+    "stats_title": "Números Clave",
+    "globe_title": "Confiado por equipos en todo el mundo",
+    "testimonials_title": "Testimonios",
+    "process_title": "Cómo Trabajamos",
+    "cta_banner": "¿Listo para construir algo increíble?",
+    "cta_subtitle": "Da vida a tu visión con nuestro equipo experto de ingenieros y diseñadores.",
+    "start_project": "Iniciar un Proyecto",
+    "stats": {
+      "projects_delivered": "Proyectos Entregados",
+      "happy_clients": "Clientes Satisfechos",
+      "years_experience": "Años de Experiencia",
+      "client_satisfaction": "Satisfacción del Cliente"
+    },
+    "process_steps": {
+      "1": "Descubrimiento y Planificación",
+      "2": "Diseño y Prototipo",
+      "3": "Desarrollo y Pruebas",
+      "4": "Lanzamiento y Soporte"
+    },
+    "testimonials_items": {
+      "1": {
+        "name": "Ahmed R.",
+        "role": "CTO",
+        "company": "FinTech ME",
+        "quote": "Trabajar con YallaCode transformó por completo nuestra infraestructura de pagos."
+      },
+      "2": {
+        "name": "Sarah J.",
+        "role": "Product Manager",
+        "company": "Health Plus",
+        "quote": "El equipo de IA entregó exactamente lo que necesitábamos, antes del plazo."
+      },
+      "3": {
+        "name": "Tariq M.",
+        "role": "CEO",
+        "company": "Urban Navigators",
+        "quote": "Soluciones profesionales, escalables y con un diseño hermoso."
+      },
+      "4": {
+        "name": "Emma W.",
+        "role": "Director",
+        "company": "EduGlobal",
+        "quote": "Dieron vida a nuestra visión con tecnologías web de punta."
+      }
+    }
+  },
+  "services": {
+    "subtitle": "Ofrecemos soluciones integrales aprovechando las últimas tecnologías para acelerar el crecimiento de tu negocio y la transformación digital.",
+    "items": {
+      "web-mobile": {
+        "title": "Desarrollo Web y Móvil",
+        "description": "Aplicaciones escalables y de alto rendimiento construidas con frameworks modernos."
+      },
+      "ai-ml": {
+        "title": "IA y Aprendizaje Automático",
+        "description": "Sistemas inteligentes diseñados para automatizar y optimizar flujos de trabajo."
+      },
+      "cloud": {
+        "title": "Arquitectura en la Nube",
+        "description": "Infraestructura en la nube resiliente y segura diseñada para escala global."
+      },
+      "ui-ux": {
+        "title": "Sistemas de Diseño UI/UX",
+        "description": "Interfaces hermosas e intuitivas que mejoran la interacción del usuario."
+      },
+      "api": {
+        "title": "API y Microservicios",
+        "description": "Soluciones modulares de backend que aseguran conectividad fluida de datos."
+      },
+      "devops": {
+        "title": "DevOps y Automatización",
+        "description": "Pipelines de despliegue optimizados e infraestructura como código."
+      }
+    }
+  },
+  "projects": {
+    "subtitle": "Explora nuestra exhibición de proyectos de alto impacto que combinan diseño de clase mundial con ingeniería escalable e inteligencia de punta.",
+    "view_project": "Ver Proyecto",
+    "status": {
+      "completed": "Completado",
+      "in_progress": "En Progreso",
+      "case_study": "Estudio de Caso"
+    },
+    "items": {
+      "novapay": {
+        "title": "NovaPay",
+        "description": "Plataforma fintech de pagos con transacciones seguras."
+      },
+      "healthai": {
+        "title": "HealthAI",
+        "description": "Asistente de diagnóstico médico impulsado por aprendizaje profundo."
+      },
+      "urbannav": {
+        "title": "UrbanNav",
+        "description": "Navegación inteligente para ciudades con actualizaciones de tráfico en tiempo real."
+      },
+      "eduflow": {
+        "title": "EduFlow",
+        "description": "Plataforma LMS para educación moderna descentralizada."
+      },
+      "stocksense": {
+        "title": "StockSense",
+        "description": "Perspectivas de trading AI y predicciones del mercado."
+      },
+      "cloudops": {
+        "title": "CloudOps",
+        "description": "Dashboard DevOps para monitoreo de infraestructura global."
+      }
+    }
+  },
+  "footer": {
+    "description": "Soluciones full-stack de software e IA para empresas visionarias.",
+    "pages_title": "Páginas",
+    "services": {
+      "web_mobile": "Web y Móvil",
+      "ai_ml": "IA y Aprendizaje Automático",
+      "cloud_architecture": "Arquitectura en la Nube"
+    },
+    "pages": {
+      "home": "Inicio",
+      "projects": "Proyectos",
+      "about": "Acerca de"
+    },
+    "rights_reserved": "Todos los derechos reservados.",
+    "privacy_policy": "Política de Privacidad",
+    "terms_of_service": "Términos del Servicio"
+  },
+  "language": {
+    "button_aria_label": "Seleccionar idioma",
+    "dialog_title": "Selecciona Tu Idioma",
+    "close_aria_label": "Cerrar diálogo de idioma",
+    "search_placeholder": "Buscar idiomas...",
+    "suggested_title": "Sugeridos para ti",
+    "all_languages_title": "Todos los idiomas"
+  }
+}

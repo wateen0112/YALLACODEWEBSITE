@@ -1,0 +1,155 @@
+{
+  "nav": {
+    "home": "홈",
+    "services": "서비스",
+    "projects": "프로젝트",
+    "about": "회사소개",
+    "contact": "문의하기",
+    "toggle_menu": "메뉴 토글"
+  },
+  "hero": {
+    "title": "한 줄씩 미래를 만듭니다",
+    "subtitle": "비전 있는 기업을 위한 풀스택 소프트웨어 및 AI 솔루션",
+    "view_projects": "프로젝트 보기 \u001297",
+    "contact_us": "문의하기"
+  },
+  "home": {
+    "marquee": "우리가 다루는 기술:",
+    "services_title": "우리의 서비스",
+    "projects_title": "가상 프로젝트 쇼케이스",
+    "stats_title": "핵심 수치",
+    "globe_title": "전 세계 팀이 신뢰하는",
+    "testimonials_title": "고객 후기",
+    "process_title": "작업 방식",
+    "cta_banner": "멋진 무언가를 만들 준비가 되셨나요?",
+    "cta_subtitle": "전문 엔지니어와 디자이너 팀과 함께 당신의 비전을 현실로 만드세요.",
+    "start_project": "프로젝트 시작하기",
+    "stats": {
+      "projects_delivered": "완료된 프로젝트",
+      "happy_clients": "만족한 고객",
+      "years_experience": "경력 연수",
+      "client_satisfaction": "고객 만족도"
+    },
+    "process_steps": {
+      "1": "발견 및 계획",
+      "2": "디자인 및 프로토타입",
+      "3": "개발 및 테스트",
+      "4": "출시 및 지원"
+    },
+    "testimonials_items": {
+      "1": {
+        "name": "아흐메드 R.",
+        "role": "CTO",
+        "company": "핀테크 ME",
+        "quote": "YallaCode와의 협업으로 결제 인프라가 완전히 혁신되었습니다."
+      },
+      "2": {
+        "name": "사라 J.",
+        "role": "제품 관리자",
+        "company": "헬스 플러스",
+        "quote": "AI 팀이 필요한 것을 정확히, 예정보다 빨리 제공했습니다."
+      },
+      "3": {
+        "name": "타릭 M.",
+        "role": "CEO",
+        "company": "어반 네비게이터스",
+        "quote": "전문적이고 확장 가능하며 아름답게 디자인된 솔루션입니다."
+      },
+      "4": {
+        "name": "엠마 W.",
+        "role": "이사",
+        "company": "에듀글로벌",
+        "quote": "최첨단 웹 기술로 우리의 비전을 현실로 만들어주었습니다."
+      }
+    }
+  },
+  "services": {
+    "subtitle": "최신 기술을 활용한 종합 솔루션을 제공하여 비즈니스 성장과 디지털 전환을 가속화합니다.",
+    "items": {
+      "web-mobile": {
+        "title": "웹 및 모바일 개발",
+        "description": "최신 프레임워크로 구축된 확장 가능하고 고성능 애플리케이션."
+      },
+      "ai-ml": {
+        "title": "AI 및 머신 러닝",
+        "description": "자동화하고 워크플로우를 최적화하는 맞춤형 지능형 시스템."
+      },
+      "cloud": {
+        "title": "클라우드 아키텍처",
+        "description": "글로벌 규모에 맞게 설계된 안정적이고 안전한 클라우드 인프라."
+      },
+      "ui-ux": {
+        "title": "UI/UX 디자인 시스템",
+        "description": "사용자 참여를 향상시키는 아름답고 직관적인 인터페이스."
+      },
+      "api": {
+        "title": "API 및 마이크로서비스",
+        "description": "원활한 데이터 연결을 보장하는 모듈식 백엔드 솔루션."
+      },
+      "devops": {
+        "title": "DevOps 및 자동화",
+        "description": "효율적인 배포 파이프라인과 코드 기반 인프라."
+      }
+    }
+  },
+  "projects": {
+    "subtitle": "세계적 수준의 디자인과 확장 가능한 엔지니어링, 최첨단 인텔리전스를 결합한 하이 임팩트 프로젝트를 탐험하세요.",
+    "view_project": "프로젝트 보기",
+    "status": {
+      "completed": "완료됨",
+      "in_progress": "진행 중",
+      "case_study": "사례 연구"
+    },
+    "items": {
+      "novapay": {
+        "title": "노바페이",
+        "description": "안전한 거래의 핀테크 결제 플랫폼."
+      },
+      "healthai": {
+        "title": "헬스AI",
+        "description": "딥러닝 기반 의료 진단 보조 시스템."
+      },
+      "urbannav": {
+        "title": "어반내브",
+        "description": "실시간 교통 업데이트를 제공하는 스마트 시티 내비게이션."
+      },
+      "eduflow": {
+        "title": "에듀플로우",
+        "description": "현대적 분산 교육을 위한 LMS 플랫폼."
+      },
+      "stocksense": {
+        "title": "스톡센스",
+        "description": "AI 기반 거래 인사이트 및 시장 예측."
+      },
+      "cloudops": {
+        "title": "클라우드옵스",
+        "description": "글로벌 인프라 모니터링을 위한 DevOps 대시보드."
+      }
+    }
+  },
+  "footer": {
+    "description": "비전 있는 기업을 위한 풀스택 소프트웨어 및 AI 솔루션.",
+    "pages_title": "페이지",
+    "services": {
+      "web_mobile": "웹 및 모바일",
+      "ai_ml": "AI 및 머신 러닝",
+      "cloud_architecture": "클라우드 아키텍처"
+    },
+    "pages": {
+      "home": "홈",
+      "projects": "프로젝트",
+      "about": "회사소개"
+    },
+    "rights_reserved": "판권 소유.",
+    "privacy_policy": "개인정보처리방침",
+    "terms_of_service": "이용약관"
+  },
+  "language": {
+    "button_aria_label": "언어 선택",
+    "dialog_title": "언어를 선택하세요",
+    "close_aria_label": "언어 대화상자 닫기",
+    "search_placeholder": "언어 검색...",
+    "suggested_title": "추천 언어",
+    "all_languages_title": "모든 언어"
+  }
+}

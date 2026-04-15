@@ -1,0 +1,155 @@
+{
+  "nav": {
+    "home": "Koti",
+    "services": "Palvelut",
+    "projects": "Projektit",
+    "about": "Tietoa",
+    "contact": "Ota yhteyttä",
+    "toggle_menu": "Vaihda valikko"
+  },
+  "hero": {
+    "title": "Rakennamme tulevaisuutta, yksi rivi kerrallaan",
+    "subtitle": "Täyden pinon ohjelmisto- ja tekoälyratkaisut visionäärisille yrityksille",
+    "view_projects": "Katso projektit \u0002197",
+    "contact_us": "Ota yhteyttä"
+  },
+  "home": {
+    "marquee": "Teknologiat, joihin keskitymme:",
+    "services_title": "Palvelumme",
+    "projects_title": "Virtuaalinen projektinäyttely",
+    "stats_title": "Keskeiset luvut",
+    "globe_title": "Luotettu tiimien toimesta ympäri maailmaa",
+    "testimonials_title": "Suosituksia",
+    "process_title": "Miten työskentelemme",
+    "cta_banner": "Valmis rakentamaan jotain mahtavaa?",
+    "cta_subtitle": "Tuo visiollesi elämä asiantuntevan insinööri- ja suunnittelijatiimimme avulla.",
+    "start_project": "Aloita projekti",
+    "stats": {
+      "projects_delivered": "Toimitetut projektit",
+      "happy_clients": "Tyytyväiset asiakkaat",
+      "years_experience": "Vuoden kokemus",
+      "client_satisfaction": "Asiakastyytyväisyys"
+    },
+    "process_steps": {
+      "1": "Tutkimus ja suunnittelu",
+      "2": "Suunnittelu ja prototyyppi",
+      "3": "Kehitys ja testaus",
+      "4": "Julkaisu ja tuki"
+    },
+    "testimonials_items": {
+      "1": {
+        "name": "Ahmed R.",
+        "role": "CTO",
+        "company": "FinTech ME",
+        "quote": "YallaCoden kanssa työskentely mullisti maksujärjestelmämme täysin."
+      },
+      "2": {
+        "name": "Sarah J.",
+        "role": "Tuotepäällikkö",
+        "company": "Health Plus",
+        "quote": "Tekoälytiimi toimitti juuri tarvitsemamme, vieläpä etuajassa."
+      },
+      "3": {
+        "name": "Tariq M.",
+        "role": "Toimitusjohtaja",
+        "company": "Urban Navigators",
+        "quote": "Ammatillisia, skaalautuvia ja kauniisti suunniteltuja ratkaisuja."
+      },
+      "4": {
+        "name": "Emma W.",
+        "role": "Johtaja",
+        "company": "EduGlobal",
+        "quote": "He elävöittivät visiomme viimeisimmillä web-teknologioilla."
+      }
+    }
+  },
+  "services": {
+    "subtitle": "Tarjoamme kattavia ratkaisuja hyödyntäen uusimpia teknologioita nopeuttaaksemme liiketoimintasi kasvua ja digitaalista transformaatiota.",
+    "items": {
+      "web-mobile": {
+        "title": "Web- ja mobiilikehitys",
+        "description": "Skaalautuvat, suorituskykyiset sovellukset moderneilla kehyksillä."
+      },
+      "ai-ml": {
+        "title": "Tekoäly ja koneoppiminen",
+        "description": "Älykkäät järjestelmät työnkulkujen automatisointiin ja optimointiin."
+      },
+      "cloud": {
+        "title": "Pilviarkkitehtuuri",
+        "description": "Kestävä ja turvallinen pilvi-infrastruktuuri maailmanlaajuiseksi skaalaksi."
+      },
+      "ui-ux": {
+        "title": "UI/UX-suunnittelujärjestelmät",
+        "description": "Kauniit, intuitiiviset käyttöliittymät, jotka parantavat käyttäjäkokemusta."
+      },
+      "api": {
+        "title": "API ja mikropalvelut",
+        "description": "Modulaariset backend-ratkaisut saumattomaan datayhteyteen."
+      },
+      "devops": {
+        "title": "DevOps ja automaatio",
+        "description": "Tehostetut julkaisuprosessit ja infrastruktuuri koodina."
+      }
+    }
+  },
+  "projects": {
+    "subtitle": "Tutustu näyttelyymme vaikuttavista projekteista, joissa yhdistyy huippuluokan suunnittelu, skaalautuva insinöörityö ja huippuäly.",
+    "view_project": "Katso projekti",
+    "status": {
+      "completed": "Valmis",
+      "in_progress": "Käynnissä",
+      "case_study": "Tapaustutkimus"
+    },
+    "items": {
+      "novapay": {
+        "title": "NovaPay",
+        "description": "Fintech-maksualusta turvallisilla siirroilla."
+      },
+      "healthai": {
+        "title": "HealthAI",
+        "description": "Lääkinnällinen diagnoosiavustaja syväoppimiseen perustuen."
+      },
+      "urbannav": {
+        "title": "UrbanNav",
+        "description": "Älykäs kaupunkisuunnistus reaaliaikaisilla liikennetiedotteilla."
+      },
+      "eduflow": {
+        "title": "EduFlow",
+        "description": "LMS-alusta modernille hajautetulle koulutukselle."
+      },
+      "stocksense": {
+        "title": "StockSense",
+        "description": "Tekoälypohjaiset kaupankäyntinäkymät ja markkinaennusteet."
+      },
+      "cloudops": {
+        "title": "CloudOps",
+        "description": "DevOps-hallintapaneeli globaaliin infrastruktuurin seurantaan."
+      }
+    }
+  },
+  "footer": {
+    "description": "Täyden pinon ohjelmisto- ja tekoälyratkaisut visionäärisille yrityksille.",
+    "pages_title": "Sivut",
+    "services": {
+      "web_mobile": "Web & mobiili",
+      "ai_ml": "Tekoäly ja koneoppiminen",
+      "cloud_architecture": "Pilviarkkitehtuuri"
+    },
+    "pages": {
+      "home": "Koti",
+      "projects": "Projektit",
+      "about": "Tietoa"
+    },
+    "rights_reserved": "Kaikki oikeudet pidätetään.",
+    "privacy_policy": "Tietosuojakäytäntö",
+    "terms_of_service": "Käyttöehdot"
+  },
+  "language": {
+    "button_aria_label": "Valitse kieli",
+    "dialog_title": "Valitse kielesi",
+    "close_aria_label": "Sulje kielivalintaikkuna",
+    "search_placeholder": "Etsi kieliä...",
+    "suggested_title": "Suositellaan sinulle",
+    "all_languages_title": "Kaikki kielet"
+  }
+}

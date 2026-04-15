@@ -1,0 +1,155 @@
+{
+  "nav": {
+    "home": "首页",
+    "services": "服务",
+    "projects": "项目",
+    "about": "关于",
+    "contact": "联系",
+    "toggle_menu": "切换菜单"
+  },
+  "hero": {
+    "title": "我们构建未来，一次一行",
+    "subtitle": "为有远见的公司提供全栈软件与人工智能解决方案",
+    "view_projects": "查看项目 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t223",
+    "contact_us": "联系我们"
+  },
+  "home": {
+    "marquee": "我们针对的技术：",
+    "services_title": "我们的服务",
+    "projects_title": "虚拟项目展示",
+    "stats_title": "关键数据",
+    "globe_title": "全球团队信赖",
+    "testimonials_title": "客户评价",
+    "process_title": "我们的工作流程",
+    "cta_banner": "准备好打造非凡作品了吗？",
+    "cta_subtitle": "与我们的专家团队一起实现您的愿景，包括工程师与设计师。",
+    "start_project": "启动项目",
+    "stats": {
+      "projects_delivered": "交付项目数",
+      "happy_clients": "满意客户",
+      "years_experience": "经验年数",
+      "client_satisfaction": "客户满意度"
+    },
+    "process_steps": {
+      "1": "探索与规划",
+      "2": "设计与原型",
+      "3": "开发与测试",
+      "4": "上线与支持"
+    },
+    "testimonials_items": {
+      "1": {
+        "name": "Ahmed R.",
+        "role": "首席技术官",
+        "company": "FinTech ME",
+        "quote": "与YallaCode合作彻底改变了我们的支付基础设施。"
+      },
+      "2": {
+        "name": "Sarah J.",
+        "role": "产品经理",
+        "company": "Health Plus",
+        "quote": "AI团队提前交付了我们所需的产品。"
+      },
+      "3": {
+        "name": "Tariq M.",
+        "role": "首席执行官",
+        "company": "Urban Navigators",
+        "quote": "专业、可扩展且设计精美的解决方案。"
+      },
+      "4": {
+        "name": "Emma W.",
+        "role": "主管",
+        "company": "EduGlobal",
+        "quote": "他们利用尖端网页技术让我们的愿景成为现实。"
+      }
+    }
+  },
+  "services": {
+    "subtitle": "我们利用最新技术提供全方位解决方案，加速您的业务增长和数字化转型。",
+    "items": {
+      "web-mobile": {
+        "title": "网页与移动开发",
+        "description": "基于现代框架构建的可扩展高性能应用。"
+      },
+      "ai-ml": {
+        "title": "人工智能与机器学习",
+        "description": "定制智能系统，实现工作流程自动化与优化。"
+      },
+      "cloud": {
+        "title": "云架构",
+        "description": "面向全球规模设计的弹性安全云基础设施。"
+      },
+      "ui-ux": {
+        "title": "界面/用户体验设计系统",
+        "description": "美观且直观的界面，提升用户参与度。"
+      },
+      "api": {
+        "title": "API与微服务",
+        "description": "模块化后端解决方案，确保数据无缝连接。"
+      },
+      "devops": {
+        "title": "DevOps与自动化",
+        "description": "简化的部署流水线和基础设施即代码。"
+      }
+    }
+  },
+  "projects": {
+    "subtitle": "探索我们结合世界级设计、可扩展工程和尖端智能的高影响力项目展示。",
+    "view_project": "查看项目",
+    "status": {
+      "completed": "已完成",
+      "in_progress": "进行中",
+      "case_study": "案例研究"
+    },
+    "items": {
+      "novapay": {
+        "title": "NovaPay",
+        "description": "具有安全交易功能的金融科技支付平台。"
+      },
+      "healthai": {
+        "title": "HealthAI",
+        "description": "基于深度学习的医疗诊断助手。"
+      },
+      "urbannav": {
+        "title": "UrbanNav",
+        "description": "提供实时交通更新的智能城市导航。"
+      },
+      "eduflow": {
+        "title": "EduFlow",
+        "description": "现代化去中心化教育的学习管理系统平台。"
+      },
+      "stocksense": {
+        "title": "StockSense",
+        "description": "提供AI交易洞察和市场预测。"
+      },
+      "cloudops": {
+        "title": "CloudOps",
+        "description": "用于全球基础设施监控的DevOps仪表盘。"
+      }
+    }
+  },
+  "footer": {
+    "description": "为有远见的公司提供全栈软件和人工智能解决方案。",
+    "pages_title": "页面",
+    "services": {
+      "web_mobile": "网页与移动",
+      "ai_ml": "人工智能与机器学习",
+      "cloud_architecture": "云架构"
+    },
+    "pages": {
+      "home": "首页",
+      "projects": "项目",
+      "about": "关于"
+    },
+    "rights_reserved": "版权所有。",
+    "privacy_policy": "隐私政策",
+    "terms_of_service": "服务条款"
+  },
+  "language": {
+    "button_aria_label": "选择语言",
+    "dialog_title": "选择您的语言",
+    "close_aria_label": "关闭语言对话框",
+    "search_placeholder": "搜索语言...",
+    "suggested_title": "为您推荐",
+    "all_languages_title": "所有语言"
+  }
+}

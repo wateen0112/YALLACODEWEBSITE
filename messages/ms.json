@@ -1,0 +1,155 @@
+{
+  "nav": {
+    "home": "Laman Utama",
+    "services": "Perkhidmatan",
+    "projects": "Projek",
+    "about": "Tentang",
+    "contact": "Hubungi",
+    "toggle_menu": "Tukar menu"
+  },
+  "hero": {
+    "title": "Kami Membangun Masa Depan, Satu Baris Pada Satu Masa",
+    "subtitle": "Penyelesaian perisian & AI penuh untuk syarikat berwawasan",
+    "view_projects": "Lihat Projek \u00002197",
+    "contact_us": "Hubungi Kami"
+  },
+  "home": {
+    "marquee": "Teknologi yang Kami Sasarkan:",
+    "services_title": "Perkhidmatan Kami",
+    "projects_title": "Pameran Projek Maya",
+    "stats_title": "Angka Utama",
+    "globe_title": "Dipercayai oleh pasukan di seluruh dunia",
+    "testimonials_title": "Testimoni",
+    "process_title": "Cara Kami Bekerja",
+    "cta_banner": "Bersedia Membangun Sesuatu Yang Hebat?",
+    "cta_subtitle": "Hidupkan visi anda dengan pasukan pakar jurutera dan pereka kami.",
+    "start_project": "Mulakan Projek",
+    "stats": {
+      "projects_delivered": "Projek Disiapkan",
+      "happy_clients": "Pelanggan Puas",
+      "years_experience": "Tahun Pengalaman",
+      "client_satisfaction": "Kepuasan Pelanggan"
+    },
+    "process_steps": {
+      "1": "Penemuan & Perancangan",
+      "2": "Reka Bentuk & Prototaip",
+      "3": "Pembangunan & Ujian",
+      "4": "Pelancaran & Sokongan"
+    },
+    "testimonials_items": {
+      "1": {
+        "name": "Ahmed R.",
+        "role": "CTO",
+        "company": "FinTech ME",
+        "quote": "Bekerjasama dengan YallaCode telah mengubah infrastruktur pembayaran kami sepenuhnya."
+      },
+      "2": {
+        "name": "Sarah J.",
+        "role": "Pengurus Produk",
+        "company": "Health Plus",
+        "quote": "Pasukan AI menyampaikan apa yang kami perlukan, lebih awal dari jadual."
+      },
+      "3": {
+        "name": "Tariq M.",
+        "role": "CEO",
+        "company": "Urban Navigators",
+        "quote": "Penyelesaian profesional, skala besar, dan reka bentuk yang indah."
+      },
+      "4": {
+        "name": "Emma W.",
+        "role": "Pengarah",
+        "company": "EduGlobal",
+        "quote": "Mereka menghidupkan visi kami dengan teknologi web terkini."
+      }
+    }
+  },
+  "services": {
+    "subtitle": "Kami menyediakan penyelesaian komprehensif menggunakan teknologi terkini untuk mempercepat pertumbuhan perniagaan dan transformasi digital anda.",
+    "items": {
+      "web-mobile": {
+        "title": "Pembangunan Web & Mudah Alih",
+        "description": "Aplikasi berskala, berprestasi tinggi dibina dengan rangka kerja moden."
+      },
+      "ai-ml": {
+        "title": "AI & Pembelajaran Mesin",
+        "description": "Sistem pintar disesuaikan untuk mengautomasi dan mengoptimumkan aliran kerja."
+      },
+      "cloud": {
+        "title": "Seni Bina Awan",
+        "description": "Infrastruktur awan yang tahan lasak dan selamat direka untuk skala global."
+      },
+      "ui-ux": {
+        "title": "Sistem Reka Bentuk UI/UX",
+        "description": "Antaramuka yang indah dan intuitif yang meningkatkan penglibatan pengguna."
+      },
+      "api": {
+        "title": "API & Mikroservis",
+        "description": "Penyelesaian backend modular memastikan sambungan data tanpa masalah."
+      },
+      "devops": {
+        "title": "DevOps & Automasi",
+        "description": "Saluran pelancaran yang dipermudahkan dan infrastruktur sebagai kod."
+      }
+    }
+  },
+  "projects": {
+    "subtitle": "Terokai pameran projek berimpak tinggi yang menggabungkan reka bentuk kelas dunia dengan kejuruteraan skala besar dan kecerdasan terkini.",
+    "view_project": "Lihat Projek",
+    "status": {
+      "completed": "Selesai",
+      "in_progress": "Dalam Proses",
+      "case_study": "Kajian Kes"
+    },
+    "items": {
+      "novapay": {
+        "title": "NovaPay",
+        "description": "Platform pembayaran fintech dengan transaksi selamat."
+      },
+      "healthai": {
+        "title": "HealthAI",
+        "description": "Pembantu diagnosis perubatan yang dikuasakan oleh pembelajaran mendalam."
+      },
+      "urbannav": {
+        "title": "UrbanNav",
+        "description": "Navigasi bandar pintar dengan kemas kini trafik masa nyata."
+      },
+      "eduflow": {
+        "title": "EduFlow",
+        "description": "Platform LMS untuk pendidikan terdesentralisasi moden."
+      },
+      "stocksense": {
+        "title": "StockSense",
+        "description": "Wawasan perdagangan AI dan ramalan pasaran."
+      },
+      "cloudops": {
+        "title": "CloudOps",
+        "description": "Papan pemuka DevOps untuk pemantauan infrastruktur global."
+      }
+    }
+  },
+  "footer": {
+    "description": "Penyelesaian perisian & AI penuh untuk syarikat berwawasan.",
+    "pages_title": "Halaman",
+    "services": {
+      "web_mobile": "Web & Mudah Alih",
+      "ai_ml": "AI & Pembelajaran Mesin",
+      "cloud_architecture": "Seni Bina Awan"
+    },
+    "pages": {
+      "home": "Laman Utama",
+      "projects": "Projek",
+      "about": "Tentang"
+    },
+    "rights_reserved": "Hak cipta terpelihara.",
+    "privacy_policy": "Dasar Privasi",
+    "terms_of_service": "Terma Perkhidmatan"
+  },
+  "language": {
+    "button_aria_label": "Pilih bahasa",
+    "dialog_title": "Pilih Bahasa Anda",
+    "close_aria_label": "Tutup dialog bahasa",
+    "search_placeholder": "Cari bahasa...",
+    "suggested_title": "Dicadangkan Untuk Anda",
+    "all_languages_title": "Semua Bahasa"
+  }
+}

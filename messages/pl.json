@@ -1,0 +1,155 @@
+{
+  "nav": {
+    "home": "Strona główna",
+    "services": "Usługi",
+    "projects": "Projekty",
+    "about": "O nas",
+    "contact": "Kontakt",
+    "toggle_menu": "Przełącz menu"
+  },
+  "hero": {
+    "title": "Budujemy przyszłość, linia po linii",
+    "subtitle": "Kompleksowe rozwiązania software i AI dla wizjonerskich firm",
+    "view_projects": "Zobacz projekty \u0002197",
+    "contact_us": "Skontaktuj się z nami"
+  },
+  "home": {
+    "marquee": "Technologie, na które stawiamy:",
+    "services_title": "Nasze usługi",
+    "projects_title": "Wirtualna prezentacja projektów",
+    "stats_title": "Kluczowe liczby",
+    "globe_title": "Zaufanie zespołów na całym świecie",
+    "testimonials_title": "Opinie",
+    "process_title": "Jak pracujemy",
+    "cta_banner": "Gotowy, by stworzyć coś niesamowitego?",
+    "cta_subtitle": "Zrealizuj swoją wizję z pomocą naszego zespołu ekspertów — inżynierów i projektantów.",
+    "start_project": "Rozpocznij projekt",
+    "stats": {
+      "projects_delivered": "Zrealizowane projekty",
+      "happy_clients": "Zadowoleni klienci",
+      "years_experience": "Lata doświadczenia",
+      "client_satisfaction": "Satysfakcja klientów"
+    },
+    "process_steps": {
+      "1": "Odkrywanie i planowanie",
+      "2": "Projektowanie i prototypowanie",
+      "3": "Rozwój i testowanie",
+      "4": "Wdrożenie i wsparcie"
+    },
+    "testimonials_items": {
+      "1": {
+        "name": "Ahmed R.",
+        "role": "CTO",
+        "company": "FinTech ME",
+        "quote": "Współpraca z YallaCode całkowicie zmieniła naszą infrastrukturę płatności."
+      },
+      "2": {
+        "name": "Sarah J.",
+        "role": "Kierownik produktu",
+        "company": "Health Plus",
+        "quote": "Zespół AI dostarczył dokładnie to, czego potrzebowaliśmy, przed terminem."
+      },
+      "3": {
+        "name": "Tariq M.",
+        "role": "CEO",
+        "company": "Urban Navigators",
+        "quote": "Profesjonalne, skalowalne i pięknie zaprojektowane rozwiązania."
+      },
+      "4": {
+        "name": "Emma W.",
+        "role": "Dyrektor",
+        "company": "EduGlobal",
+        "quote": "Wprowadzili naszą wizję w życie, korzystając z najnowocześniejszych technologii internetowych."
+      }
+    }
+  },
+  "services": {
+    "subtitle": "Dostarczamy kompleksowe rozwiązania wykorzystujące najnowsze technologie, aby przyspieszyć rozwój Twojej firmy i cyfrową transformację.",
+    "items": {
+      "web-mobile": {
+        "title": "Rozwój Web i Mobile",
+        "description": "Skalowalne, wydajne aplikacje budowane z nowoczesnych frameworków."
+      },
+      "ai-ml": {
+        "title": "AI i uczenie maszynowe",
+        "description": "Inteligentne systemy dostosowane do automatyzacji i optymalizacji procesów."
+      },
+      "cloud": {
+        "title": "Architektura chmurowa",
+        "description": "Odporna i bezpieczna infrastruktura chmurowa zaprojektowana dla globalnej skali."
+      },
+      "ui-ux": {
+        "title": "Systemy projektowania UI/UX",
+        "description": "Piękne, intuicyjne interfejsy zwiększające zaangażowanie użytkowników."
+      },
+      "api": {
+        "title": "API i mikrousługi",
+        "description": "Modularne rozwiązania backendowe zapewniające płynną łączność danych."
+      },
+      "devops": {
+        "title": "DevOps i automatyzacja",
+        "description": "Usprawnione procesy wdrożeniowe i infrastruktura jako kod."
+      }
+    }
+  },
+  "projects": {
+    "subtitle": "Poznaj naszą prezentację projektów o dużym wpływie, łączących światowej klasy design ze skalowalnym inżynierią i nowoczesną inteligencją.",
+    "view_project": "Zobacz projekt",
+    "status": {
+      "completed": "Zakończony",
+      "in_progress": "W realizacji",
+      "case_study": "Studium przypadku"
+    },
+    "items": {
+      "novapay": {
+        "title": "NovaPay",
+        "description": "Platforma płatnicza fintech z bezpiecznymi transakcjami."
+      },
+      "healthai": {
+        "title": "HealthAI",
+        "description": "Asystent diagnozy medycznej oparty na uczeniu głębokim."
+      },
+      "urbannav": {
+        "title": "UrbanNav",
+        "description": "Nawigacja po inteligentnym mieście z aktualizacjami ruchu w czasie rzeczywistym."
+      },
+      "eduflow": {
+        "title": "EduFlow",
+        "description": "Platforma LMS dla nowoczesnej zdecentralizowanej edukacji."
+      },
+      "stocksense": {
+        "title": "StockSense",
+        "description": "AI do analizy handlu i prognoz rynkowych."
+      },
+      "cloudops": {
+        "title": "CloudOps",
+        "description": "Panel DevOps do monitorowania globalnej infrastruktury."
+      }
+    }
+  },
+  "footer": {
+    "description": "Kompleksowe rozwiązania software i AI dla wizjonerskich firm.",
+    "pages_title": "Strony",
+    "services": {
+      "web_mobile": "Web i Mobile",
+      "ai_ml": "AI i uczenie maszynowe",
+      "cloud_architecture": "Architektura chmurowa"
+    },
+    "pages": {
+      "home": "Strona główna",
+      "projects": "Projekty",
+      "about": "O nas"
+    },
+    "rights_reserved": "Wszelkie prawa zastrzeżone.",
+    "privacy_policy": "Polityka prywatności",
+    "terms_of_service": "Warunki świadczenia usług"
+  },
+  "language": {
+    "button_aria_label": "Wybierz język",
+    "dialog_title": "Wybierz swój język",
+    "close_aria_label": "Zamknij okno wyboru języka",
+    "search_placeholder": "Szukaj języków...",
+    "suggested_title": "Proponowane dla Ciebie",
+    "all_languages_title": "Wszystkie języki"
+  }
+}

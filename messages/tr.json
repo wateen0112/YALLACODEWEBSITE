@@ -1,0 +1,155 @@
+{
+  "nav": {
+    "home": "Ana Sayfa",
+    "services": "Hizmetler",
+    "projects": "Projeler",
+    "about": "Hakkında",
+    "contact": "İletişim",
+    "toggle_menu": "Menüyü değiştir"
+  },
+  "hero": {
+    "title": "Geleceği İnşa Ediyoruz, Satır Satır",
+    "subtitle": "Vizyoner şirketler için tam yığın yazılım ve yapay zeka çözümleri",
+    "view_projects": "Projeleri Görüntüle \u0002197",
+    "contact_us": "Bizimle İletişime Geçin"
+  },
+  "home": {
+    "marquee": "Hedeflediğimiz Teknolojiler:",
+    "services_title": "Hizmetlerimiz",
+    "projects_title": "Sanal Proje Gösterimi",
+    "stats_title": "Önemli Sayılar",
+    "globe_title": "Dünyanın dört bir yanından ekipler tarafından güveniliyor",
+    "testimonials_title": "Referanslar",
+    "process_title": "Nasıl Çalışıyoruz",
+    "cta_banner": "Harika Bir Şey İnşa Etmeye Hazır mısınız?",
+    "cta_subtitle": "Vizyonunuzu, uzman mühendislerimiz ve tasarımcılarımızla hayata geçirin.",
+    "start_project": "Projeye Başla",
+    "stats": {
+      "projects_delivered": "Teslim Edilen Projeler",
+      "happy_clients": "Memnun Müşteriler",
+      "years_experience": "Yıllık Deneyim",
+      "client_satisfaction": "Müşteri Memnuniyeti"
+    },
+    "process_steps": {
+      "1": "Keşif ve Planlama",
+      "2": "Tasarım ve Prototip",
+      "3": "Geliştirme ve Test",
+      "4": "Lansman ve Destek"
+    },
+    "testimonials_items": {
+      "1": {
+        "name": "Ahmed R.",
+        "role": "CTO",
+        "company": "FinTech ME",
+        "quote": "YallaCode ile çalışmak, ödeme altyapımızı tamamen dönüştürdü."
+      },
+      "2": {
+        "name": "Sarah J.",
+        "role": "Ürün Yöneticisi",
+        "company": "Health Plus",
+        "quote": "Yapay zeka ekibi tam da ihtiyacımız olanı, zamanından önce teslim etti."
+      },
+      "3": {
+        "name": "Tariq M.",
+        "role": "CEO",
+        "company": "Urban Navigators",
+        "quote": "Profesyonel, ölçeklenebilir ve güzel tasarlanmış çözümler."
+      },
+      "4": {
+        "name": "Emma W.",
+        "role": "Direktör",
+        "company": "EduGlobal",
+        "quote": "Vizyonumuzu, son teknoloji web teknolojileriyle hayata geçirdiler."
+      }
+    }
+  },
+  "services": {
+    "subtitle": "İş büyümenizi ve dijital dönüşümünüzü hızlandırmak için en son teknolojilere dayalı kapsamlı çözümler sunuyoruz.",
+    "items": {
+      "web-mobile": {
+        "title": "Web & Mobil Geliştirme",
+        "description": "Modern çerçevelerle oluşturulmuş ölçeklenebilir, yüksek performanslı uygulamalar."
+      },
+      "ai-ml": {
+        "title": "Yapay Zeka & Makine Öğrenimi",
+        "description": "İş akışlarını otomatikleştirmek ve optimize etmek için tasarlanmış akıllı sistemler."
+      },
+      "cloud": {
+        "title": "Bulut Mimarisi",
+        "description": "Küresel ölçek için tasarlanmış dayanıklı ve güvenli bulut altyapısı."
+      },
+      "ui-ux": {
+        "title": "UI/UX Tasarım Sistemleri",
+        "description": "Kullanıcı etkileşimini artıran güzel ve sezgisel arayüzler."
+      },
+      "api": {
+        "title": "API & Mikroservisler",
+        "description": "Kesintisiz veri bağlantısı sağlayan modüler backend çözümleri."
+      },
+      "devops": {
+        "title": "DevOps & Otomasyon",
+        "description": "Yayınlama süreçleri ve kod olarak altyapı için akıcı pipeline'lar."
+      }
+    }
+  },
+  "projects": {
+    "subtitle": "Dünya standartlarında tasarım, ölçeklenebilir mühendislik ve keskin zekanın birleştiği yüksek etkili projelerimizi keşfedin.",
+    "view_project": "Projeyi Görüntüle",
+    "status": {
+      "completed": "Tamamlandı",
+      "in_progress": "Devam Ediyor",
+      "case_study": "Vaka Çalışması"
+    },
+    "items": {
+      "novapay": {
+        "title": "NovaPay",
+        "description": "Güvenli işlemlerle fintech ödeme platformu."
+      },
+      "healthai": {
+        "title": "HealthAI",
+        "description": "Derin öğrenmeye dayalı tıbbi tanı asistanı."
+      },
+      "urbannav": {
+        "title": "UrbanNav",
+        "description": "Gerçek zamanlı trafik güncellemeleri ile akıllı şehir navigasyonu."
+      },
+      "eduflow": {
+        "title": "EduFlow",
+        "description": "Modern, merkezi olmayan eğitim için LMS platformu."
+      },
+      "stocksense": {
+        "title": "StockSense",
+        "description": "Yapay zeka destekli ticaret içgörüleri ve piyasa tahminleri."
+      },
+      "cloudops": {
+        "title": "CloudOps",
+        "description": "Küresel altyapı izleme için DevOps panosu."
+      }
+    }
+  },
+  "footer": {
+    "description": "Vizyoner şirketler için tam yığın yazılım ve yapay zeka çözümleri.",
+    "pages_title": "Sayfalar",
+    "services": {
+      "web_mobile": "Web & Mobil",
+      "ai_ml": "Yapay Zeka & Makine Öğrenimi",
+      "cloud_architecture": "Bulut Mimarisi"
+    },
+    "pages": {
+      "home": "Ana Sayfa",
+      "projects": "Projeler",
+      "about": "Hakkında"
+    },
+    "rights_reserved": "Tüm hakları saklıdır.",
+    "privacy_policy": "Gizlilik Politikası",
+    "terms_of_service": "Hizmet Şartları"
+  },
+  "language": {
+    "button_aria_label": "Dil seç",
+    "dialog_title": "Dil Seçin",
+    "close_aria_label": "Dil diyalog kutusunu kapat",
+    "search_placeholder": "Dillerde ara...",
+    "suggested_title": "Sizin İçin Önerilenler",
+    "all_languages_title": "Tüm Diller"
+  }
+}
