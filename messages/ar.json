@@ -95,6 +95,14 @@
   "projects": {
     "subtitle": "استكشف معرض مشاريعنا ذات التأثير العالي التي تجمع بين التصميم العالمي والهندسة القابلة للتوسع والذكاء المتقدم.",
     "view_project": "عرض المشروع",
+    "back_to_projects": "العودة إلى المشاريع",
+    "project_overview": "نظرة عامة على المشروع",
+    "technologies": "التقنيات",
+    "project_info": "معلومات المشروع",
+    "status_label": "الحالة",
+    "project_id": "معرف المشروع",
+    "actions": "الإجراءات",
+    "view_live_project": "عرض المشروع المباشر",
     "status": {
       "completed": "مكتمل",
       "in_progress": "قيد التنفيذ",
