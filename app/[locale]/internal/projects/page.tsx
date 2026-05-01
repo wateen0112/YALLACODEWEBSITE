@@ -10,6 +10,7 @@ type ProjectFormState = {
   title: string;
   description: string;
   coverImage: string;
+  imageFile: File | null;
   tags: string;
   status: string;
 };
@@ -19,6 +20,7 @@ const defaultForm: ProjectFormState = {
   title: "",
   description: "",
   coverImage: "",
+  imageFile: null,
   tags: "",
   status: "Completed"
 };
@@ -69,6 +71,7 @@ export default function InternalProjectsPage() {
       title: project.title,
       description: project.description,
       coverImage: project.coverImage,
+      imageFile: null,
       tags: project.tags.join(", "),
       status: project.status
     });
@@ -78,28 +81,48 @@ export default function InternalProjectsPage() {
     setForm(defaultForm);
   }
 
+  function handleImageChange(event: React.ChangeEvent<HTMLInputElement>) {
+    const file = event.target.files?.[0] || null;
+    setForm(prev => ({ ...prev, imageFile: file }));
+  }
+
   async function submitForm(event: FormEvent) {
     event.preventDefault();
     setSubmitting(true);
     setError("");
 
-    const payload = {
-      slug: form.slug.trim(),
-      title: form.title.trim(),
-      description: form.description.trim(),
-      coverImage: form.coverImage.trim(),
-      tags: form.tags,
-      status: form.status.trim()
-    };
+    // Validate that image file is provided for new projects
+    if (!form.id && !form.imageFile) {
+      setError("Please select an image file.");
+      setSubmitting(false);
+      return;
+    }
 
     try {
       const endpoint = form.id ? `/api/internal/projects/${form.id}` : "/api/internal/projects";
       const method = form.id ? "PUT" : "POST";
 
+      // Create FormData for file upload
+      const formData = new FormData();
+      
+      // Add all form fields
+      formData.append("slug", form.slug.trim());
+      formData.append("title", form.title.trim());
+      formData.append("description", form.description.trim());
+      formData.append("tags", form.tags);
+      formData.append("status", form.status.trim());
+      
+      // Add image file if provided
+      if (form.imageFile) {
+        formData.append("image", form.imageFile);
+      } else if (form.coverImage) {
+        // For editing without new image, keep existing cover image URL
+        formData.append("coverImage", form.coverImage.trim());
+      }
+
       const response = await fetch(endpoint, {
         method,
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload)
+        body: formData // Don't set Content-Type header for FormData
       });
 
       if (response.status === 401) {
@@ -181,12 +204,28 @@ export default function InternalProjectsPage() {
               onChange={(event) => setForm((prev) => ({ ...prev, slug: event.target.value }))}
               className="rounded-lg border border-primary-600/30 bg-black/20 px-3 py-2 outline-none focus:border-primary-400"
             />
-            <input
-              placeholder="Cover image URL"
-              value={form.coverImage}
-              onChange={(event) => setForm((prev) => ({ ...prev, coverImage: event.target.value }))}
-              className="rounded-lg border border-primary-600/30 bg-black/20 px-3 py-2 outline-none focus:border-primary-400 md:col-span-2"
-            />
+            <div className="md:col-span-2">
+              <label className="block text-sm mb-1">
+                Project Image {form.id ? "(optional - leave empty to keep current)" : "*"}
+              </label>
+              <input
+                type="file"
+                accept="image/*"
+                onChange={handleImageChange}
+                className="w-full rounded-lg border border-primary-600/30 bg-black/20 px-3 py-2 outline-none focus:border-primary-400"
+                required={!form.id}
+              />
+              {form.imageFile && (
+                <p className="mt-2 text-sm text-text-secondary">
+                  Selected: {form.imageFile.name}
+                </p>
+              )}
+              {form.id && form.coverImage && !form.imageFile && (
+                <p className="mt-2 text-sm text-text-secondary">
+                  Current image: {form.coverImage}
+                </p>
+              )}
+            </div>
             <textarea
               placeholder="Description"
               value={form.description}
