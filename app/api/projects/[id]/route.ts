@@ -3,11 +3,12 @@ import { listProjectsFromApi } from "@/lib/projects-api";
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await params;
     const projects = await listProjectsFromApi();
-    const project = projects.find(p => p.id === params.id);
+    const project = projects.find(p => p.id === id);
     
     if (!project) {
       return NextResponse.json({ error: "Project not found" }, { status: 404 });
