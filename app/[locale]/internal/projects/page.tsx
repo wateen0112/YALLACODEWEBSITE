@@ -276,16 +276,46 @@ export default function InternalProjectsPage() {
             {projects.map((project) => (
               <div
                 key={project.id}
-                className="rounded-xl border border-primary-600/20 bg-black/20 p-4 flex flex-wrap items-start justify-between gap-3"
+                className="rounded-xl border border-primary-600/20 bg-black/20 p-4 flex flex-wrap items-start gap-4"
               >
-                <div className="max-w-3xl">
-                  <p className="font-semibold">{project.title}</p>
-                  <p className="text-sm text-text-secondary">{project.description}</p>
-                  <p className="text-xs text-text-secondary mt-2">
+                {/* Product Image */}
+                <div className="w-24 h-24 rounded-lg overflow-hidden flex-shrink-0 bg-black/40 border border-primary-600/20">
+                  {project.coverImage ? (
+                    <img
+                      src={project.coverImage}
+                      alt={project.title}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center text-text-secondary text-xs">
+                      No Image
+                    </div>
+                  )}
+                </div>
+
+                {/* Project Info */}
+                <div className="flex-1 min-w-0">
+                  <p className="font-semibold text-lg">{project.title}</p>
+                  <p className="text-sm text-text-secondary mb-2 line-clamp-2">{project.description}</p>
+                  <p className="text-xs text-text-secondary">
                     slug: {project.slug} | status: {project.status}
                   </p>
+                  {project.tags && project.tags.length > 0 && (
+                    <div className="flex flex-wrap gap-1 mt-2">
+                      {project.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="px-2 py-0.5 text-xs bg-primary-600/10 text-primary-400 rounded border border-primary-600/20"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
                 </div>
-                <div className="flex gap-2">
+
+                {/* Action Buttons */}
+                <div className="flex gap-2 items-start">
                   <button
                     onClick={() => editProject(project)}
                     className="rounded-lg border border-primary-600/30 px-3 py-1.5 text-sm hover:bg-primary-600/10"

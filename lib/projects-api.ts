@@ -62,11 +62,11 @@ function toProject(raw: UnknownRecord, index: number): Project {
 }
 
 function ensureConfigured() {
-  return API_BASE_URL.length > 0;
+  return API_BASE_URL && API_BASE_URL.length > 0;
 }
 
 function buildBaseEndpoint() {
-  const base = API_BASE_URL.replace(/\/+$/, "");
+  const base = API_BASE_URL
   const endpoint = API_PROJECTS_ENDPOINT.startsWith("/")
     ? API_PROJECTS_ENDPOINT
     : `/${API_PROJECTS_ENDPOINT}`;
@@ -198,7 +198,14 @@ export async function createProjectWithImage(formData: FormData): Promise<Projec
     headers.Authorization = `Bearer ${API_SECRET}`;
   }
 
-  const response = await fetch(buildBaseEndpoint(), {
+  const endpoint = buildBaseEndpoint();
+  console.log('Creating project with image at:', endpoint);
+  console.log('FormData entries:');
+  for (const [key, value] of formData.entries()) {
+    console.log(`  ${key}:`, value instanceof File ? `File(${value.name}, ${value.size} bytes)` : value);
+  }
+
+  const response = await fetch(endpoint, {
     method: "POST",
     headers,
     body: formData,
