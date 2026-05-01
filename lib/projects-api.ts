@@ -184,3 +184,32 @@ export async function deleteProjectInApi(id: string): Promise<void> {
   }
 }
 
+export async function createProjectWithImage(formData: FormData): Promise<Project> {
+  if (!ensureConfigured()) {
+    throw new Error("API is not configured");
+  }
+
+  // Build headers without Content-Type for FormData (browser sets it automatically)
+  const headers: HeadersInit = {};
+  
+  if (API_SECRET) {
+    headers["x-api-secret"] = API_SECRET;
+    headers[API_SECRET_HEADER] = API_SECRET;
+    headers.Authorization = `Bearer ${API_SECRET}`;
+  }
+
+  const response = await fetch(buildBaseEndpoint(), {
+    method: "POST",
+    headers,
+    body: formData,
+    cache: "no-store"
+  });
+
+  if (!response.ok) {
+    throw await buildApiError("create", response);
+  }
+
+  const raw = (await response.json()) as UnknownRecord;
+  return toProject(raw, 0);
+}
+
