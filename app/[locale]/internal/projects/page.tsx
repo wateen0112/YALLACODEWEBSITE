@@ -41,18 +41,24 @@ export default function InternalProjectsPage() {
 
     try {
       const response = await fetch("/api/internal/projects", { cache: "no-store" });
+      console.log('Projects response status:', response.status);
+      
       if (response.status === 401) {
+        console.log('Unauthorized, redirecting to login');
         router.push(`/${locale}/internal/login`);
         return;
       }
       if (!response.ok) {
         const payload = (await response.json().catch(() => ({}))) as { error?: string };
+        console.log('Projects error:', payload);
         setError(payload.error || "Failed to load projects.");
         return;
       }
       const data = (await response.json()) as Project[];
+      console.log('Projects loaded:', data.length);
       setProjects(Array.isArray(data) ? data : []);
-    } catch {
+    } catch (error) {
+      console.log('Projects fetch error:', error);
       setError("Failed to load projects.");
     } finally {
       setLoading(false);

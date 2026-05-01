@@ -95,6 +95,14 @@
   "projects": {
     "subtitle": "Explore our showcase of  high-impact projects combining world-class design with scalable engineering and cutting-edge intelligence.",
     "view_project": "View Project",
+    "back_to_projects": "Back to Projects",
+    "project_overview": "Project Overview",
+    "technologies": "Technologies",
+    "project_info": "Project Info",
+    "status_label": "Status",
+    "project_id": "Project ID",
+    "actions": "Actions",
+    "view_live_project": "View Live Project",
     "status": {
       "completed": "Completed",
       "in_progress": "In Progress",
