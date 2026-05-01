@@ -6,6 +6,7 @@ export interface Project {
   coverImage: string;
   tags: string[];
   status: "Completed" | "In Progress" | "Case Study" | string;
+  projectUrl?: string;
 }
 
 export const projects: Project[] = [

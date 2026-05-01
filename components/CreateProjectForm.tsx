@@ -9,6 +9,7 @@ interface ProjectFormData {
   longDescription: string;
   technologies: string;
   demoLink: string;
+  projectUrl: string;
   image: File | null;
 }
 
@@ -19,6 +20,7 @@ export default function CreateProjectForm() {
     longDescription: '',
     technologies: '',
     demoLink: '',
+    projectUrl: '',
     image: null,
   });
 
@@ -59,6 +61,7 @@ export default function CreateProjectForm() {
       submitData.append('longDescription', formData.longDescription);
       submitData.append('technologies', formData.technologies);
       submitData.append('demoLink', formData.demoLink);
+      submitData.append('projectUrl', formData.projectUrl);
 
       await createProjectWithImage(submitData);
       setSuccess(true);
@@ -70,10 +73,11 @@ export default function CreateProjectForm() {
         longDescription: '',
         technologies: '',
         demoLink: '',
+        projectUrl: '',
         image: null,
       });
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Failed to create project');
+      setError(err instanceof Error ? err.message : ' t');
     } finally {
       setLoading(false);
     }
@@ -192,6 +196,22 @@ export default function CreateProjectForm() {
             onChange={handleInputChange}
             className="w-full p-2 border border-gray-300 rounded-md"
             placeholder="https://example.com"
+            required
+          />
+        </div>
+
+        {/* Project URL */}
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            Project URL *
+          </label>
+          <input
+            type="url"
+            name="projectUrl"
+            value={formData.projectUrl}
+            onChange={handleInputChange}
+            className="w-full p-2 border border-gray-300 rounded-md"
+            placeholder="https://github.com/username/project"
             required
           />
         </div>

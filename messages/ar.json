@@ -101,6 +101,7 @@
     "project_info": "معلومات المشروع",
     "status_label": "الحالة",
     "project_id": "معرف المشروع",
+    "project_url": "رابط المشروع",
     "actions": "الإجراءات",
     "view_live_project": "عرض المشروع المباشر",
     "status": {

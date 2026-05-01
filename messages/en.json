@@ -101,6 +101,7 @@
     "project_info": "Project Info",
     "status_label": "Status",
     "project_id": "Project ID",
+    "project_url": "Project URL",
     "actions": "Actions",
     "view_live_project": "View Live Project",
     "status": {

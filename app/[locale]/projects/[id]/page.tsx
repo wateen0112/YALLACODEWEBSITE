@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { Project } from "@/lib/projects";
-import { ArrowLeft, ExternalLink, Calendar, Tag } from "lucide-react";
+import { ArrowLeft, ExternalLink, Calendar, Tag, Link } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { GlowButton } from "@/components/ui/GlowButton";
 
@@ -199,6 +199,23 @@ export default function ProjectDetailPage() {
                     <p className="font-medium text-text-primary">{project.id}</p>
                   </div>
                 </div>
+
+                {project.projectUrl && (
+                  <div className="flex items-center gap-3">
+                    <Link className="w-5 h-5 text-primary-400" />
+                    <div>
+                      <p className="text-sm text-text-secondary">{t("project_url")}</p>
+                      <a 
+                        href={project.projectUrl} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="font-medium text-primary-400 hover:text-primary-300 transition-colors"
+                      >
+                        {project.projectUrl}
+                      </a>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
 
@@ -209,10 +226,15 @@ export default function ProjectDetailPage() {
               </h3>
               
               <div className="space-y-3">
-                <GlowButton className="w-full justify-center">
-                  <ExternalLink className="w-4 h-4 mr-2" />
-                  {t("view_live_project")}
-                </GlowButton>
+                {project.projectUrl && (
+                  <GlowButton 
+                    className="w-full justify-center"
+                    onClick={() => window.open(project.projectUrl, '_blank')}
+                  >
+                    <ExternalLink className="w-4 h-4 mr-2" />
+                    {t("view_live_project")}
+                  </GlowButton>
+                )}
               </div>
             </div>
           </div>
