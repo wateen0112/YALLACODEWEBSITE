@@ -34,7 +34,7 @@ export function ProjectCard({ project }: { project: Project }) {
       <div className="relative aspect-video overflow-hidden">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img 
-          src={project.coverImage} 
+          src={project.image || project.coverImage} 
           alt={project.title} 
           className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110" 
         />

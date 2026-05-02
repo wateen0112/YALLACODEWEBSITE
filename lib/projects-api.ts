@@ -52,12 +52,22 @@ function toProject(raw: UnknownRecord, index: number): Project {
 
   return {
     id: String(raw.id ?? raw._id ?? index + 1),
+    _id: String(raw._id ?? raw.id ?? index + 1),
     slug: normalizeSlug(slugSource),
     title,
     description,
     coverImage,
+    image: coverImage, // Use coverImage as fallback for image field
     tags,
-    status
+    status,
+    shortDescription: typeof raw.shortDescription === "string" ? raw.shortDescription : description,
+    longDescription: typeof raw.longDescription === "string" ? raw.longDescription : description,
+    technologies: Array.isArray(raw.technologies) ? raw.technologies : tags,
+    demoLink: typeof raw.demoLink === "string" ? raw.demoLink : "#",
+    project_url: typeof raw.project_url === "string" ? raw.project_url : undefined,
+    createdAt: typeof raw.createdAt === "string" ? raw.createdAt : new Date().toISOString(),
+    updatedAt: typeof raw.updatedAt === "string" ? raw.updatedAt : new Date().toISOString(),
+    __v: typeof raw.__v === "number" ? raw.__v : 0
   };
 }
 
@@ -131,6 +141,8 @@ export async function listProjectsFromApi(): Promise<Project[]> {
   }
 
   const data = (await response.json()) as unknown;
+  console.log('Raw backend data:', JSON.stringify(data, null, 2));
+
   const list = Array.isArray(data)
     ? data
     : typeof data === "object" && data !== null && Array.isArray((data as UnknownRecord).data)

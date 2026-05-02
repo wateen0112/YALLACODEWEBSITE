@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { createProjectWithImage } from '@/lib/projects-api';
+import { logger } from '@/lib/logger';
 
 interface ProjectFormData {
   title: string;
@@ -66,6 +67,16 @@ export default function CreateProjectForm() {
       await createProjectWithImage(submitData);
       setSuccess(true);
       
+      // Log successful form submission
+      logger.logFormSubmission('CreateProjectForm', {
+        title: formData.title,
+        shortDescription: formData.shortDescription,
+        technologies: formData.technologies,
+        demoLink: formData.demoLink,
+        projectUrl: formData.projectUrl,
+        hasImage: !!formData.image
+      }, true);
+      
       // Reset form
       setFormData({
         title: '',
@@ -77,7 +88,15 @@ export default function CreateProjectForm() {
         image: null,
       });
     } catch (err) {
-      setError(err instanceof Error ? err.message : ' t');
+      const errorMessage = err instanceof Error ? err.message : 'Failed to create project';
+      
+      // Log failed form submission
+      logger.logFormSubmission('CreateProjectForm', {
+        title: formData.title,
+        error: errorMessage
+      }, false);
+      
+      setError(errorMessage);
     } finally {
       setLoading(false);
     }

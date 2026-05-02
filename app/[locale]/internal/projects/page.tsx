@@ -3,26 +3,37 @@
 import { FormEvent, useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import type { Project } from "@/lib/projects";
+import { logger } from "@/lib/logger";
 
 type ProjectFormState = {
   id?: string;
   slug: string;
   title: string;
   description: string;
+  shortDescription: string;
+  longDescription: string;
   coverImage: string;
   imageFile: File | null;
   tags: string;
+  technologies: string;
   status: string;
+  projectUrl: string;
+  demoLink: string;
 };
 
 const defaultForm: ProjectFormState = {
   slug: "",
   title: "",
   description: "",
+  shortDescription: "",
+  longDescription: "",
   coverImage: "",
   imageFile: null,
   tags: "",
-  status: "Completed"
+  technologies: "",
+  status: "Completed",
+  projectUrl: "",
+  demoLink: "#"
 };
 
 export default function InternalProjectsPage() {
@@ -76,10 +87,15 @@ export default function InternalProjectsPage() {
       slug: project.slug,
       title: project.title,
       description: project.description,
+      shortDescription: project.shortDescription || "",
+      longDescription: project.longDescription || "",
       coverImage: project.coverImage,
       imageFile: null,
       tags: project.tags.join(", "),
-      status: project.status
+      technologies: project.technologies.join(", "),
+      status: project.status,
+      projectUrl: project.project_url || "",
+      demoLink: project.demoLink || "#"
     });
   }
 
@@ -115,8 +131,13 @@ export default function InternalProjectsPage() {
       formData.append("slug", form.slug.trim());
       formData.append("title", form.title.trim());
       formData.append("description", form.description.trim());
+      formData.append("shortDescription", form.shortDescription.trim());
+      formData.append("longDescription", form.longDescription.trim());
       formData.append("tags", form.tags);
+      formData.append("technologies", form.technologies.trim());
       formData.append("status", form.status.trim());
+      formData.append("project_url", form.projectUrl.trim());
+      formData.append("demoLink", form.demoLink.trim());
       
       // Add image file if provided
       if (form.imageFile) {
@@ -144,8 +165,25 @@ export default function InternalProjectsPage() {
 
       resetForm();
       await loadProjects();
-    } catch {
-      setError("Failed to save project.");
+      
+      // Log successful form submission
+      logger.logFormSubmission('InternalProjectsForm', {
+        id: form.id,
+        title: form.title,
+        slug: form.slug,
+        status: form.status,
+        hasImage: !!form.imageFile || !!form.coverImage
+      }, true);
+    } catch (error) {
+      const errorMessage = error instanceof Error ? error.message : "Failed to save project.";
+      setError(errorMessage);
+      
+      // Log failed form submission
+      logger.logFormSubmission('InternalProjectsForm', {
+        id: form.id,
+        title: form.title,
+        error: errorMessage
+      }, false);
     } finally {
       setSubmitting(false);
     }
@@ -239,16 +277,48 @@ export default function InternalProjectsPage() {
               className="rounded-lg border border-primary-600/30 bg-black/20 px-3 py-2 outline-none focus:border-primary-400 md:col-span-2"
               rows={3}
             />
+            <textarea
+              placeholder="Short Description"
+              value={form.shortDescription}
+              onChange={(event) => setForm((prev) => ({ ...prev, shortDescription: event.target.value }))}
+              className="rounded-lg border border-primary-600/30 bg-black/20 px-3 py-2 outline-none focus:border-primary-400 md:col-span-2"
+              rows={2}
+            />
+            <textarea
+              placeholder="Long Description"
+              value={form.longDescription}
+              onChange={(event) => setForm((prev) => ({ ...prev, longDescription: event.target.value }))}
+              className="rounded-lg border border-primary-600/30 bg-black/20 px-3 py-2 outline-none focus:border-primary-400 md:col-span-2"
+              rows={4}
+            />
             <input
-              placeholder="Tags (comma separated)"
+              placeholder="Tags (comma-separated)"
               value={form.tags}
               onChange={(event) => setForm((prev) => ({ ...prev, tags: event.target.value }))}
               className="rounded-lg border border-primary-600/30 bg-black/20 px-3 py-2 outline-none focus:border-primary-400"
             />
             <input
-              placeholder="Status (Completed / In Progress / Case Study)"
+              placeholder="Technologies (comma-separated)"
+              value={form.technologies}
+              onChange={(event) => setForm((prev) => ({ ...prev, technologies: event.target.value }))}
+              className="rounded-lg border border-primary-600/30 bg-black/20 px-3 py-2 outline-none focus:border-primary-400"
+            />
+            <input
+              placeholder="Status (Completed / In Progress / Case Study / Pending)"
               value={form.status}
               onChange={(event) => setForm((prev) => ({ ...prev, status: event.target.value }))}
+              className="rounded-lg border border-primary-600/30 bg-black/20 px-3 py-2 outline-none focus:border-primary-400"
+            />
+            <input
+              placeholder="Project URL (https://example.com)"
+              value={form.projectUrl}
+              onChange={(event) => setForm((prev) => ({ ...prev, projectUrl: event.target.value }))}
+              className="rounded-lg border border-primary-600/30 bg-black/20 px-3 py-2 outline-none focus:border-primary-400"
+            />
+            <input
+              placeholder="Demo Link (https://example.com)"
+              value={form.demoLink}
+              onChange={(event) => setForm((prev) => ({ ...prev, demoLink: event.target.value }))}
               className="rounded-lg border border-primary-600/30 bg-black/20 px-3 py-2 outline-none focus:border-primary-400"
             />
 
@@ -279,6 +349,7 @@ export default function InternalProjectsPage() {
           {error ? <p className="text-red-400 mb-3">{error}</p> : null}
 
           <div className="space-y-4">
+       
             {projects.map((project) => (
               <div
                 key={project.id}
@@ -286,9 +357,9 @@ export default function InternalProjectsPage() {
               >
                 {/* Product Image */}
                 <div className="w-24 h-24 rounded-lg overflow-hidden flex-shrink-0 bg-black/40 border border-primary-600/20">
-                  {project.coverImage ? (
+                  {project.image ? (
                     <img
-                      src={project.coverImage}
+                      src={project.image}
                       alt={project.title}
                       className="w-full h-full object-cover"
                     />
@@ -303,11 +374,80 @@ export default function InternalProjectsPage() {
                 <div className="flex-1 min-w-0">
                   <p className="font-semibold text-lg">{project.title}</p>
                   <p className="text-sm text-text-secondary mb-2 line-clamp-2">{project.description}</p>
-                  <p className="text-xs text-text-secondary">
+                  
+                  {/* Short Description */}
+                  {project.shortDescription && project.shortDescription !== project.description && (
+                    <p className="text-xs text-text-secondary mb-1">
+                      <strong>Short:</strong> {project.shortDescription}
+                    </p>
+                  )}
+                  
+                  {/* Long Description */}
+                  {project.longDescription && project.longDescription !== project.description && (
+                    <p className="text-xs text-text-secondary mb-1">
+                      <strong>Long:</strong> {project.longDescription.length > 100 ? project.longDescription.substring(0, 100) + "..." : project.longDescription}
+                    </p>
+                  )}
+                  
+                  <p className="text-xs text-text-secondary mb-1">
                     slug: {project.slug} | status: {project.status}
                   </p>
+                  
+                  {/* Technologies */}
+                  {project.technologies && project.technologies.length > 0 && (
+                    <div className="flex flex-wrap gap-1 mt-1 mb-1">
+                      <span className="text-xs text-text-secondary"><strong>Tech:</strong></span>
+                      {project.technologies.map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-2 py-0.5 text-xs bg-primary-600/10 text-primary-400 rounded border border-primary-600/20"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                  
+                  {/* Links */}
+                  <div className="space-y-1 mt-2">
+                    {project.project_url && (
+                      <p className="text-xs text-primary-400">
+                        <strong>Project:</strong>
+                        <a 
+                          href={project.project_url} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="hover:text-primary-300 transition-colors ml-1"
+                        >
+                          {project.project_url}
+                        </a>
+                      </p>
+                    )}
+                    {project.demoLink && project.demoLink !== "#" && (
+                      <p className="text-xs text-primary-400">
+                        <strong>Demo:</strong>
+                        <a 
+                          href={project.demoLink} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="hover:text-primary-300 transition-colors ml-1"
+                        >
+                          {project.demoLink}
+                        </a>
+                      </p>
+                    )}
+                  </div>
+                  
+                  {/* Dates */}
+                  <div className="text-xs text-text-secondary mt-2">
+                    <strong>Created:</strong> {new Date(project.createdAt).toLocaleDateString()} | 
+                    <strong> Updated:</strong> {new Date(project.updatedAt).toLocaleDateString()}
+                  </div>
+                  
+                  {/* Tags */}
                   {project.tags && project.tags.length > 0 && (
                     <div className="flex flex-wrap gap-1 mt-2">
+                      <span className="text-xs text-text-secondary"><strong>Tags:</strong></span>
                       {project.tags.map((tag) => (
                         <span
                           key={tag}

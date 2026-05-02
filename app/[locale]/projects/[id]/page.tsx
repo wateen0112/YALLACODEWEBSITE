@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { Project } from "@/lib/projects";
-import { ArrowLeft, ExternalLink, Calendar, Tag, Link } from "lucide-react";
+import { ArrowLeft, ExternalLink, Calendar, Tag, Link, Clock, Code, Globe } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { GlowButton } from "@/components/ui/GlowButton";
 
@@ -21,6 +21,7 @@ export default function ProjectDetailPage() {
       try {
         const response = await fetch(`/api/projects/${params.id}`);
         if (!response.ok) {
+          
           if (response.status === 404) {
             setError("Project not found");
           } else {
@@ -29,6 +30,7 @@ export default function ProjectDetailPage() {
           return;
         }
         const data = await response.json();
+        console.log(data)
         setProject(data);
       } catch (err) {
         setError("Failed to load project");
@@ -111,6 +113,7 @@ export default function ProjectDetailPage() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="mb-8"
         >
+          {JSON.stringify(project)}
           <div className="relative rounded-2xl overflow-hidden bg-surface border border-primary-600/20 shadow-xl mb-6">
             <div className="relative aspect-video overflow-hidden">
               <img
@@ -152,9 +155,20 @@ export default function ProjectDetailPage() {
               <h2 className="text-2xl font-bold text-text-primary mb-4">
                 {t("project_overview")}
               </h2>
-              <p className="text-text-secondary leading-relaxed">
-                {translatedDescription}
-              </p>
+              <div className="space-y-4">
+                <div>
+                  <h3 className="text-lg font-semibold text-text-primary mb-2"> Description</h3>
+                  <p className="text-text-secondary leading-relaxed">
+                    {project.shortDescription || translatedDescription}
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-text-primary mb-2"> Project URL</h3>
+                  <p className="text-text-secondary leading-relaxed">
+                    {project.project_url }
+                  </p>
+                </div>
+              </div>
             </div>
 
             {/* Technologies */}
@@ -163,16 +177,35 @@ export default function ProjectDetailPage() {
                 {t("technologies")}
               </h2>
               <div className="flex flex-wrap gap-3">
-                {project.tags.map((tag) => (
+                {project.technologies.map((tech) => (
                   <span
-                    key={tag}
+                    key={tech}
                     className="px-4 py-2 bg-primary-600/10 text-primary-400 rounded-lg border border-primary-600/20 font-medium"
                   >
-                    {tag}
+                    {tech}
                   </span>
                 ))}
               </div>
             </div>
+
+            {/* Tags */}
+            {project.tags && project.tags.length > 0 && (
+              <div className="bg-surface rounded-2xl p-6 border border-primary-600/20">
+                <h2 className="text-2xl font-bold text-text-primary mb-4">
+                  Tags
+                </h2>
+                <div className="flex flex-wrap gap-3">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-4 py-2 bg-primary-600/10 text-primary-400 rounded-lg border border-primary-600/20 font-medium"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Sidebar */}
@@ -200,22 +233,59 @@ export default function ProjectDetailPage() {
                   </div>
                 </div>
 
-                {project.projectUrl && (
+                {project.project_url && (
                   <div className="flex items-center gap-3">
                     <Link className="w-5 h-5 text-primary-400" />
                     <div>
                       <p className="text-sm text-text-secondary">{t("project_url")}</p>
                       <a 
-                        href={project.projectUrl} 
+                        href={project.project_url} 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="font-medium text-primary-400 hover:text-primary-300 transition-colors"
                       >
-                        {project.projectUrl}
+                        {project.project_url}
                       </a>
                     </div>
                   </div>
                 )}
+
+                {project.demoLink && project.demoLink !== "#" && (
+                  <div className="flex items-center gap-3">
+                    <Globe className="w-5 h-5 text-primary-400" />
+                    <div>
+                      <p className="text-sm text-text-secondary">Demo Link</p>
+                      <a 
+                        href={project.demoLink} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="font-medium text-primary-400 hover:text-primary-300 transition-colors"
+                      >
+                        {project.demoLink}
+                      </a>
+                    </div>
+                  </div>
+                )}
+
+                <div className="flex items-center gap-3">
+                  <Clock className="w-5 h-5 text-primary-400" />
+                  <div>
+                    <p className="text-sm text-text-secondary">Created</p>
+                    <p className="font-medium text-text-primary">
+                      {new Date(project.createdAt).toLocaleDateString()}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <Calendar className="w-5 h-5 text-primary-400" />
+                  <div>
+                    <p className="text-sm text-text-secondary">Updated</p>
+                    <p className="font-medium text-text-primary">
+                      {new Date(project.updatedAt).toLocaleDateString()}
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -226,14 +296,29 @@ export default function ProjectDetailPage() {
               </h3>
               
               <div className="space-y-3">
-                {project.projectUrl && (
+                {project.project_url && (
                   <GlowButton 
                     className="w-full justify-center"
-                    onClick={() => window.open(project.projectUrl, '_blank')}
+                    onClick={() => window.open(project.project_url, '_blank')}
                   >
                     <ExternalLink className="w-4 h-4 mr-2" />
                     {t("view_live_project")}
                   </GlowButton>
+                )}
+                {project.demoLink && project.demoLink !== "#" && (
+                  <GlowButton 
+                    className="w-full justify-center"
+                    onClick={() => window.open(project.demoLink, '_blank')}
+                  >
+                    <Globe className="w-4 h-4 mr-2" />
+                    View Demo
+                  </GlowButton>
+                )}
+                {!project.project_url && !project.demoLink && (
+                  <div className="text-center text-text-secondary text-sm p-4 border border-primary-600/20 rounded-lg">
+                    <ExternalLink className="w-4 h-4 mx-auto mb-2 opacity-50" />
+                    <p>No project links available</p>
+                  </div>
                 )}
               </div>
             </div>
