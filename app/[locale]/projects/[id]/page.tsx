@@ -158,20 +158,7 @@ export default function ProjectDetailPage() {
               <h2 className="text-2xl font-bold text-text-primary mb-4">
                 {t("project_overview")}
               </h2>
-              <div className="space-y-4">
-                <div>
-                  <h3 className="text-lg font-semibold text-text-primary mb-2"> Description</h3>
-                  <p className="text-text-secondary leading-relaxed">
-                    {project.shortDescription || translatedDescription}
-                  </p>
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-text-primary mb-2"> Project URL</h3>
-                  <p className="text-text-secondary leading-relaxed">
-                    {project.project_url }
-                  </p>
-                </div>
-              </div>
+           
             </div>
 
             {/* Technologies */}
@@ -195,7 +182,7 @@ export default function ProjectDetailPage() {
             {project.tags && project.tags.length > 0 && (
               <div className="bg-surface rounded-2xl p-6 border border-primary-600/20">
                 <h2 className="text-2xl font-bold text-text-primary mb-4">
-                  Tags
+                  {t("tags")}
                 </h2>
                 <div className="flex flex-wrap gap-3">
                   {project.tags.map((tag) => (
@@ -257,7 +244,7 @@ export default function ProjectDetailPage() {
                   <div className="flex items-center gap-3">
                     <Globe className="w-5 h-5 text-primary-400" />
                     <div>
-                      <p className="text-sm text-text-secondary">Demo Link</p>
+                      <p className="text-sm text-text-secondary">{t("demo_link")}</p>
                       <a 
                         href={project.demoLink} 
                         target="_blank" 
@@ -273,7 +260,7 @@ export default function ProjectDetailPage() {
                 <div className="flex items-center gap-3">
                   <Clock className="w-5 h-5 text-primary-400" />
                   <div>
-                    <p className="text-sm text-text-secondary">Created</p>
+                    <p className="text-sm text-text-secondary">{t("created")}</p>
                     <p className="font-medium text-text-primary">
                       {new Date(project.createdAt).toLocaleDateString()}
                     </p>
@@ -283,7 +270,7 @@ export default function ProjectDetailPage() {
                 <div className="flex items-center gap-3">
                   <Clock className="w-5 h-5 text-primary-400" />
                   <div>
-                    <p className="text-sm text-text-secondary">Updated</p>
+                    <p className="text-sm text-text-secondary">{t("updated")}</p>
                     <p className="font-medium text-text-primary">
                       {new Date(project.updatedAt).toLocaleDateString()}
                     </p>

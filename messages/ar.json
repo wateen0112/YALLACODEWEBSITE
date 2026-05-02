@@ -104,6 +104,10 @@
     "project_url": "رابط المشروع",
     "actions": "الإجراءات",
     "view_live_project": "عرض المشروع المباشر",
+    "tags": "الوسوم",
+    "demo_link": "رابط العرض",
+    "created": "تم الإنشاء",
+    "updated": "تم التحديث",
     "status": {
       "completed": "مكتمل",
       "in_progress": "قيد التنفيذ",

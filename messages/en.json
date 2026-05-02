@@ -104,6 +104,10 @@
     "project_url": "Project URL",
     "actions": "Actions",
     "view_live_project": "View Live Project",
+    "tags": "Tags",
+    "demo_link": "Demo Link",
+    "created": "Created",
+    "updated": "Updated",
     "status": {
       "completed": "Completed",
       "in_progress": "In Progress",
