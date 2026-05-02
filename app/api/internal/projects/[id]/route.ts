@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { isAuthenticated } from "@/lib/admin-auth";
-import { deleteProjectInApi, updateProjectInApi } from "@/lib/projects-api";
+import { deleteProjectInApi, updateProjectInApi, updateProjectWithImage } from "@/lib/projects-api";
 
 type UpdateBody = {
   slug?: string;
@@ -62,12 +62,76 @@ export async function PUT(
   if (!isAuthenticated(request)) return unauthorized();
 
   const { id } = await params;
-  const body = (await request.json().catch(() => ({}))) as UpdateBody;
-  const title = (body.title ?? "").trim();
-  const coverImage = normalizeImageUrl(body.coverImage ?? body.image ?? "");
-  const shortDescription = (body.shortDescription ?? body.description ?? "").trim();
-  const longDescription = (body.longDescription ?? body.description ?? "").trim();
-  const demoLink = (body.demoLink ?? "#").trim();
+
+  // Handle FormData for file uploads
+  const formData = await request.formData().catch(() => null);
+  
+  if (formData) {
+    // FormData handling for file uploads - Get all fields
+    const title = (formData.get("title") as string ?? "").trim();
+    const slug = (formData.get("slug") as string ?? "").trim();
+    const description = (formData.get("description") as string ?? "").trim();
+    const shortDescription = (formData.get("shortDescription") as string ?? description).trim();
+    const longDescription = (formData.get("longDescription") as string ?? description).trim();
+    const tags = (formData.get("tags") as string ?? "").trim();
+    const technologies = (formData.get("technologies") as string ?? tags).trim();
+    const status = (formData.get("status") as string ?? "Completed").trim();
+    const project_url = (formData.get("project_url") as string ?? "").trim();
+    const demoLink = (formData.get("demoLink") as string ?? "#").trim();
+    const imageFile = formData.get("image") as File;
+    const coverImage = (formData.get("coverImage") as string ?? "").trim();
+
+    if (!title) {
+      return NextResponse.json({ error: "Title is required" }, { status: 400 });
+    }
+    if (!shortDescription) {
+      return NextResponse.json({ error: "shortDescription is required" }, { status: 400 });
+    }
+    if (!longDescription) {
+      return NextResponse.json({ error: "longDescription is required" }, { status: 400 });
+    }
+
+    try {
+      // Create FormData with the correct field names for the backend
+      const backendFormData = new FormData();
+      
+      // Map all form fields to what the backend expects
+      backendFormData.append("title", title);
+      backendFormData.append("description", description);
+      backendFormData.append("shortDescription", shortDescription);
+      backendFormData.append("longDescription", longDescription);
+      backendFormData.append("tags", tags);
+      backendFormData.append("technologies", technologies);
+      backendFormData.append("status", status);
+      backendFormData.append("project_url", project_url);
+      backendFormData.append("demoLink", demoLink);
+      
+      if (slug) {
+        backendFormData.append("slug", slug);
+      }
+      
+      if (imageFile) {
+        backendFormData.append("image", imageFile);
+      } else if (coverImage) {
+        backendFormData.append("coverImage", coverImage);
+      }
+      
+      // Use the existing backend API with FormData for update
+      // Note: We need to create an update function that handles FormData
+      const updated = await updateProjectWithImage(id, backendFormData);
+      return NextResponse.json(updated);
+    } catch (error) {
+      const message = error instanceof Error ? error.message : "Failed to update project";
+      return NextResponse.json({ error: message }, { status: 500 });
+    }
+  } else {
+    // Fallback to JSON handling for backward compatibility
+    const body = (await request.json().catch(() => ({}))) as UpdateBody;
+    const title = (body.title ?? "").trim();
+    const coverImage = normalizeImageUrl(body.coverImage ?? body.image ?? "");
+    const shortDescription = (body.shortDescription ?? body.description ?? "").trim();
+    const longDescription = (body.longDescription ?? body.description ?? "").trim();
+    const demoLink = (body.demoLink ?? "#").trim();
 
   if (!title) {
     return NextResponse.json({ error: "Title is required" }, { status: 400 });
@@ -107,6 +171,7 @@ export async function PUT(
     const message = error instanceof Error ? error.message : "Failed to update project";
     return NextResponse.json({ error: message }, { status: 500 });
   }
+}
 }
 
 export async function DELETE(

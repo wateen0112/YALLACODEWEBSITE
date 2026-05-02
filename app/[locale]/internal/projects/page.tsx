@@ -94,7 +94,7 @@ export default function InternalProjectsPage() {
       tags: project.tags.join(", "),
       technologies: project.technologies.join(", "),
       status: project.status,
-      projectUrl: project.project_url || "",
+      projectUrl: project.project_url,
       demoLink: project.demoLink || "#"
     });
   }
@@ -138,6 +138,13 @@ export default function InternalProjectsPage() {
       formData.append("status", form.status.trim());
       formData.append("project_url", form.projectUrl.trim());
       formData.append("demoLink", form.demoLink.trim());
+      
+      // Log FormData payload body
+      console.log(`${method} ${endpoint} - FormData Payload:`);
+      console.log('FormData entries:');
+      for (const [key, value] of formData.entries()) {
+        console.log(`  ${key}:`, value instanceof File ? `File(${value.name}, ${value.size} bytes)` : value);
+      }
       
       // Add image file if provided
       if (form.imageFile) {
@@ -410,7 +417,7 @@ export default function InternalProjectsPage() {
                   
                   {/* Links */}
                   <div className="space-y-1 mt-2">
-                    {project.project_url && (
+                    {project.project_url && project.project_url !== "" && (
                       <p className="text-xs text-primary-400">
                         <strong>Project:</strong>
                         <a 

@@ -4,7 +4,8 @@ import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { Project } from "@/lib/projects";
-import { ArrowLeft, ExternalLink, Calendar, Tag, Link, Clock, Code, Globe } from "lucide-react";
+import { Clock, Code, Globe, Link, Tag, ExternalLink, ArrowLeft } from "lucide-react";
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { GlowButton } from "@/components/ui/GlowButton";
 
@@ -113,13 +114,15 @@ export default function ProjectDetailPage() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="mb-8"
         >
-          {JSON.stringify(project)}
           <div className="relative rounded-2xl overflow-hidden bg-surface border border-primary-600/20 shadow-xl mb-6">
             <div className="relative aspect-video overflow-hidden">
-              <img
-                src={project.coverImage}
+              <Image
+                src={project.image}
                 alt={project.title}
-                className="object-cover w-full h-full"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
+                priority
               />
               <div className="absolute top-4 left-4">
                 <span className="px-4 py-2 text-sm font-semibold bg-surface/80 text-primary-400 rounded-full backdrop-blur-md border border-primary-600/20">
@@ -218,7 +221,7 @@ export default function ProjectDetailPage() {
               
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
-                  <Calendar className="w-5 h-5 text-primary-400" />
+                  <Clock className="w-5 h-5 text-primary-400" />
                   <div>
                     <p className="text-sm text-text-secondary">{t("status_label")}</p>
                     <p className="font-medium text-text-primary">{translatedStatus}</p>
@@ -233,7 +236,7 @@ export default function ProjectDetailPage() {
                   </div>
                 </div>
 
-                {project.project_url && (
+                {project.project_url && project.project_url !== "" && (
                   <div className="flex items-center gap-3">
                     <Link className="w-5 h-5 text-primary-400" />
                     <div>
@@ -278,7 +281,7 @@ export default function ProjectDetailPage() {
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <Calendar className="w-5 h-5 text-primary-400" />
+                  <Clock className="w-5 h-5 text-primary-400" />
                   <div>
                     <p className="text-sm text-text-secondary">Updated</p>
                     <p className="font-medium text-text-primary">
@@ -296,7 +299,7 @@ export default function ProjectDetailPage() {
               </h3>
               
               <div className="space-y-3">
-                {project.project_url && (
+                {project.project_url && project.project_url !== "" && (
                   <GlowButton 
                     className="w-full justify-center"
                     onClick={() => window.open(project.project_url, '_blank')}
@@ -314,7 +317,7 @@ export default function ProjectDetailPage() {
                     View Demo
                   </GlowButton>
                 )}
-                {!project.project_url && !project.demoLink && (
+                {(!project.project_url || project.project_url === "") && !project.demoLink && (
                   <div className="text-center text-text-secondary text-sm p-4 border border-primary-600/20 rounded-lg">
                     <ExternalLink className="w-4 h-4 mx-auto mb-2 opacity-50" />
                     <p>No project links available</p>

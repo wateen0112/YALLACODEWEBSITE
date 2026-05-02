@@ -9,7 +9,7 @@ export interface Project {
 
   tags: string[];
   status: "Completed" | "In Progress" | "Case Study" | "Pending" | string;
-  project_url?: string;
+  project_url: string;
   shortDescription: string;
   longDescription: string;
   technologies: string[];

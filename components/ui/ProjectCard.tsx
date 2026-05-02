@@ -5,6 +5,7 @@ import { Project } from "@/lib/projects";
 import { ArrowUpRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 export function ProjectCard({ project }: { project: Project }) {
   const t = useTranslations("projects");
@@ -32,11 +33,12 @@ export function ProjectCard({ project }: { project: Project }) {
       className="group relative rounded-2xl overflow-hidden bg-surface border border-primary-600/20 shadow-xl"
     >
       <div className="relative aspect-video overflow-hidden">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img 
-          src={project.image || project.coverImage} 
+        <Image 
+          src={project.image} 
           alt={project.title} 
-          className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110" 
+          fill
+          className="object-cover transition-transform duration-700 group-hover:scale-110" 
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
         <div className="absolute inset-0 bg-background/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
           <button 
@@ -57,13 +59,15 @@ export function ProjectCard({ project }: { project: Project }) {
         <h3 className="text-2xl font-bold mb-2 text-text-primary">{translatedTitle}</h3>
         <p className="text-text-secondary text-sm mb-4 line-clamp-2">{translatedDescription}</p>
         
-        <div className="flex flex-wrap gap-2">
-          {project.tags.map(tag => (
-            <span key={tag} className="px-3 py-1 text-xs bg-primary-600/10 text-primary-400 rounded-lg border border-primary-600/20">
-              {tag}
-            </span>
-          ))}
-        </div>
+        {project.technologies && project.technologies.length > 0 && (
+          <div className="flex flex-wrap gap-2">
+            {project.technologies.map(tech => (
+              <span key={tech} className="px-3 py-1 text-xs bg-primary-600/10 text-primary-400 rounded-lg border border-primary-600/20">
+                {tech}
+              </span>
+            ))}
+          </div>
+        )}
       </div>
     </motion.div>
   );

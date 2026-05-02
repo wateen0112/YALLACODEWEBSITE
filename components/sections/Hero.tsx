@@ -54,7 +54,15 @@ export function Hero() {
                 transition={{ delay: 0.3, duration: 0.8 }}
                 className="flex flex-wrap gap-4"
               >
-                <GlowButton variant="primary">
+                <GlowButton 
+                  variant="primary"
+                  onClick={() => {
+                    const projectsSection = document.getElementById('projects');
+                    if (projectsSection) {
+                      projectsSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
+                >
                   {t("view_projects")}
                   {isRtl ? (
                     <ArrowUpLeft className="w-5 h-5 shrink-0" aria-hidden />

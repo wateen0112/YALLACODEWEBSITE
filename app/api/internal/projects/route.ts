@@ -74,17 +74,19 @@ export async function POST(request: NextRequest) {
   const formData = await request.formData().catch(() => null);
   
   if (formData) {
-    // FormData handling for file uploads
+    // FormData handling for file uploads - Get all fields
     const title = (formData.get("title") as string ?? "").trim();
     const slug = (formData.get("slug") as string ?? title).trim().toLowerCase();
     const description = (formData.get("description") as string ?? "").trim();
+    const shortDescription = (formData.get("shortDescription") as string ?? description).trim();
+    const longDescription = (formData.get("longDescription") as string ?? description).trim();
     const tags = (formData.get("tags") as string ?? "").trim();
+    const technologies = (formData.get("technologies") as string ?? tags).trim();
     const status = (formData.get("status") as string ?? "Completed").trim();
+    const project_url = (formData.get("project_url") as string ?? "").trim();
+    const demoLink = (formData.get("demoLink") as string ?? "#").trim();
     const imageFile = formData.get("image") as File;
-
-    // For FormData, we need both short and long descriptions
-    const shortDescription = description;
-    const longDescription = description;
+    const coverImage = (formData.get("coverImage") as string ?? "").trim();
 
     if (!title) {
       return NextResponse.json({ error: "Title is required" }, { status: 400 });
@@ -103,18 +105,24 @@ export async function POST(request: NextRequest) {
       // Create FormData with the correct field names for the backend
       const backendFormData = new FormData();
       
-      // Map the form fields to what the backend expects
+      // Map all form fields to what the backend expects
       backendFormData.append("title", title);
-      backendFormData.append("description", shortDescription); // Backend expects "description"
+      backendFormData.append("description", description);
       backendFormData.append("shortDescription", shortDescription);
       backendFormData.append("longDescription", longDescription);
-      backendFormData.append("technologies", tags); // Backend expects "technologies"
-      backendFormData.append("demoLink", "#"); // Default demo link
-      backendFormData.append("status", status || "Completed"); // Default to "Completed"
+      backendFormData.append("tags", tags);
+      backendFormData.append("technologies", technologies);
+      backendFormData.append("status", status);
+      backendFormData.append("project_url", project_url);
+      backendFormData.append("demoLink", demoLink);
       backendFormData.append("image", imageFile); // The image file
       
       if (slug) {
         backendFormData.append("slug", slug);
+      }
+      
+      if (coverImage) {
+        backendFormData.append("coverImage", coverImage);
       }
       
       // Use the existing backend API with FormData

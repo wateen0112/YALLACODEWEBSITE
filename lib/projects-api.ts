@@ -35,12 +35,11 @@ function toProject(raw: UnknownRecord, index: number): Project {
           ? raw.longDescription
           : "Project description is not available.";
   const slugSource = typeof raw.slug === "string" ? raw.slug : title;
-  const coverImage =
-    typeof raw.coverImage === "string"
-      ? raw.coverImage
-      : typeof raw.image === "string"
-        ? raw.image
-        : "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80";
+  const coverImage = typeof raw.coverImage === "string" ? raw.coverImage : "";
+  const image =
+    typeof raw.image === "string"
+      ? raw.image
+      : "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80";
 
   const tagsRaw = raw.tags;
   const tags =
@@ -57,14 +56,14 @@ function toProject(raw: UnknownRecord, index: number): Project {
     title,
     description,
     coverImage,
-    image: coverImage, // Use coverImage as fallback for image field
+    image,
     tags,
     status,
     shortDescription: typeof raw.shortDescription === "string" ? raw.shortDescription : description,
     longDescription: typeof raw.longDescription === "string" ? raw.longDescription : description,
     technologies: Array.isArray(raw.technologies) ? raw.technologies : tags,
     demoLink: typeof raw.demoLink === "string" ? raw.demoLink : "#",
-    project_url: typeof raw.project_url === "string" ? raw.project_url : undefined,
+    project_url: typeof raw.project_url === "string" ? raw.project_url : (typeof raw.projectUrl === "string" ? raw.projectUrl : ""),
     createdAt: typeof raw.createdAt === "string" ? raw.createdAt : new Date().toISOString(),
     updatedAt: typeof raw.updatedAt === "string" ? raw.updatedAt : new Date().toISOString(),
     __v: typeof raw.__v === "number" ? raw.__v : 0
@@ -153,6 +152,8 @@ export async function listProjectsFromApi(): Promise<Project[]> {
 }
 
 export async function createProjectInApi(payload: ProjectPayload): Promise<Project> {
+  console.log('adding new project request   : ',JSON.stringify(payload));
+  
   const response = await fetch(buildBaseEndpoint(), {
     method: "POST",
     headers: buildHeaders(true),
@@ -226,6 +227,42 @@ export async function createProjectWithImage(formData: FormData): Promise<Projec
 
   if (!response.ok) {
     throw await buildApiError("create", response);
+  }
+
+  const raw = (await response.json()) as UnknownRecord;
+  return toProject(raw, 0);
+}
+
+export async function updateProjectWithImage(id: string, formData: FormData): Promise<Project> {
+  if (!ensureConfigured()) {
+    throw new Error("API is not configured");
+  }
+
+  // Build headers without Content-Type for FormData (browser sets it automatically)
+  const headers: HeadersInit = {};
+  
+  if (API_SECRET) {
+    headers["x-api-secret"] = API_SECRET;
+    headers[API_SECRET_HEADER] = API_SECRET;
+    headers.Authorization = `Bearer ${API_SECRET}`;
+  }
+
+  const endpoint = `${buildBaseEndpoint()}/${id}`;
+  console.log('Updating project with image at:', endpoint);
+  console.log('FormData entries:');
+  for (const [key, value] of formData.entries()) {
+    console.log(`  ${key}:`, value instanceof File ? `File(${value.name}, ${value.size} bytes)` : value);
+  }
+
+  const response = await fetch(endpoint, {
+    method: "PUT",
+    headers,
+    body: formData,
+    cache: "no-store"
+  });
+
+  if (!response.ok) {
+    throw await buildApiError("update", response);
   }
 
   const raw = (await response.json()) as UnknownRecord;

@@ -41,17 +41,31 @@ export function YallaCodeLoader() {
       { text: "/>", color: "#ffffff", type: "bracket" as const },
     ];
 
-    const fontSize = 80;
+    const getResponsiveFontSize = () => {
+      const screenWidth = window.innerWidth;
+      if (screenWidth < 480) return 40;  // Mobile phones
+      if (screenWidth < 768) return 60;  // Tablets
+      return 80;  // Desktop
+    };
+    
+    let fontSize = getResponsiveFontSize();
     let centerX = canvas.width / 2;
     let centerY = canvas.height / 2;
 
-    ctx.font = `bold ${fontSize}px 'Courier New', monospace`;
+    ctx.font = `bold ${fontSize}px 'Tahoma', sans-serif`;
     ctx.textAlign = "left";
     ctx.textBaseline = "middle";
 
     const buildLetterPositions = () => {
       centerX = canvas.width / 2;
       centerY = canvas.height / 2;
+      
+      // Update font size on resize
+      const currentFontSize = getResponsiveFontSize();
+      if (currentFontSize !== fontSize) {
+        fontSize = currentFontSize;
+        ctx.font = `bold ${fontSize}px 'Tahoma', sans-serif`;
+      }
 
       let totalWidth = 0;
       const measurements = textParts.map((part) => {
@@ -148,7 +162,7 @@ export function YallaCodeLoader() {
           ctx.fillStyle = `rgba(255, 255, 255, ${opacity})`;
         }
 
-        ctx.font = `bold ${fontSize}px 'Courier New', monospace`;
+        ctx.font = `bold ${fontSize}px 'Tahoma', sans-serif`;
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
         ctx.fillText(letter.char, x, y);
