@@ -223,40 +223,7 @@ export default function ProjectDetailPage() {
                   </div>
                 </div>
 
-                {project.project_url && project.project_url !== "" && (
-                  <div className="flex items-center gap-3">
-                    <Link className="w-5 h-5 text-primary-400" />
-                    <div>
-                      <p className="text-sm text-text-secondary">{t("project_url")}</p>
-                      <a 
-                        href={project.project_url} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="font-medium text-primary-400 hover:text-primary-300 transition-colors"
-                      >
-                        {project.project_url}
-                      </a>
-                    </div>
-                  </div>
-                )}
-
-                {project.demoLink && project.demoLink !== "#" && (
-                  <div className="flex items-center gap-3">
-                    <Globe className="w-5 h-5 text-primary-400" />
-                    <div>
-                      <p className="text-sm text-text-secondary">{t("demo_link")}</p>
-                      <a 
-                        href={project.demoLink} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="font-medium text-primary-400 hover:text-primary-300 transition-colors"
-                      >
-                        {project.demoLink}
-                      </a>
-                    </div>
-                  </div>
-                )}
-
+         
                 <div className="flex items-center gap-3">
                   <Clock className="w-5 h-5 text-primary-400" />
                   <div>
