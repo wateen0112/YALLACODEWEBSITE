@@ -5,18 +5,25 @@
     "projects": "프로젝트",
     "about": "회사소개",
     "contact": "문의하기",
-    "toggle_menu": "메뉴 토글"
+    "toggle_menu": "메뉴 토글",
+    "get_started": "Get Started",
+    "menu": "Menu",
+    "close_menu": "Close menu"
   },
   "hero": {
     "title": "한 줄씩 미래를 만듭니다",
-    "subtitle": "비전 있는 기업을 위한 풀스택 소프트웨어 및 AI 솔루션",
-    "view_projects": "프로젝트 보기 \u001297",
-    "contact_us": "문의하기"
+    "subtitle": "Seamlessly integrate advanced features into your app with our developer-friendly, scalable SDK. Save time, reduce complexity, and focus on building what matters.",
+    "view_projects": "View Our Work",
+    "contact_us": "문의하기",
+    "badge": "Announcing our SDK Flex",
+    "title_line1": "Empower your product",
+    "title_line2": "with our versatile SDK",
+    "documentation": "SDK Documentation"
   },
   "home": {
     "marquee": "우리가 다루는 기술:",
     "services_title": "우리의 서비스",
-    "projects_title": "가상 프로젝트 쇼케이스",
+    "projects_title": "Featured Projects",
     "stats_title": "핵심 수치",
     "globe_title": "전 세계 팀이 신뢰하는",
     "testimonials_title": "고객 후기",
@@ -28,7 +35,8 @@
       "projects_delivered": "완료된 프로젝트",
       "happy_clients": "만족한 고객",
       "years_experience": "경력 연수",
-      "client_satisfaction": "고객 만족도"
+      "client_satisfaction": "고객 만족도",
+      "industries_served": "Industries Served"
     },
     "process_steps": {
       "1": "발견 및 계획",
@@ -61,7 +69,98 @@
         "company": "에듀글로벌",
         "quote": "최첨단 웹 기술로 우리의 비전을 현실로 만들어주었습니다."
       }
-    }
+    },
+    "services_title_highlight": "",
+    "projects_title_highlight": "",
+    "cta_banner_highlight": "",
+    "explore_services": "Explore Services",
+    "process_title_highlight": "",
+    "process_subtitle": "A proven approach that turns your vision into production-ready software.",
+    "why_stand_out_title": "Why We Stand Out",
+    "why_stand_out_highlight": "stand out",
+    "why_stand_out_subtitle": "We combine deep technical expertise with a relentless commitment to delivering value for our clients.",
+    "why_stand_out": {
+      "expertise": {
+        "title": "Technical Expertise",
+        "item_1": "Certified engineers across cloud, AI, and full-stack development.",
+        "item_2": "Proven experience with enterprise-grade architectures.",
+        "item_3": "Continuous upskilling on emerging technologies."
+      },
+      "comprehensive": {
+        "title": "Comprehensive Services",
+        "item_1": "End-to-end software development lifecycle.",
+        "item_2": "UX/UI design, consulting, robotics, and AI.",
+        "item_3": "Scalable support and maintenance plans."
+      },
+      "commitment": {
+        "title": "Client Commitment",
+        "item_1": "Transparent communication and agile delivery.",
+        "item_2": "Dedicated success managers for every project.",
+        "item_3": "Long-term partnerships, not one-off transactions."
+      }
+    },
+    "why_choose_title": "Why Businesses Choose Us",
+    "why_choose_highlight": "Choose Us",
+    "why_choose_subtitle": "We don't just write code — we solve business problems. From startups to enterprise giants, our clients trust us to deliver solutions that drive growth, efficiency, and competitive advantage.",
+    "why_choose_stats": {
+      "client_satisfaction": "Client Satisfaction",
+      "happy_clients": "Happy Clients",
+      "years_experience": "Years Experience",
+      "projects_delivered": "Projects Delivered"
+    },
+    "why_choose_features": {
+      "custom_solutions": {
+        "title": "Custom Solutions",
+        "description": "Tailored software built around your unique workflows, goals, and constraints — never one-size-fits-all."
+      },
+      "diverse_portfolio": {
+        "title": "Diverse Portfolio",
+        "description": "Experience across fintech, logistics, healthcare, retail, and more — giving us the perspective to solve complex challenges."
+      },
+      "latest_tech": {
+        "title": "Latest Technologies",
+        "description": "We continuously adopt modern stacks — Flutter, Next.js, AWS, Google Cloud, Laravel, and cutting-edge AI frameworks."
+      },
+      "security_support": {
+        "title": "Security & Support",
+        "description": "Enterprise-grade cybersecurity practices and responsive ongoing support keep your systems safe and running."
+      }
+    },
+    "why_choose_values": {
+      "collaboration": {
+        "title": "Commitment to Collaboration",
+        "description": "We embed ourselves in your team, aligning every sprint with your business outcomes. Regular demos, clear documentation, and open feedback loops ensure we build the right product, right."
+      },
+      "sustainability": {
+        "title": "Sustainability and Responsibility",
+        "description": "We design efficient, cloud-native solutions that minimize resource waste and support your ESG goals. Ethical AI and responsible data practices are core to how we work."
+      }
+    },
+    "solutions_title": "Solutions We Deliver",
+    "solutions_highlight": "Deliver",
+    "solutions_subtitle": "Enterprise-grade platforms tailored to modern business operations.",
+    "solutions": {
+      "enterprise_apps": "Enterprise Applications",
+      "erp": "ERP Systems",
+      "crm": "CRM Platforms",
+      "ecommerce": "E-Commerce",
+      "mobile_apps": "Mobile Apps",
+      "collaboration": "Collaboration & Productivity",
+      "fleet": "Fleet Management",
+      "robotics": "Robotics & AI"
+    },
+    "trusted_by": "Trusted by the world's most innovative companies",
+    "scroll_to_explore": "Scroll to explore",
+    "process_steps_description": {
+      "1": "We dive deep into your business goals, user needs, and technical requirements to build a clear, actionable roadmap.",
+      "2": "We craft intuitive interfaces and interactive prototypes so you can visualize the final product before development begins.",
+      "3": "Our engineers build robust, scalable solutions using modern stacks, with continuous testing and quality assurance.",
+      "4": "We deploy your product, monitor performance, and provide ongoing support to ensure long-term success."
+    },
+    "previous_step": "Previous step",
+    "next_step": "Next step",
+    "tech_stack_title": "Technologies We Master",
+    "tech_stack_subtitle": "Our team brings deep expertise across modern development stacks and design tools."
   },
   "services": {
     "subtitle": "최신 기술을 활용한 종합 솔루션을 제공하여 비즈니스 성장과 디지털 전환을 가속화합니다.",
@@ -142,7 +241,10 @@
     },
     "rights_reserved": "판권 소유.",
     "privacy_policy": "개인정보처리방침",
-    "terms_of_service": "이용약관"
+    "terms_of_service": "이용약관",
+    "contact_phone": "+971 4 123 4567",
+    "contact_email": "info@yallacode.com",
+    "contact_address": "Dubai, United Arab Emirates"
   },
   "language": {
     "button_aria_label": "언어 선택",
@@ -151,5 +253,19 @@
     "search_placeholder": "언어 검색...",
     "suggested_title": "추천 언어",
     "all_languages_title": "모든 언어"
+  },
+  "sections": {
+    "hero": "Hero",
+    "why-stand-out": "Why Stand Out",
+    "why-choose-us": "Why Choose Us",
+    "services": "Services",
+    "solutions": "Solutions",
+    "projects": "Projects",
+    "stats": "Stats",
+    "testimonials": "Testimonials",
+    "process": "Process",
+    "cta": "Contact",
+    "trusted-by": "Trusted By",
+    "footer": "Footer"
   }
 }

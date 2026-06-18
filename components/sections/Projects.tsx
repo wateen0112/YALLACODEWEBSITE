@@ -1,13 +1,19 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useScroll } from "framer-motion";
 import { useTranslations } from "next-intl";
-import { ProjectCard } from "../ui/ProjectCard";
+import { ProjectShowcaseCard } from "../ui/ProjectShowcaseCard";
 import type { Project } from "@/lib/projects";
 
 export function ProjectsSection() {
   const t = useTranslations("home");
-  const tProjects = useTranslations("projects");
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end end"],
+  });
+
   const [projectList, setProjectList] = useState<Project[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
@@ -41,31 +47,44 @@ export function ProjectsSection() {
     };
   }, []);
 
+  const displayedProjects = projectList.slice(0, 6);
+
   return (
-    <section id="projects" className="py-24 bg-surface/30 border-y border-primary-600/10">
-        <div className="container mx-auto px-4 md:px-8">
-            <div className="flex flex-col items-center justify-between mb-16 text-center">
-                <h2 className="text-4xl md:text-5xl font-bold mb-4">{t("projects_title")}</h2>
-                <p className="text-text-secondary max-w-2xl">
-                    {tProjects("subtitle")}
-                </p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {projectList.map(project => (
-                    <ProjectCard key={project.id} project={project} />
-                ))}
-            </div>
-            {isLoading ? (
-              <p className="mt-6 text-center text-text-secondary">Loading projects...</p>
-            ) : null}
-            {!isLoading && hasError ? (
-              <p className="mt-6 text-center text-red-400">Unable to load projects from API.</p>
-            ) : null}
-            {!isLoading && !hasError && projectList.length === 0 ? (
-              <p className="mt-6 text-center text-text-secondary">No projects returned by API.</p>
-            ) : null}
+    <section
+      ref={sectionRef}
+      id="projects"
+      className="relative"
+      style={{ height: `${displayedProjects.length * 100}vh` }}
+    >
+      {isLoading ? (
+        <div className="h-screen flex items-center justify-center">
+          <p className="text-center text-text-secondary">Loading projects...</p>
         </div>
+      ) : null}
+
+      {!isLoading && hasError ? (
+        <div className="h-screen flex items-center justify-center">
+          <p className="text-center text-red-400">Unable to load projects from API.</p>
+        </div>
+      ) : null}
+
+      {!isLoading && !hasError && displayedProjects.length === 0 ? (
+        <div className="h-screen flex items-center justify-center">
+          <p className="text-center text-text-secondary">No projects returned by API.</p>
+        </div>
+      ) : null}
+
+      {!isLoading && displayedProjects.length > 0
+        ? displayedProjects.map((project, index) => (
+            <ProjectShowcaseCard
+              key={project.id}
+              project={project}
+              index={index}
+              total={displayedProjects.length}
+              scrollYProgress={scrollYProgress}
+            />
+          ))
+        : null}
     </section>
   );
 }
