@@ -9,24 +9,27 @@ export function ServicesSection() {
   const tServices = useTranslations("services");
 
   return (
-    <section id="services" className="py-24 relative overflow-hidden">
-      <div className="container mx-auto px-4 md:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-text-primary to-primary-400 mb-4">
+    <section id="services" className="relative pt-[65px] md:pt-[65px] lg:pt-[65px] pb-24 lg:pb-32 overflow-hidden">
+      <div className="container mx-auto px-5 md:px-[30px] max-w-[1170px]">
+        {/* Title */}
+        <div className="flex flex-col items-center gap-5 text-center mb-12 md:mb-16" data-aos="fade-up">
+          <h2 className="text-4xl md:text-5xl lg:text-[52px] font-bold font-satoshi text-white leading-[1.1]">
             {t("services_title")}
           </h2>
-          <p className="text-text-secondary text-lg max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-text-secondary max-w-2xl leading-relaxed">
             {tServices("subtitle")}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service) => (
-            <ServiceCard 
+        {/* Cards grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[30px]">
+          {services.map((service, index) => (
+            <ServiceCard
               key={service.id}
               title={tServices(`items.${service.id}.title`)}
               description={tServices(`items.${service.id}.description`)}
               icon={service.icon}
+              index={index}
             />
           ))}
         </div>

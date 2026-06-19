@@ -42,30 +42,33 @@ export function ProjectsSection() {
   }, []);
 
   return (
-    <section id="projects" className="py-24 bg-surface/30 border-y border-primary-600/10">
-        <div className="container mx-auto px-4 md:px-8">
-            <div className="flex flex-col items-center justify-between mb-16 text-center">
-                <h2 className="text-4xl md:text-5xl font-bold mb-4">{t("projects_title")}</h2>
-                <p className="text-text-secondary max-w-2xl">
-                    {tProjects("subtitle")}
-                </p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {projectList.map(project => (
-                    <ProjectCard key={project.id} project={project} />
-                ))}
-            </div>
-            {isLoading ? (
-              <p className="mt-6 text-center text-text-secondary">Loading projects...</p>
-            ) : null}
-            {!isLoading && hasError ? (
-              <p className="mt-6 text-center text-red-400">Unable to load projects from API.</p>
-            ) : null}
-            {!isLoading && !hasError && projectList.length === 0 ? (
-              <p className="mt-6 text-center text-text-secondary">No projects returned by API.</p>
-            ) : null}
+    <section id="projects" className="py-24 lg:py-32 relative overflow-hidden">
+      <div className="container mx-auto px-4 md:px-8">
+        <div className="flex flex-col items-center justify-between mb-16 lg:mb-20 text-center" data-aos="fade-up">
+          <h2 className="text-4xl md:text-5xl lg:text-[52px] font-bold font-satoshi text-white mb-5 leading-[1.1]">
+            {t("projects_title")}
+          </h2>
+          <p className="text-text-secondary max-w-2xl text-lg leading-relaxed">
+            {tProjects("subtitle")}
+          </p>
         </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {projectList.map((project, index) => (
+            <ProjectCard key={project.id} project={project} index={index} />
+          ))}
+        </div>
+
+        {isLoading ? (
+          <p className="mt-8 text-center text-text-secondary">Loading projects...</p>
+        ) : null}
+        {!isLoading && hasError ? (
+          <p className="mt-8 text-center text-red-400">Unable to load projects from API.</p>
+        ) : null}
+        {!isLoading && !hasError && projectList.length === 0 ? (
+          <p className="mt-8 text-center text-text-secondary">No projects returned by API.</p>
+        ) : null}
+      </div>
     </section>
   );
 }

@@ -1,37 +1,145 @@
 @import "tailwindcss";
 
-:root {
-  --background: #F8F5FF;
-  --surface: #FFFFFF;
-  --text-primary: #0F0A1E;
-  --text-secondary: #6B7280;
-  --glow: #7C3AED; 
+/* ─── NFTify Design System ─── */
+
+/* Satoshi font family (weights 400/500/700/900) — same assets as NFTify */
+@font-face {
+  font-family: "Satoshi";
+  src: url("https://framerusercontent.com/third-party-assets/fontshare/wf/TTX2Z3BF3P6Y5BQT3IV2VNOK6FL22KUT/7QYRJOI3JIMYHGY6CH7SOIFRQLZOLNJ6/KFIAZD4RUMEZIYV6FQ3T3GP5PDBDB6JY.woff2") format("woff2");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Satoshi";
+  src: url("https://framerusercontent.com/third-party-assets/fontshare/wf/P2LQKHE6KA6ZP4AAGN72KDWMHH6ZH3TA/ZC32TK2P7FPS5GFTL46EU6KQJA24ZYDB/7AHDUZ4A7LFLVFUIFSARGIWCRQJHISQP.woff2") format("woff2");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Satoshi";
+  src: url("https://framerusercontent.com/third-party-assets/fontshare/wf/LAFFD4SDUCDVQEXFPDC7C53EQ4ZELWQI/PXCT3G6LO6ICM5I3NTYENYPWJAECAWDD/GHM6WVH6MILNYOOCXHXB5GTSGNTMGXZR.woff2") format("woff2");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Satoshi";
+  src: url("https://framerusercontent.com/third-party-assets/fontshare/wf/NHPGVFYUXYXE33DZ75OIT4JFGHITX5PE/PSUTMASCDJTVPERDYJZPN23BVUFUCQIF/J64QX5IPOHK56I2KYUNBQ5M2XWZEYKYX.woff2") format("woff2");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 900;
 }
 
-.dark {
-  --background: #020617;
-  --surface: #0B0F1A;
-  --text-primary: #FFFFFF;
-  --text-secondary: #9CA3AF;
-  --glow: #C084FC;
+:root {
+  /* Core surfaces */
+  --background: #020202;
+  --surface: #0f0f0f;
+  --surface-glass: #ffffff0d;
+  --surface-glass-strong: #ffffff1a;
+  --surface-input: #0f0f0f;
+
+  /* Text */
+  --text-primary: #ffffff;
+  --text-secondary: #e3e3e3;
+  --text-muted: #dbdbdb;
+  --text-tertiary: #545454;
+
+  /* Neon accents */
+  --accent-cyan: #1dd4ff;
+  --accent-magenta: #f32eff;
+  --accent-lime: #61ec1c;
+  --accent-yellow: #ffcf0f;
+
+  /* Glows */
+  --glow-cyan: rgba(29, 212, 255, 0.35);
+  --glow-magenta: rgba(243, 46, 255, 0.35);
+  --glow-lime: rgba(97, 236, 28, 0.35);
 }
 
 @theme {
-  --color-primary-400: #D946EF;
-  --color-primary-500: #A855F7;
-  --color-primary-600: #7C3AED;
-  --color-primary-700: #5B21B6;
+  /* Colors */
   --color-background: var(--background);
   --color-surface: var(--surface);
+  --color-surface-glass: var(--surface-glass);
+  --color-surface-glass-strong: var(--surface-glass-strong);
+  --color-surface-input: var(--surface-input);
+
   --color-text-primary: var(--text-primary);
   --color-text-secondary: var(--text-secondary);
-  --color-glow: var(--glow);
+  --color-text-muted: var(--text-muted);
+  --color-text-tertiary: var(--text-tertiary);
+
+  --color-accent-cyan: var(--accent-cyan);
+  --color-accent-magenta: var(--accent-magenta);
+  --color-accent-lime: var(--accent-lime);
+  --color-accent-yellow: var(--accent-yellow);
+
+  /* Typography */
+  --font-sans: var(--font-inter), "Inter", system-ui, Arial, sans-serif;
+  --font-satoshi: "Satoshi", var(--font-inter), system-ui, Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background-color: var(--background);
   color: var(--text-primary);
-  /* Use smooth scroll */
-  scroll-behavior: smooth;
+  font-family: var(--font-sans);
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Utility helpers */
+.font-satoshi {
+  font-family: var(--font-satoshi);
+}
+
+/* Gradient text utilities */
+.text-gradient-cyan-magenta {
+  background: linear-gradient(90deg, var(--accent-cyan) 0%, var(--accent-magenta) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-lime-cyan {
+  background: linear-gradient(90deg, var(--accent-lime) 0%, var(--accent-cyan) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* NFTify primary gradient (cyan → magenta) */
+.bg-gradient-nftify {
+  background: linear-gradient(90deg, var(--accent-cyan) 0%, var(--accent-magenta) 100%);
+}
+
+/* Neon glow utilities */
+.shadow-glow-cyan {
+  box-shadow: 0 0 32px var(--glow-cyan);
+}
+.shadow-glow-magenta {
+  box-shadow: 0 0 32px var(--glow-magenta);
+}
+.shadow-glow-lime {
+  box-shadow: 0 0 32px var(--glow-lime);
+}
+
+/* Hide scrollbar for carousels */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* AOS default easing polish */
+[data-aos] {
+  will-change: transform, opacity;
 }

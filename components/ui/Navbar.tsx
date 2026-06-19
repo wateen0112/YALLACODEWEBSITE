@@ -31,22 +31,27 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "py-3 bg-surface/60 backdrop-blur-xl border-b border-primary-600/20 shadow-lg"
-          : "py-6 bg-transparent"
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-500 py-4 md:py-5"
+      data-aos="fade-down"
+      data-aos-duration="800"
+      data-aos-delay="300"
     >
       <div className="container mx-auto px-4 md:px-8">
-        <div className="flex items-center justify-between">
-          <Link href="/" aria-label="YallaCode home">
+        <div
+          className={`flex items-center justify-between px-4 md:px-6 py-3 rounded-[58px] border transition-all duration-500 ${
+            isScrolled
+              ? "bg-surface-glass-strong/80 backdrop-blur-xl border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.35)]"
+              : "bg-surface-glass/50 backdrop-blur-md border-white/5"
+          }`}
+        >
+          <Link href="/" aria-label="YallaCode home" className="flex items-center">
             <Image
               src="/logo.png"
               alt="YallaCode"
               width={730}
               height={194}
               priority
-              className="h-9 w-auto md:h-10"
+              className="h-8 w-auto md:h-9"
             />
           </Link>
 
@@ -56,24 +61,24 @@ export function Navbar() {
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-sm font-medium hover:text-primary-400 transition-colors"
+                className="text-sm font-medium text-text-muted hover:text-accent-magenta transition-colors duration-500"
               >
                 {link.name}
               </Link>
             ))}
           </nav>
 
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden md:flex items-center gap-3">
             <LanguageSwitcher />
           </div>
 
           {/* Mobile Menu Toggle */}
           <button
-            className="md:hidden p-2 text-primary-400"
+            className="md:hidden p-2 rounded-full bg-white/5 text-text-primary hover:bg-white/10 transition-colors"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label={t("toggle_menu")}
           >
-            {mobileMenuOpen ? <X /> : <Menu />}
+            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
       </div>
@@ -82,23 +87,26 @@ export function Navbar() {
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="md:hidden absolute top-full left-0 w-full bg-surface/95 backdrop-blur-xl border-b border-primary-600/20 p-6 flex flex-col gap-6 shadow-2xl z-40"
+            initial={{ opacity: 0, y: -20, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -20, scale: 0.98 }}
+            transition={{ duration: 0.25 }}
+            className="md:hidden absolute top-full left-0 w-full px-4 pt-3"
           >
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="text-lg font-medium hover:text-primary-400 transition-colors border-b border-primary-600/10 pb-2"
-              >
-                {link.name}
-              </Link>
-            ))}
-            <div className="flex items-center justify-between pt-4">
-              <LanguageSwitcher />
+            <div className="bg-surface-glass-strong/90 backdrop-blur-2xl border border-white/10 rounded-[36px] p-6 flex flex-col gap-5 shadow-2xl">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-lg font-medium text-text-muted hover:text-accent-magenta transition-colors border-b border-white/5 pb-3 last:border-0 last:pb-0"
+                >
+                  {link.name}
+                </Link>
+              ))}
+              <div className="flex items-center justify-between pt-2">
+                <LanguageSwitcher />
+              </div>
             </div>
           </motion.div>
         )}

@@ -3,8 +3,9 @@
 import { useTranslations } from "next-intl";
 import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
+import { Briefcase, Users, Clock, Award } from "lucide-react";
 
-function CountUp({ end, suffix = "" }: { end: number, suffix?: string }) {
+function CountUp({ end, suffix = "" }: { end: number; suffix?: string }) {
   const [count, setCount] = useState(0);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
@@ -17,8 +18,6 @@ function CountUp({ end, suffix = "" }: { end: number, suffix?: string }) {
       const step = (timestamp: number) => {
         if (!startTime) startTime = timestamp;
         const progress = Math.min((timestamp - startTime) / duration, 1);
-
-        // Easing out function
         const easeOutQuart = 1 - Math.pow(1 - progress, 4);
         setCount(Math.floor(easeOutQuart * end));
 
@@ -36,6 +35,13 @@ function CountUp({ end, suffix = "" }: { end: number, suffix?: string }) {
   return <span ref={ref}>{count}{suffix}</span>;
 }
 
+const statsConfig = [
+  { icon: Briefcase, gradient: "from-accent-cyan to-accent-magenta" },
+  { icon: Users, gradient: "from-accent-lime to-accent-cyan" },
+  { icon: Clock, gradient: "from-accent-magenta to-accent-yellow" },
+  { icon: Award, gradient: "from-accent-yellow to-accent-cyan" },
+];
+
 export function StatsSection() {
   const t = useTranslations("home");
 
@@ -47,25 +53,41 @@ export function StatsSection() {
   ];
 
   return (
-    <section className="py-20 relative">
-      <div className="mx-4 md:mx-12 rounded-3xl bg-surface border border-primary-600/30 overflow-hidden shadow-2xl">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-600/10 via-background to-primary-400/10 opacity-50 block" />
+    <section className="py-20 lg:py-24 relative">
+      <div className="container mx-auto px-4 md:px-8">
+        <div
+          className="rounded-[36px] bg-surface-glass/40 border border-white/10 overflow-hidden shadow-2xl backdrop-blur-xl p-8 md:p-12"
+          data-aos="zoom-in"
+        >
+          <div className="text-center mb-10 md:mb-14">
+            <h3 className="text-2xl md:text-3xl font-bold font-satoshi text-white">{t("stats_title")}</h3>
+          </div>
 
-        <div className="relative">
-          <div className="container mx-auto px-6 md:px-12 py-10 md:py-14 text-center">
-            <h3 className="text-2xl font-bold mb-10 text-primary-400">{t("stats_title")}</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-6">
-              {stats.map((stat, i) => (
-                <div key={i} className="flex flex-col items-center min-w-0">
-                  <h4 className="text-4xl md:text-5xl font-extrabold text-white mb-2 whitespace-nowrap">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {stats.map((stat, i) => {
+              const Icon = statsConfig[i].icon;
+              const gradient = statsConfig[i].gradient;
+              return (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1, type: "spring", stiffness: 396, damping: 56 }}
+                  className="group relative flex flex-col items-center text-center p-6 rounded-[20px] bg-surface-glass border border-white/5 backdrop-blur-md hover:border-white/10 transition-colors"
+                >
+                  <div className={`w-12 h-12 rounded-full bg-gradient-to-br ${gradient} flex items-center justify-center mb-5 shadow-lg group-hover:scale-110 transition-transform`}>
+                    <Icon className="w-6 h-6 text-white" />
+                  </div>
+                  <h4 className="text-4xl md:text-5xl font-black font-satoshi text-gradient-cyan-magenta mb-2 whitespace-nowrap">
                     <CountUp end={stat.value} suffix={stat.suffix} />
                   </h4>
-                  <p className="text-text-secondary uppercase tracking-wide md:tracking-wider text-xs md:text-sm font-semibold">
+                  <p className="text-text-secondary uppercase tracking-wide text-xs md:text-sm font-semibold">
                     {stat.label}
                   </p>
-                </div>
-              ))}
-            </div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </div>

@@ -3,6 +3,7 @@ import { getMessages } from 'next-intl/server';
 import { Inter, Cairo } from 'next/font/google';
 import { ThemeProvider } from '@/components/ui/ThemeProvider';
 import { SiteLoadOverlay } from '@/components/ui/SiteLoadOverlay';
+import { AOSProvider } from '@/components/ui/AOSProvider';
 import '../globals.css';
 import { ReactNode } from 'react';
 import type { Metadata } from 'next';
@@ -29,10 +30,11 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} dir={dir} suppressHydrationWarning>
-      <body className={`${fontClass} transition-colors duration-300 antialiased bg-background text-text-primary`}>
+      <body className={`${fontClass} font-sans transition-colors duration-300 antialiased bg-background text-text-primary`}>
         <NextIntlClientProvider messages={messages}>
           <SiteLoadOverlay>
             <ThemeProvider attribute="class" forcedTheme="dark" defaultTheme="dark" enableSystem={false}>
+              <AOSProvider />
               {children}
             </ThemeProvider>
           </SiteLoadOverlay>
