@@ -1,14 +1,13 @@
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
-import { Inter, Cairo } from 'next/font/google';
+
 import { ThemeProvider } from '@/components/ui/ThemeProvider';
 import { SiteLoadOverlay } from '@/components/ui/SiteLoadOverlay';
+import { AOSProvider } from '@/components/ui/AOSProvider';
+import { CustomCursor } from '@/components/ui/CustomCursor';
 import '../globals.css';
 import { ReactNode } from 'react';
 import type { Metadata } from 'next';
-
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
-const cairo = Cairo({ subsets: ['arabic'], variable: '--font-cairo' });
 
 export const metadata: Metadata = {
   title: 'YallaCode | Next-Gen Software',
@@ -25,15 +24,24 @@ export default async function LocaleLayout({
   const { locale } = await params;
   const messages = await getMessages();
   const dir = locale === 'ar' ? 'rtl' : 'ltr';
-  const fontClass = locale === 'ar' ? cairo.className : inter.className;
-
   return (
     <html lang={locale} dir={dir} suppressHydrationWarning>
-      <body className={`${fontClass} transition-colors duration-300 antialiased bg-background text-text-primary`}>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Kufam:ital,wght@0,400..900;1,400..900&family=Noto+Kufi+Arabic:wght@100..900&family=Reem+Kufi:wght@400..700&family=Revalia&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body className="font-main main-font transition-colors duration-300 antialiased bg-background text-text-primary">
         <NextIntlClientProvider messages={messages}>
           <SiteLoadOverlay>
             <ThemeProvider attribute="class" forcedTheme="dark" defaultTheme="dark" enableSystem={false}>
-              {children}
+              <AOSProvider>
+                <CustomCursor />
+                {children}
+              </AOSProvider>
             </ThemeProvider>
           </SiteLoadOverlay>
         </NextIntlClientProvider>

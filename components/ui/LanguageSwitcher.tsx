@@ -91,7 +91,7 @@ export function LanguageSwitcher() {
             role="dialog"
             aria-modal="true"
             aria-label={t("dialog_title")}
-            className="my-auto max-h-[88vh] w-full max-w-5xl overflow-hidden rounded-2xl border border-white/10 bg-[#161616] text-white shadow-2xl"
+            className="my-auto max-h-[88vh] w-full max-w-5xl overflow-hidden rounded-2xl border border-white/10 bg-[#0B0F1A] text-white shadow-2xl"
             onClick={(event) => event.stopPropagation()}
           >
             <div className="flex items-center justify-between border-b border-white/10 px-5 py-4">
@@ -112,7 +112,7 @@ export function LanguageSwitcher() {
                   value={search}
                   onChange={(event) => setSearch(event.target.value)}
                   placeholder={t("search_placeholder")}
-                  className="w-full rounded-xl border border-yellow-500/40 bg-[#111111] py-3 pl-10 pr-4 text-sm text-white outline-none transition-colors placeholder:text-zinc-500 focus:border-yellow-400"
+                  className="w-full rounded-xl border border-primary-500/40 bg-[#0B0F1A] py-3 pl-10 pr-4 text-sm text-white outline-none transition-colors placeholder:text-zinc-500 focus:border-primary-400"
                 />
               </div>
             </div>

@@ -198,7 +198,7 @@ export function YallaCodeLoader() {
     <div
       ref={containerRef}
       dir="ltr"
-      className="fixed inset-0 z-[100] flex items-center justify-center overflow-hidden bg-black"
+      className="fixed inset-0 z-[100] flex items-center justify-center overflow-hidden bg-[#020617]"
       style={{ direction: "ltr", unicodeBidi: "isolate" }}
     >
       <canvas

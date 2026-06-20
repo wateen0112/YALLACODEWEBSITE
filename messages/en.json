@@ -5,63 +5,174 @@
     "projects": "Projects",
     "about": "About",
     "contact": "Contact",
+    "how_it_works": "How It Works",
+    "blog": "Blog",
+    "testimonials": "Testimonials",
     "toggle_menu": "Toggle menu"
   },
   "hero": {
     "title": "We Build the Future, One Line at a Time",
     "subtitle": "Full-stack software & AI solutions for visionary companies",
+    "badge": "Build My AI System",
+    "headline": "Build Intelligent Systems. Not Just Software.",
+    "description": "We design and deploy AI-powered systems that automate operations, increase revenue, and turn businesses into scalable digital machines.",
     "view_projects": "View Projects ↗",
     "contact_us": "Contact Us"
   },
   "home": {
     "marquee": "Technologies We Target:",
-    "services_title": "Our Services",
-    "projects_title": " Projects ",
+    "showcase_badge": "SHOWCASE",
+    "showcase_title": "Our Work in Action",
+    "showcase_subtitle": "See how our systems look across every screen — from mobile apps to enterprise dashboards.",
+    "trusted_badge": "TRUSTED BY",
+    "trusted_title": "Trusted by Industry Leaders",
+    "trusted_description": "From fast-growing startups to global enterprises, ambitious teams rely on YallaCode to ship intelligent systems at scale.",
+    "services_badge": "WHAT WE BUILD",
+    "services_title": "What We Build",
+    "projects_badge": "PROJECTS",
+    "projects_title": "Projects",
+    "projects_loading": "Loading projects...",
+    "projects_fallback": "Showing selected work from our portfolio.",
+    "trust_badge": "ABOUT",
+    "trust_title": "Trust & Impact",
+    "trust_lead": "Real Systems. Real Impact.",
+    "trust_statement": "We don't experiment with AI. We engineer production-ready intelligence that drives measurable business outcomes.",
+    "trust_cta": "Discover our approach",
     "stats_title": "Key Numbers",
-    "globe_title": "Trusted by teams around the world",
-    "testimonials_title": "Testimonials",
-    "process_title": "How We Work",
-    "cta_banner": "Ready to Build Something Amazing?",
-    "cta_subtitle": "Bring your vision to life with our expert team of engineers and designers.",
-    "start_project": "Start a Project",
     "stats": {
       "projects_delivered": "Projects Delivered",
+      "projects_description": "End-to-end products shipped across fintech, health, edtech, and cloud.",
       "happy_clients": "Happy Clients",
+      "clients_description": "Repeat partnerships built on clarity, speed, and reliable delivery.",
       "years_experience": "Years Experience",
-      "client_satisfaction": "Client Satisfaction"
+      "experience_description": "Deep expertise in modern stacks, AI models, and cloud infrastructure.",
+      "client_satisfaction": "Client Satisfaction",
+      "satisfaction_description": "Consistently rated excellent for communication and results."
     },
+    "globe_title": "Your AI Infrastructure. Managed. Scalable. Intelligent.",
+    "globe_badge": "AI SYSTEMS",
+    "globe_subtitle": "A fully managed backbone for AI workflows, data pipelines, and continuous optimization.",
+    "globe_feature_1": "Centralized AI Workflow Control",
+    "globe_feature_2": "Prompt & Model Management",
+    "globe_feature_3": "Performance Monitoring Dashboard",
+    "globe_feature_4": "Secure Data Layer",
+    "globe_feature_5": "Continuous System Optimization",
+    "testimonials_title": "Testimonials",
+    "testimonials_badge": "TESTIMONIALS",
+    "testimonials_claim": "YallaCode Doesn't Just Build Software...",
+    "testimonials_subclaim": "We rebuild your business around AI.",
+    "process_title": "How We Work",
+    "process_badge": "WORK",
     "process_steps": {
       "1": "Discovery & Planning",
       "2": "Design & Prototype",
       "3": "Development & Testing",
       "4": "Launch & Support"
     },
+    "process_descriptions": {
+      "1": "We map your workflows, identify high-leverage AI opportunities, and define a clear delivery roadmap.",
+      "2": "We architect a custom system aligned with your business goals and validate it with rapid prototypes.",
+      "3": "We build, test, and integrate your AI stack using clean code, automation, and rigorous QA.",
+      "4": "We monitor, improve, and scale your AI infrastructure continuously after launch."
+    },
+    "why_badge": "WHY YALLACODE",
+    "why_title": "We Build Systems. Others Build Tools.",
+    "why_lead": "Most agencies deliver automation tools. We deliver intelligent ecosystems that grow with your business.",
+    "why_tabs": {
+      "custom_architecture": {
+        "title": "Custom-Built Architecture",
+        "description": "Every system is designed around your exact business model, data, and workflows — no off-the-shelf templates."
+      },
+      "strategy_first": {
+        "title": "Strategy-First Approach",
+        "description": "We pinpoint where AI creates real leverage and measurable impact before writing the first line of code."
+      },
+      "business_focused": {
+        "title": "Business-Focused Intelligence",
+        "description": "Process automation and revenue-focused execution that directly supports your growth goals."
+      },
+      "long_term": {
+        "title": "Long-Term Partnership",
+        "description": "We evolve your intelligent infrastructure as you scale, optimizing workflows and performance over time."
+      }
+    },
+    "faq_title": "Frequently Asked Questions",
+    "faq_subtitle": "Didn't find the answer you're looking for?",
+    "faq_contact": "Contact us",
+    "faq_q1": {
+      "question": "What is YallaCode?",
+      "answer": "YallaCode is a full-stack software and AI agency that builds scalable digital products, automation systems, and intelligent infrastructure for modern businesses."
+    },
+    "faq_q2": {
+      "question": "Do you work with startups or enterprises?",
+      "answer": "Both. We adapt our engagement model and engineering to the size, stage, and goals of your organization."
+    },
+    "faq_q3": {
+      "question": "How secure are the systems you build?",
+      "answer": "Security is built in from day one — encrypted data layers, access controls, audit logs, and cloud best practices."
+    },
+    "faq_q4": {
+      "question": "Can you integrate with our existing tools?",
+      "answer": "Yes. We design APIs, microservices, and connectors that integrate smoothly with your current stack."
+    },
+    "faq_q5": {
+      "question": "How does pricing work?",
+      "answer": "We offer flexible project-based and retainer models. Pricing depends on scope, complexity, and ongoing support requirements."
+    },
+    "cta_banner": "Ready to Build Your AI Edge?",
+    "cta_subtitle": "Stop managing tasks. Start managing systems. Bring your vision to life with our expert team.",
+    "start_project": "Start a Project",
     "testimonials_items": {
       "1": {
         "name": "Ahmed R.",
         "role": "CTO",
         "company": "FinTech ME",
-        "quote": "Working with YallaCode completely transformed our payment infrastructure."
+        "quote": "Working with YallaCode completely transformed our payment infrastructure. Their AI-driven approach reduced processing delays and loaded performance everywhere."
       },
       "2": {
         "name": "Sarah J.",
         "role": "Product Manager",
         "company": "Health Plus",
-        "quote": "The AI team delivered exactly what we needed, ahead of schedule."
+        "quote": "The AI team delivered exactly what we needed, ahead of schedule. The system is intuitive, fast, and drives measurable outcomes for our users."
       },
       "3": {
         "name": "Tariq M.",
         "role": "CEO",
         "company": "Urban Navigators",
-        "quote": "Professional, scalable, and beautifully designed solutions."
+        "quote": "Professional, scalable, and beautifully designed solutions. YallaCode understood our vision and turned it into a product our customers love."
       },
       "4": {
         "name": "Emma W.",
         "role": "Director",
         "company": "EduGlobal",
-        "quote": "They brought our vision to life with bleeding-edge web technologies."
+        "quote": "They brought our vision to life with bleeding-edge web technologies. The team's technical depth and communication made the entire process seamless."
+      },
+      "5": {
+        "name": "Omar K.",
+        "role": "Founder",
+        "company": "LogiChain",
+        "quote": "YallaCode built a supply-chain intelligence layer that cut our manual reporting by 80%. Their engineering discipline is world-class."
+      },
+      "6": {
+        "name": "Lina P.",
+        "role": "Head of Product",
+        "company": "RetailAI",
+        "quote": "From prototype to production in weeks. The team moves fast without sacrificing quality — a rare combination."
       }
-    }
+    },
+    "pinscroll_step_1_badge": "VISION",
+    "pinscroll_step_1_title": "From Vision to System",
+    "pinscroll_step_1_desc": "Every great product starts with clarity. We translate your goals into a living blueprint for intelligent software.",
+    "pinscroll_step_2_badge": "INTELLIGENT WORKFLOW",
+    "pinscroll_step_2_title": "Execution Powered by AI",
+    "pinscroll_step_2_desc": "Automation, prediction, and decision-making woven into interfaces that feel effortless.",
+    "pinscroll_step_3_badge": "INFRASTRUCTURE",
+    "pinscroll_step_3_title": "Built for Your Business",
+    "pinscroll_step_3_desc": "Custom architecture that grows with you — secure, observable, and future-ready.",
+    "techstack_badge": "TECH STACK",
+    "techstack_title": "Technologies We Master",
+    "techstack_subtitle": "From frontend frameworks to AI models — the tools we use to build intelligent systems.",
+    "cube_drag_hint": "Drag to rotate the cube"
   },
   "services": {
     "subtitle": "We provide comprehensive solutions leveraging the latest technologies to accelerate your business growth and digital transformation.",
@@ -93,7 +204,7 @@
     }
   },
   "projects": {
-    "subtitle": "Explore our showcase of  high-impact projects combining world-class design with scalable engineering and cutting-edge intelligence.",
+    "subtitle": "Explore our showcase of high-impact projects combining world-class design with scalable engineering and cutting-edge intelligence.",
     "view_project": "View Project",
     "back_to_projects": "Back to Projects",
     "project_overview": "Project Overview",
@@ -155,7 +266,29 @@
     },
     "rights_reserved": "All rights reserved.",
     "privacy_policy": "Privacy Policy",
-    "terms_of_service": "Terms of Service"
+    "terms_of_service": "Terms of Service",
+    "marquee": "Smart Business Engineering",
+    "marquee_accent": "& Innovation"
+  },
+  "contact": {
+    "badge": "GET IN TOUCH",
+    "email_label": "Email",
+    "location_label": "Location",
+    "location_value": "Global — Remote First",
+    "form_title": "Send us a message",
+    "placeholder_name": "Your name",
+    "placeholder_email": "Your email",
+    "placeholder_company": "Company (optional)",
+    "placeholder_message": "Tell us about your project",
+    "error_name_required": "Name is required",
+    "error_email_required": "Email is required",
+    "error_email_invalid": "Please enter a valid email",
+    "error_message_required": "Message is required",
+    "sending": "Sending...",
+    "submit": "Send Message",
+    "success_title": "Message Sent!",
+    "success_message": "Thanks for reaching out. We'll get back to you within 24 hours.",
+    "send_another": "Send another message"
   },
   "language": {
     "button_aria_label": "Select language",

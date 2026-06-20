@@ -5,9 +5,12 @@
   --surface: #FFFFFF;
   --text-primary: #0F0A1E;
   --text-secondary: #6B7280;
-  --glow: #7C3AED; 
+  --glow: #7C3AED;
 }
 
+*, *::before, *::after, .main-font {
+  font-family: "Cairo", "Kufam", "Noto Kufi Arabic", "Reem Kufi", "Revalia", sans-serif !important;
+}
 .dark {
   --background: #020617;
   --surface: #0B0F1A;
@@ -17,10 +20,14 @@
 }
 
 @theme {
+  --font-main: "Cairo", "Kufam", "Noto Kufi Arabic", "Reem Kufi", "Revalia", sans-serif;
+  --color-primary-200: #E9D5FF;
+  --color-primary-300: #D8B4FE;
   --color-primary-400: #D946EF;
   --color-primary-500: #A855F7;
   --color-primary-600: #7C3AED;
   --color-primary-700: #5B21B6;
+  --color-primary-800: #4C1D95;
   --color-background: var(--background);
   --color-surface: var(--surface);
   --color-text-primary: var(--text-primary);
@@ -29,9 +36,120 @@
 }
 
 body {
+  font-family: var(--font-main);
   background-color: var(--background);
   color: var(--text-primary);
-  /* Use smooth scroll */
   scroll-behavior: smooth;
   overflow-x: hidden;
+}
+
+/* --- AOS custom 3D animations --- */
+[data-aos="tilt-up"] {
+  opacity: 0;
+  transform: perspective(1000px) rotateX(18deg) translateY(50px);
+  transition-property: transform, opacity;
+}
+[data-aos="tilt-up"].aos-animate {
+  opacity: 1;
+  transform: perspective(1000px) rotateX(0deg) translateY(0);
+}
+
+[data-aos="tilt-left"] {
+  opacity: 0;
+  transform: perspective(1000px) rotateY(-14deg) translateX(-40px);
+  transition-property: transform, opacity;
+}
+[data-aos="tilt-left"].aos-animate {
+  opacity: 1;
+  transform: perspective(1000px) rotateY(0deg) translateX(0);
+}
+
+[data-aos="tilt-right"] {
+  opacity: 0;
+  transform: perspective(1000px) rotateY(14deg) translateX(40px);
+  transition-property: transform, opacity;
+}
+[data-aos="tilt-right"].aos-animate {
+  opacity: 1;
+  transform: perspective(1000px) rotateY(0deg) translateX(0);
+}
+
+[data-aos="zoom-tilt"] {
+  opacity: 0;
+  transform: perspective(1000px) scale(0.92) rotateX(10deg);
+  transition-property: transform, opacity;
+}
+[data-aos="zoom-tilt"].aos-animate {
+  opacity: 1;
+  transform: perspective(1000px) scale(1) rotateX(0deg);
+}
+
+[data-aos="flip-card"] {
+  opacity: 0;
+  transform: perspective(1200px) rotateY(90deg);
+  transition-property: transform, opacity;
+}
+[data-aos="flip-card"].aos-animate {
+  opacity: 1;
+  transform: perspective(1200px) rotateY(0deg);
+}
+
+/* --- 3D helpers --- */
+.perspective-1000 {
+  perspective: 1000px;
+}
+.perspective-1200 {
+  perspective: 1200px;
+}
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.card-3d {
+  transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.4s ease;
+  transform-style: preserve-3d;
+}
+.card-3d:hover {
+  transform: translateY(-8px) translateZ(24px) rotateX(2deg) rotateY(-2deg);
+  box-shadow: 0 24px 60px rgba(168, 85, 247, 0.18);
+}
+
+.card-lift {
+  transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.card-lift:hover {
+  transform: translateY(-6px) scale(1.01);
+}
+
+/* Glass surface used across sections */
+.glass-card {
+  background: rgba(11, 15, 26, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Optional scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: #7C3AED;
+  border-radius: 4px;
+}
+
+/* Hide scrollbar without disabling scrolling */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }

@@ -7,12 +7,7 @@ export const services = [
     description: "Scalable, high-performance applications built with modern frameworks.",
     icon: Smartphone,
   },
-  {
-    id: "ai-ml",
-    title: "AI & Machine Learning",
-    description: "Intelligent systems tailored to automate and optimize workflows.",
-    icon: BrainCircuit,
-  },
+
   {
     id: "cloud",
     title: "Cloud Architecture",
