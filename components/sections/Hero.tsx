@@ -13,7 +13,7 @@ export function Hero() {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Video background */}
       <video
-        src="/assets/bg.mp4"
+        src="https://res.cloudinary.com/dodxldns9/video/upload/v1782585308/bg_r7w2cs.mp4"
         autoPlay
         loop
         muted
