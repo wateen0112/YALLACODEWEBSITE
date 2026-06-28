@@ -43,6 +43,51 @@ body {
   overflow-x: hidden;
 }
 
+/* --- Scroll reveal animations (lightweight AOS replacement) --- */
+[data-aos="fade-up"] {
+  opacity: 0;
+  transform: translateY(30px);
+  transition-property: transform, opacity;
+}
+[data-aos="fade-up"].aos-animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+[data-aos="fade-down"] {
+  opacity: 0;
+  transform: translateY(-30px);
+  transition-property: transform, opacity;
+}
+[data-aos="fade-down"].aos-animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+[data-aos="zoom-in"] {
+  opacity: 0;
+  transform: scale(0.9);
+  transition-property: transform, opacity;
+}
+[data-aos="zoom-in"].aos-animate {
+  opacity: 1;
+  transform: scale(1);
+}
+
+[data-aos] {
+  transition-duration: 600ms;
+  transition-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
+  will-change: transform, opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-aos] {
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
 /* --- AOS custom 3D animations --- */
 [data-aos="tilt-up"] {
   opacity: 0;
