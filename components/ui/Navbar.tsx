@@ -87,10 +87,10 @@ export function Navbar() {
 
             {/* Scrolled: centered floating pill */}
             <nav
-              className={`hidden md:flex mx-auto items-center gap-1 md:gap-2 rounded-full border px-2 py-1.5 shadow-lg transition-transform transition-opacity transition-colors duration-300 ${
+              className={`hidden md:flex mx-auto items-center rounded-full border shadow-lg transition-all duration-300 ${
                 isScrolled
-                  ? "border-white/10 bg-surface/70 backdrop-blur-2xl opacity-100 translate-y-0 relative"
-                  : "border-transparent bg-transparent backdrop-blur-none opacity-0 -translate-y-2 pointer-events-none absolute"
+                  ? "w-1/2 max-w-3xl justify-between gap-1 border-white/10 bg-surface/70 backdrop-blur-2xl px-3 py-1.5 opacity-100 translate-y-0 relative"
+                  : "w-auto gap-1 md:gap-2 border-transparent bg-transparent backdrop-blur-none px-2 py-1.5 opacity-0 -translate-y-2 pointer-events-none absolute"
               }`}
             >
               {/* Logo */}
@@ -108,12 +108,12 @@ export function Navbar() {
               </Link>
 
               {/* Main links */}
-              <div className="flex items-center gap-1 px-2">
+              <div className={`flex items-center gap-1 ${isScrolled ? "px-1" : "px-2"}`}>
                 {navLinks.map((link) => (
                   <Link
                     key={link.name}
                     href={link.href}
-                    className="px-3 py-1.5 text-sm font-medium text-text-primary/90 hover:text-white transition-colors rounded-full hover:bg-white/5"
+                    className={`py-1.5 text-sm font-medium text-text-primary/90 hover:text-white transition-colors rounded-full hover:bg-white/5 ${isScrolled ? "px-1.5" : "px-3"}`}
                   >
                     {link.name}
                   </Link>
