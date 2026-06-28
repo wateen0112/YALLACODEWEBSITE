@@ -2,14 +2,14 @@ export interface LogEntry {
   timestamp: string;
   level: 'INFO' | 'ERROR' | 'SUCCESS' | 'WARNING';
   message: string;
-  data?: any;
+  data?: unknown;
   source?: string;
 }
 
 class Logger {
   private logs: LogEntry[] = [];
 
-  private createEntry(level: LogEntry['level'], message: string, data?: any, source?: string): LogEntry {
+  private createEntry(level: LogEntry['level'], message: string, data?: unknown, source?: string): LogEntry {
     const entry: LogEntry = {
       timestamp: new Date().toISOString(),
       level,
@@ -46,24 +46,24 @@ class Logger {
     }
   }
 
-  info(message: string, data?: any, source?: string) {
+  info(message: string, data?: unknown, source?: string) {
     return this.createEntry('INFO', message, data, source);
   }
 
-  success(message: string, data?: any, source?: string) {
+  success(message: string, data?: unknown, source?: string) {
     return this.createEntry('SUCCESS', message, data, source);
   }
 
-  error(message: string, data?: any, source?: string) {
+  error(message: string, data?: unknown, source?: string) {
     return this.createEntry('ERROR', message, data, source);
   }
 
-  warning(message: string, data?: any, source?: string) {
+  warning(message: string, data?: unknown, source?: string) {
     return this.createEntry('WARNING', message, data, source);
   }
 
   // Log API responses
-  logApiResponse(url: string, method: string, status: number, responseTime: number, data?: any) {
+  logApiResponse(url: string, method: string, status: number, responseTime: number, data?: unknown) {
     const level = status >= 400 ? 'ERROR' : status >= 300 ? 'WARNING' : 'SUCCESS';
     
     // Simulate backend server response format
@@ -72,7 +72,7 @@ class Logger {
     return this.createEntry(level, backendMessage, data, 'BACKEND');
   }
 
-  private formatBackendResponse(method: string, url: string, status: number, responseTime: number, data?: any): string {
+  private formatBackendResponse(method: string, url: string, status: number, responseTime: number, data?: unknown): string {
     const timestamp = new Date().toISOString();
     const statusText = this.getStatusText(status);
     const backendUrl = url.replace('/api', '').replace(/^\//, '') || 'root';
@@ -112,7 +112,7 @@ class Logger {
   }
 
   // Log form submissions
-  logFormSubmission(formName: string, data: any, success: boolean) {
+  logFormSubmission(formName: string, data: Record<string, unknown>, success: boolean) {
     const level = success ? 'SUCCESS' : 'ERROR';
     
     // Simulate backend processing response
@@ -121,7 +121,7 @@ class Logger {
     return this.createEntry(level, backendMessage, { formData: data }, 'BACKEND');
   }
 
-  private formatFormSubmissionResponse(formName: string, data: any, success: boolean): string {
+  private formatFormSubmissionResponse(formName: string, data: Record<string, unknown>, success: boolean): string {
     const timestamp = new Date().toISOString();
     const processingTime = Math.floor(Math.random() * 200) + 50; // Simulate 50-250ms processing time
     

@@ -4,8 +4,8 @@ import { usePathname } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
 import Link from "next/link";
 import Image from "next/image";
-import { Globe, Search, X } from "lucide-react";
-import { useEffect, useMemo, useState } from "react";
+import { Search, X } from "lucide-react";
+import { useEffect, useMemo, useState, useSyncExternalStore } from "react";
 import { createPortal } from "react-dom";
 import { LANGUAGE_OPTIONS, SUPPORTED_LOCALES } from "@/lib/locales";
 
@@ -14,8 +14,12 @@ export function LanguageSwitcher() {
   const locale = useLocale();
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
   const [search, setSearch] = useState("");
+  const isMounted = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false
+  );
 
   const basePath = useMemo(() => {
     const escapedLocales = SUPPORTED_LOCALES.join("|");
@@ -38,10 +42,6 @@ export function LanguageSwitcher() {
   const currentLanguage = LANGUAGE_OPTIONS.find((language) => language.code === locale);
 
   const getFlagUrl = (countryCode: string) => `https://flagcdn.com/${countryCode}.svg`;
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
 
   useEffect(() => {
     if (!isOpen) return;

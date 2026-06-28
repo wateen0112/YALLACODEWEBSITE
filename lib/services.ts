@@ -1,4 +1,4 @@
-import { Smartphone, BrainCircuit, Cloud, Palette, Blocks, TerminalSquare } from "lucide-react";
+import { Smartphone, Cloud, Palette, Blocks, TerminalSquare } from "lucide-react";
 
 export const services = [
   {

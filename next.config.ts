@@ -23,6 +23,10 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'images.unsplash.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'framerusercontent.com',
+      },
     ],
   },
   async headers() {
@@ -32,7 +36,7 @@ const nextConfig: NextConfig = {
         headers: [
           {
             key: 'Content-Security-Policy',
-            value: "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://res.cloudinary.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https: blob:; font-src 'self'; connect-src 'self' https://vitals.vercel-insights.com; media-src 'self' https://res.cloudinary.com; object-src 'none'; frame-ancestors 'none'; require-trusted-types-for 'script';"
+            value: "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://res.cloudinary.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https: blob:; font-src 'self'; connect-src 'self' https://vitals.vercel-insights.com; media-src 'self' https://res.cloudinary.com; object-src 'none'; frame-ancestors 'none';"
           },
           {
             key: 'Strict-Transport-Security',
@@ -93,7 +97,7 @@ const nextConfig: NextConfig = {
         ],
       },
       {
-        source: '/_next/static/:path*',
+        source: '/pin-scroll/:path*',
         headers: [
           {
             key: 'Cache-Control',
@@ -101,6 +105,7 @@ const nextConfig: NextConfig = {
           },
         ],
       },
+
     ];
   },
 };

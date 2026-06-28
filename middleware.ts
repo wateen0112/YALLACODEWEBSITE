@@ -8,7 +8,7 @@ const intlMiddleware = createMiddleware({
   defaultLocale: DEFAULT_LOCALE
 });
 
-export default function(request: NextRequest) {
+export default function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
   const isHiddenAdminRoute = /^\/[^/]+\/internal(?:\/.*)?$/.test(pathname);
   const isLoginRoute = /^\/[^/]+\/internal\/login\/?$/.test(pathname);

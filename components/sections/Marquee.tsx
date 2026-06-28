@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { projects } from "@/lib/projects";
 import { Monitor, Tablet, Smartphone } from "lucide-react";
@@ -47,10 +48,12 @@ export function Marquee() {
             <div className="hidden md:block relative group perspective-1000">
               <div className="card-3d w-[140px] lg:w-[170px] rounded-[2rem] border-4 border-white/10 bg-surface p-2 shadow-2xl">
                 <div className="relative aspect-[9/19] rounded-[1.5rem] overflow-hidden bg-surface border border-white/5">
-                  <img
+                  <Image
                     src={showcaseProjects[2]?.image}
                     alt={showcaseProjects[2]?.title}
-                    className="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-700"
+                    fill
+                    sizes="170px"
+                    className="object-cover opacity-90 group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/80 to-transparent" />
                   <div className="absolute bottom-3 left-3 right-3 flex items-center gap-2">
@@ -67,10 +70,12 @@ export function Marquee() {
             <div className="relative group perspective-1000 z-10">
               <div className="card-3d rounded-2xl border border-white/10 bg-surface p-3 pb-0 shadow-2xl">
                 <div className="relative aspect-[16/10] w-[320px] md:w-[520px] lg:w-[680px] rounded-t-xl overflow-hidden bg-surface border border-white/5">
-                  <img
+                  <Image
                     src={showcaseProjects[0]?.image}
                     alt={showcaseProjects[0]?.title}
-                    className="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-700"
+                    fill
+                    sizes="(max-width: 768px) 320px, (max-width: 1024px) 520px, 680px"
+                    className="object-cover opacity-90 group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-black/80 to-transparent" />
                   <div className="absolute bottom-4 left-4 flex items-center gap-2">
@@ -89,10 +94,12 @@ export function Marquee() {
             <div className="hidden md:block relative group perspective-1000">
               <div className="card-3d w-[180px] lg:w-[220px] rounded-[1.5rem] border-4 border-white/10 bg-surface p-2 shadow-2xl">
                 <div className="relative aspect-[3/4] rounded-[1.2rem] overflow-hidden bg-surface border border-white/5">
-                  <img
+                  <Image
                     src={showcaseProjects[1]?.image}
                     alt={showcaseProjects[1]?.title}
-                    className="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-700"
+                    fill
+                    sizes="220px"
+                    className="object-cover opacity-90 group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/80 to-transparent" />
                   <div className="absolute bottom-3 left-3 right-3 flex items-center gap-2">

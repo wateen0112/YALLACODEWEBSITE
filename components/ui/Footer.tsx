@@ -4,7 +4,6 @@ import { useTranslations } from "next-intl";
 import Link from "next/link";
 import Image from "next/image";
 import { Globe, Mail, MessageCircle, MapPin } from "lucide-react";
-import { motion } from "framer-motion";
 
 export function Footer() {
   const t = useTranslations("nav");
@@ -16,8 +15,6 @@ export function Footer() {
     { name: t("how_it_works"), href: "#process" },
     { name: t("testimonials"), href: "#testimonials" },
   ];
-
-  const marqueeWords = Array(8).fill(tFooter("marquee"));
 
   return (
     <footer className="relative bg-surface border-t border-white/10 overflow-hidden">

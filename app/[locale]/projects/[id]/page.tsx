@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { Project } from "@/lib/projects";
-import { Clock, Code, Globe, Link, Tag, ExternalLink, ArrowLeft } from "lucide-react";
+import { Clock, Globe, Tag, ExternalLink, ArrowLeft } from "lucide-react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { GlowButton } from "@/components/ui/GlowButton";
@@ -33,7 +33,7 @@ export default function ProjectDetailPage() {
         const data = await response.json();
         console.log(data)
         setProject(data);
-      } catch (err) {
+      } catch {
         setError("Failed to load project");
       } finally {
         setLoading(false);

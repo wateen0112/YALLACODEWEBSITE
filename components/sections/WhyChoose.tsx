@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { projects } from "@/lib/projects";
 import { motion, AnimatePresence } from "framer-motion";
@@ -75,10 +76,12 @@ export function WhyChooseSection() {
                 transition={{ duration: 0.45 }}
                 className="absolute inset-3 rounded-2xl  preserve-3d"
               >
-                <img
-                  src={'https://framerusercontent.com/images/973oV5mb3JG6a0rHrLKzIPWGmvw.png?width=1492&height=1836'}
+                <Image
+                  src="https://framerusercontent.com/images/973oV5mb3JG6a0rHrLKzIPWGmvw.png?width=1492&height=1836"
                   alt={t(`why_tabs.${tabs[active].key}.title`)}
-                  className="absolute inset-0 w-full h-full object-contain opacity-80"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-contain opacity-80"
                 />
                 
         

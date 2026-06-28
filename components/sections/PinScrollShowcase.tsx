@@ -163,6 +163,7 @@ export function PinScrollShowcase() {
       <div className="absolute inset-0 flex items-center justify-center p-4 md:p-10 lg:p-16">
         <div className="relative w-full h-full max-w-7xl rounded-3xl overflow-hidden shadow-2xl border border-white/5">
           {FRAMES.map((src, i) => (
+            // eslint-disable-next-line @next/next/no-img-element
             <img
               key={src}
               ref={(el) => {
@@ -170,6 +171,8 @@ export function PinScrollShowcase() {
               }}
               src={src}
               alt=""
+              width={1920}
+              height={1080}
               className={`absolute inset-0 w-full h-full object-cover object-top ${
                 reducedMotion && i === FRAMES.length - 1 ? "opacity-100" : ""
               }`}
