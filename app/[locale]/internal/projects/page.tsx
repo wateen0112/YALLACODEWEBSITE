@@ -53,24 +53,19 @@ export default function InternalProjectsPage() {
 
     try {
       const response = await fetch("/api/internal/projects", { cache: "no-store" });
-      console.log('Projects response status:', response.status);
       
       if (response.status === 401) {
-        console.log('Unauthorized, redirecting to login');
         router.push(`/${locale}/internal/login`);
         return;
       }
       if (!response.ok) {
         const payload = (await response.json().catch(() => ({}))) as { error?: string };
-        console.log('Projects error:', payload);
         setError(payload.error || "Failed to load projects.");
         return;
       }
       const data = (await response.json()) as Project[];
-      console.log('Projects loaded:', data.length);
       setProjects(Array.isArray(data) ? data : []);
-    } catch (error) {
-      console.log('Projects fetch error:', error);
+    } catch {
       setError("Failed to load projects.");
     } finally {
       setLoading(false);
@@ -139,13 +134,6 @@ export default function InternalProjectsPage() {
       formData.append("status", form.status.trim());
       formData.append("project_url", form.projectUrl.trim());
       formData.append("demoLink", form.demoLink.trim());
-      
-      // Log FormData payload body
-      console.log(`${method} ${endpoint} - FormData Payload:`);
-      console.log('FormData entries:');
-      for (const [key, value] of formData.entries()) {
-        console.log(`  ${key}:`, value instanceof File ? `File(${value.name}, ${value.size} bytes)` : value);
-      }
       
       // Add image file if provided
       if (form.imageFile) {

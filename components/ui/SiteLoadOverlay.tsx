@@ -3,7 +3,7 @@
 import { ReactNode, useEffect, useState } from "react";
 import { YallaCodeLoader } from "./YallaCodeLoader";
 
-const MIN_VISIBLE_MS = 500;
+const MIN_VISIBLE_MS = 0;
 
 export function SiteLoadOverlay({ children }: { children: ReactNode }) {
   const [visible, setVisible] = useState(true);

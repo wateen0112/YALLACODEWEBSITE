@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Project } from "@/lib/projects";
 import { Clock, Globe, Tag, ExternalLink, ArrowLeft } from "lucide-react";
 import Image from "next/image";
@@ -31,7 +31,6 @@ export default function ProjectDetailPage() {
           return;
         }
         const data = await response.json();
-        console.log(data)
         setProject(data);
       } catch {
         setError("Failed to load project");
@@ -91,7 +90,7 @@ export default function ProjectDetailPage() {
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-8">
         {/* Back Button */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
@@ -105,10 +104,10 @@ export default function ProjectDetailPage() {
             <ArrowLeft className="w-4 h-4" />
             {t("back_to_projects")}
           </GlowButton>
-        </motion.div>
+        </m.div>
 
         {/* Project Header */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
@@ -142,10 +141,10 @@ export default function ProjectDetailPage() {
               </p>
             </div>
           </div>
-        </motion.div>
+        </m.div>
 
         {/* Project Details */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
@@ -280,7 +279,7 @@ export default function ProjectDetailPage() {
               </div>
             </div>
           </div>
-        </motion.div>
+        </m.div>
       </div>
     </div>
   );

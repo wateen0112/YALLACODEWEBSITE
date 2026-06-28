@@ -39,8 +39,7 @@ export async function uploadToCloudinary(file: File): Promise<CloudinaryUploadRe
       width: result.width,
       height: result.height,
     };
-  } catch (error) {
-    console.error('Cloudinary upload error:', error);
+  } catch {
     throw new Error('Failed to upload image to Cloudinary');
   }
 }

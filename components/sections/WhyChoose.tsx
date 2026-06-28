@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { projects } from "@/lib/projects";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 
 export function WhyChooseSection() {
   const t = useTranslations("home");
@@ -49,7 +49,7 @@ export function WhyChooseSection() {
                 <button
                   key={tab.key}
                   onClick={() => setActive(i)}
-                  className={`text-left px-6 py-4 rounded-2xl border transition-all duration-300 text-lg font-semibold card-lift ${
+                  className={`text-left px-6 py-4 rounded-2xl border transition-transform transition-opacity transition-colors duration-300 text-lg font-semibold card-lift ${
                     active === i
                       ? "bg-gradient-to-r from-primary-600 to-primary-400 text-white border-transparent shadow-[0_0_30px_rgba(168,85,247,0.35)]"
                       : "bg-white/5 text-text-secondary border-white/10 hover:bg-white/10 hover:text-white"
@@ -68,7 +68,7 @@ export function WhyChooseSection() {
             className="relative   h-full w-full"
           >
             <AnimatePresence mode="wait">
-              <motion.div
+              <m.div
                 key={active}
                 initial={{ opacity: 0, rotateY: 12, scale: 0.96 }}
                 animate={{ opacity: 1, rotateY: 0, scale: 1 }}
@@ -85,7 +85,7 @@ export function WhyChooseSection() {
                 />
                 
         
-              </motion.div>
+              </m.div>
             </AnimatePresence>
           </div>
         </div>

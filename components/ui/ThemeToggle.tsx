@@ -3,7 +3,7 @@
 import { useTheme } from "next-themes";
 import { Sun, Moon } from "lucide-react";
 import { useSyncExternalStore } from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 export function ThemeToggle() {
   const { theme, setTheme } = useTheme();
@@ -22,13 +22,13 @@ export function ThemeToggle() {
       aria-label="Toggle theme"
     >
       {theme === "dark" ? (
-        <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }}>
+        <m.div initial={{ scale: 0 }} animate={{ scale: 1 }}>
           <Sun className="w-5 h-5 text-primary-400" />
-        </motion.div>
+        </m.div>
       ) : (
-        <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }}>
+        <m.div initial={{ scale: 0 }} animate={{ scale: 1 }}>
           <Moon className="w-5 h-5 text-primary-600" />
-        </motion.div>
+        </m.div>
       )}
     </button>
   );

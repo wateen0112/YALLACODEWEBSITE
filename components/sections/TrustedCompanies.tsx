@@ -27,7 +27,7 @@ const doubled = [...companies, ...companies];
 
 function LogoCard({ company }: { company: typeof companies[0] }) {
   return (
-    <div className="group relative flex h-20 w-40 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.03] px-6 transition-all duration-300 hover:border-primary-500/30 hover:bg-white/[0.06] hover:scale-105">
+    <div className="group relative flex h-20 w-40 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.03] px-6 transition-transform transition-opacity transition-colors duration-300 hover:border-primary-500/30 hover:bg-white/[0.06] hover:scale-105">
       <div className="flex h-full w-full items-center justify-center">
         <Image
           src={company.src}

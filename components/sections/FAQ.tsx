@@ -38,7 +38,7 @@ export function FAQSection() {
                   key={key}
                   data-aos="tilt-right"
                   data-aos-delay={i * 100}
-                  className={`glass-card rounded-2xl overflow-hidden transition-all duration-300 ${
+                  className={`glass-card rounded-2xl overflow-hidden transition-transform transition-opacity transition-colors duration-300 ${
                     isOpen ? "border-primary-500/30 shadow-[0_0_30px_rgba(168,85,247,0.12)]" : ""
                   }`}
                 >
@@ -60,7 +60,7 @@ export function FAQSection() {
                     </span>
                   </button>
                   <div
-                    className={`grid transition-all duration-300 ${
+                    className={`grid transition-transform transition-opacity transition-colors duration-300 ${
                       isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
                     }`}
                   >

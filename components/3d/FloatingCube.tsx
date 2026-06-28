@@ -4,7 +4,7 @@ import { useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 import { useTheme } from "next-themes";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 function Cube() {
   const meshRef = useRef<THREE.Mesh>(null);
@@ -34,7 +34,7 @@ function Cube() {
 
 export function FloatingCube() {
   return (
-    <motion.div 
+    <m.div 
       initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       transition={{ duration: 1, ease: "easeOut" }}
@@ -44,6 +44,6 @@ export function FloatingCube() {
         <ambientLight intensity={0.5} />
         <Cube />
       </Canvas>
-    </motion.div>
+    </m.div>
   );
 }

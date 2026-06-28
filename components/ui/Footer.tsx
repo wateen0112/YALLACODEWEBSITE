@@ -29,7 +29,7 @@ export function Footer() {
               width={730}
               height={194}
               sizes="150px"
-              className="h-10 w-auto mb-6"
+              className="h-10 aspect-video object-contain mb-6"
             />
             <p className="text-text-secondary">{tFooter("description")}</p>
           </div>

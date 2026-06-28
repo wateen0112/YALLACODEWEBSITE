@@ -140,7 +140,6 @@ export async function listProjectsFromApi(): Promise<Project[]> {
   }
 
   const data = (await response.json()) as unknown;
-  console.log('Raw backend data:', JSON.stringify(data, null, 2));
 
   const list = Array.isArray(data)
     ? data
@@ -152,7 +151,6 @@ export async function listProjectsFromApi(): Promise<Project[]> {
 }
 
 export async function createProjectInApi(payload: ProjectPayload): Promise<Project> {
-  console.log('adding new project request   : ',JSON.stringify(payload));
   
   const response = await fetch(buildBaseEndpoint(), {
     method: "POST",
@@ -212,11 +210,6 @@ export async function createProjectWithImage(formData: FormData): Promise<Projec
   }
 
   const endpoint = buildBaseEndpoint();
-  console.log('Creating project with image at:', endpoint);
-  console.log('FormData entries:');
-  for (const [key, value] of formData.entries()) {
-    console.log(`  ${key}:`, value instanceof File ? `File(${value.name}, ${value.size} bytes)` : value);
-  }
 
   const response = await fetch(endpoint, {
     method: "POST",
@@ -248,11 +241,6 @@ export async function updateProjectWithImage(id: string, formData: FormData): Pr
   }
 
   const endpoint = `${buildBaseEndpoint()}/${id}`;
-  console.log('Updating project with image at:', endpoint);
-  console.log('FormData entries:');
-  for (const [key, value] of formData.entries()) {
-    console.log(`  ${key}:`, value instanceof File ? `File(${value.name}, ${value.size} bytes)` : value);
-  }
 
   const response = await fetch(endpoint, {
     method: "PUT",

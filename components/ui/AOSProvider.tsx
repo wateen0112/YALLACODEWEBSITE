@@ -8,17 +8,15 @@ export function AOSProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     AOS.init({
       once: true,
-      duration: 800,
+      duration: 600,
       easing: "ease-out-cubic",
-      offset: 80,
+      offset: 120,
       delay: 0,
+      disable: function () {
+        // Disable AOS on touch devices to reduce main-thread work
+        return window.matchMedia("(pointer: coarse)").matches;
+      },
     });
-
-    // Refresh after fonts/images load to recalculate positions
-    window.addEventListener("load", () => AOS.refresh());
-    return () => {
-      window.removeEventListener("load", () => AOS.refresh());
-    };
   }, []);
 
   return <>{children}</>;

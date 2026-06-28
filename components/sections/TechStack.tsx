@@ -114,7 +114,7 @@ export function TechStackSection() {
           {shuffledTech.map((tech) => (
             <div
               key={tech.name}
-              className="tech-card group relative flex flex-col items-center justify-center gap-3 rounded-2xl border border-white/10 bg-white/[0.03] p-4 md:p-5 backdrop-blur-sm transition-all duration-300 hover:bg-white/[0.08] hover:border-primary-500/30 hover:scale-105 hover:-translate-y-1 cursor-default"
+              className="tech-card group relative flex flex-col items-center justify-center gap-3 rounded-2xl border border-white/10 bg-white/[0.03] p-4 md:p-5 backdrop-blur-sm transition-transform transition-opacity transition-colors duration-300 hover:bg-white/[0.08] hover:border-primary-500/30 hover:scale-105 hover:-translate-y-1 cursor-default"
             >
               {/* Logo */}
               <div className="relative w-12 h-12 md:w-14 md:h-14 flex items-center justify-center">
@@ -124,7 +124,7 @@ export function TechStackSection() {
                   width={56}
                   height={56}
                   sizes="56px"
-                  className="w-full h-full object-contain transition-all duration-300 group-hover:scale-110 group-hover:drop-shadow-[0_0_8px_rgba(168,85,247,0.4)]"
+                  className="w-full h-full object-contain transition-transform transition-opacity transition-colors duration-300 group-hover:scale-110 group-hover:drop-shadow-[0_0_8px_rgba(168,85,247,0.4)]"
                   loading="lazy"
                   decoding="async"
                 />
@@ -136,7 +136,7 @@ export function TechStackSection() {
               </span>
 
               {/* Category tag */}
-              <span className="absolute -top-2 left-1/2 -translate-x-1/2 px-2 py-0.5 rounded-full bg-primary-600/20 text-[10px] text-primary-400 border border-primary-500/20 opacity-0 translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0 whitespace-nowrap">
+              <span className="absolute -top-2 left-1/2 -translate-x-1/2 px-2 py-0.5 rounded-full bg-primary-600/20 text-[10px] text-primary-400 border border-primary-500/20 opacity-0 translate-y-2 transition-transform transition-opacity transition-colors duration-300 group-hover:opacity-100 group-hover:translate-y-0 whitespace-nowrap">
                 {tech.category}
               </span>
             </div>

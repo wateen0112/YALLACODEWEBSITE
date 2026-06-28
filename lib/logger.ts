@@ -19,31 +19,8 @@ class Logger {
     };
     
     this.logs.push(entry);
-    this.logToConsole(entry);
     
     return entry;
-  }
-
-  private logToConsole(entry: LogEntry) {
-    const timestamp = new Date(entry.timestamp).toLocaleTimeString();
-    const source = entry.source ? `[${entry.source}]` : '';
-    const prefix = `[${timestamp}] ${source} ${entry.level}:`;
-    
-    switch (entry.level) {
-      case 'SUCCESS':
-        console.log(`✅ ${prefix} ${entry.message}`, entry.data || '');
-        break;
-      case 'ERROR':
-        console.error(`❌ ${prefix} ${entry.message}`, entry.data || '');
-        break;
-      case 'WARNING':
-        console.warn(`⚠️ ${prefix} ${entry.message}`, entry.data || '');
-        break;
-      case 'INFO':
-      default:
-        console.log(`ℹ️ ${prefix} ${entry.message}`, entry.data || '');
-        break;
-    }
   }
 
   info(message: string, data?: unknown, source?: string) {

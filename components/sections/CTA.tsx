@@ -2,7 +2,7 @@
 
 import { useState, useRef, useLayoutEffect } from "react";
 import { useTranslations, useLocale } from "next-intl";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
@@ -138,7 +138,7 @@ export function CTASection() {
   };
 
   const inputClasses = (field: string, hasError?: string) =>
-    `w-full rounded-xl border bg-white/[0.03] backdrop-blur-sm px-4 py-3.5 text-sm text-white placeholder:text-white/30 transition-all duration-300 outline-none ${
+    `w-full rounded-xl border bg-white/[0.03] backdrop-blur-sm px-4 py-3.5 text-sm text-white placeholder:text-white/30 transition-transform transition-opacity transition-colors duration-300 outline-none ${
       hasError
         ? "border-red-500/50 focus:border-red-400 focus:ring-1 focus:ring-red-400/20"
         : focusedField === field
@@ -175,7 +175,7 @@ export function CTASection() {
 
             {/* Contact info cards */}
             <div className="flex flex-col gap-4">
-              <motion.div
+              <m.div
                 whileHover={{ x: isRtl ? -4 : 4 }}
                 className="flex items-center gap-4 p-4 rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-sm"
               >
@@ -186,9 +186,9 @@ export function CTASection() {
                   <p className="text-xs text-text-secondary mb-0.5">{tContact("email_label")}</p>
                   <p className="text-sm font-medium text-white">hello@yallacode.com</p>
                 </div>
-              </motion.div>
+              </m.div>
 
-              <motion.div
+              <m.div
                 whileHover={{ x: isRtl ? -4 : 4 }}
                 className="flex items-center gap-4 p-4 rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-sm"
               >
@@ -199,7 +199,7 @@ export function CTASection() {
                   <p className="text-xs text-text-secondary mb-0.5">{tContact("location_label")}</p>
                   <p className="text-sm font-medium text-white">{tContact("location_value")}</p>
                 </div>
-              </motion.div>
+              </m.div>
             </div>
           </div>
 
@@ -211,18 +211,18 @@ export function CTASection() {
 
               {isSubmitted ? (
                 /* Success state */
-                <motion.div
+                <m.div
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   className="flex flex-col items-center justify-center py-12 text-center"
                 >
-                  <motion.div
+                  <m.div
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     transition={{ type: "spring", stiffness: 200, delay: 0.1 }}
                   >
                     <CheckCircle2 className="w-16 h-16 text-primary-400 mb-6" />
-                  </motion.div>
+                  </m.div>
                   <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">
                     {tContact("success_title")}
                   </h3>
@@ -239,7 +239,7 @@ export function CTASection() {
                   >
                     {tContact("send_another")}
                   </GlowButton>
-                </motion.div>
+                </m.div>
               ) : (
                 /* Form */
                 <form ref={formRef} onSubmit={handleSubmit} className="flex flex-col gap-5">
@@ -263,13 +263,13 @@ export function CTASection() {
                       className={`${inputClasses("name", errors.name)} pl-10`}
                     />
                     {errors.name && (
-                      <motion.p
+                      <m.p
                         initial={{ opacity: 0, y: -4 }}
                         animate={{ opacity: 1, y: 0 }}
                         className="text-xs text-red-400 mt-1.5 ml-1"
                       >
                         {errors.name}
-                      </motion.p>
+                      </m.p>
                     )}
                   </div>
 
@@ -289,13 +289,13 @@ export function CTASection() {
                       className={`${inputClasses("email", errors.email)} pl-10`}
                     />
                     {errors.email && (
-                      <motion.p
+                      <m.p
                         initial={{ opacity: 0, y: -4 }}
                         animate={{ opacity: 1, y: 0 }}
                         className="text-xs text-red-400 mt-1.5 ml-1"
                       >
                         {errors.email}
-                      </motion.p>
+                      </m.p>
                     )}
                   </div>
 
@@ -332,13 +332,13 @@ export function CTASection() {
                       className={`${inputClasses("message", errors.message)} pl-10 resize-none`}
                     />
                     {errors.message && (
-                      <motion.p
+                      <m.p
                         initial={{ opacity: 0, y: -4 }}
                         animate={{ opacity: 1, y: 0 }}
                         className="text-xs text-red-400 mt-1.5 ml-1"
                       >
                         {errors.message}
-                      </motion.p>
+                      </m.p>
                     )}
                   </div>
 

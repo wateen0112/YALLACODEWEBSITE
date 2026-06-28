@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, Variants } from "framer-motion";
+import { m, Variants } from "framer-motion";
 
 interface AnimatedTextProps {
   text: string;
@@ -36,7 +36,7 @@ export function AnimatedText({ text, className = "", delay = 0, dir = "ltr" }: A
   };
 
   return (
-    <motion.div
+    <m.div
       dir={dir}
       className={`flex flex-wrap ${className}`}
       variants={container}
@@ -45,10 +45,10 @@ export function AnimatedText({ text, className = "", delay = 0, dir = "ltr" }: A
       viewport={{ once: true, margin: "-10%" }}
     >
       {words.map((word, index) => (
-        <motion.span variants={child} key={index} className="me-[0.35em] mb-[0.1em] inline-block last:me-0">
+        <m.span variants={child} key={index} className="me-[0.35em] mb-[0.1em] inline-block last:me-0">
           {word}
-        </motion.span>
+        </m.span>
       ))}
-    </motion.div>
+    </m.div>
   );
 }

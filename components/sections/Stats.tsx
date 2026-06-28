@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { motion, useInView } from "framer-motion";
+import { m, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import { LayoutGrid, Zap, Clock, ShieldCheck, ArrowRight } from "lucide-react";
 
@@ -121,7 +121,7 @@ export function StatsSection() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {stats.map((stat, i) => (
-            <motion.div
+            <m.div
               key={i}
               data-aos="zoom-tilt"
               data-aos-delay={i * 100}
@@ -135,7 +135,7 @@ export function StatsSection() {
               </h3>
               <p className="text-white font-semibold mb-2">{stat.label}</p>
               <p className="text-sm text-text-secondary">{stat.description}</p>
-            </motion.div>
+            </m.div>
           ))}
         </div>
       </div>

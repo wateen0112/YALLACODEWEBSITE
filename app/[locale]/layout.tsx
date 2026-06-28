@@ -6,6 +6,7 @@ import { ThemeProvider } from '@/components/ui/ThemeProvider';
 import { SiteLoadOverlay } from '@/components/ui/SiteLoadOverlay';
 import { AOSProvider } from '@/components/ui/AOSProvider';
 import { CustomCursor } from '@/components/ui/CustomCursor';
+import { FramerMotionProvider } from '@/components/ui/FramerMotionProvider';
 import '../globals.css';
 import { ReactNode } from 'react';
 import type { Metadata } from 'next';
@@ -41,13 +42,20 @@ export default async function LocaleLayout({
   const dir = locale === 'ar' ? 'rtl' : 'ltr';
   return (
     <html lang={locale} dir={dir} suppressHydrationWarning className={`${cairo.variable} ${notoKufiArabic.variable}`}>
+      <head>
+        <link rel="preconnect" href="https://res.cloudinary.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://res.cloudinary.com" />
+        <link rel="preload" href="/logo.png" as="image" type="image/png" fetchPriority="high" />
+      </head>
       <body className="font-main main-font transition-colors duration-300 antialiased bg-background text-text-primary">
         <NextIntlClientProvider messages={messages}>
           <SiteLoadOverlay>
             <ThemeProvider attribute="class" forcedTheme="dark" defaultTheme="dark" enableSystem={false}>
               <AOSProvider>
-                <CustomCursor />
-                {children}
+                <FramerMotionProvider>
+                  <CustomCursor />
+                  {children}
+                </FramerMotionProvider>
               </AOSProvider>
             </ThemeProvider>
           </SiteLoadOverlay>

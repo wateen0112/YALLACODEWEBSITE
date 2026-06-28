@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 
@@ -27,10 +27,10 @@ export function Navbar() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <header className="fixed top-0 left-0 right-0 z-50 transition-transform transition-opacity transition-colors duration-300">
       {/* Full-width wrapper — transparent at top, minimal when scrolled */}
       <div
-        className={`w-full transition-all duration-300 ${
+        className={`w-full transition-transform transition-opacity transition-colors duration-300 ${
           isScrolled
             ? "bg-transparent border-b border-transparent"
             : "bg-transparent border-b border-transparent"
@@ -40,7 +40,7 @@ export function Navbar() {
           <div className="flex items-center py-3 md:py-4">
             {/* At top: full-width spread layout (no pill bg) */}
             <div
-              className={`hidden md:flex w-full items-center justify-between transition-all duration-300 ${
+              className={`hidden md:flex w-full items-center justify-between transition-transform transition-opacity transition-colors duration-300 ${
                 isScrolled
                   ? "opacity-0 pointer-events-none absolute"
                   : "opacity-100 relative"
@@ -56,7 +56,7 @@ export function Navbar() {
                   priority
                   fetchPriority="high"
                   sizes="(max-width: 768px) 120px, 150px"
-                  className="h-7 w-auto md:h-8"
+                  className="h-7 md:h-8 aspect-video object-contain"
                 />
               </Link>
 
@@ -87,7 +87,7 @@ export function Navbar() {
 
             {/* Scrolled: centered floating pill */}
             <nav
-              className={`hidden md:flex mx-auto items-center gap-1 md:gap-2 rounded-full border px-2 py-1.5 shadow-lg transition-all duration-300 ${
+              className={`hidden md:flex mx-auto items-center gap-1 md:gap-2 rounded-full border px-2 py-1.5 shadow-lg transition-transform transition-opacity transition-colors duration-300 ${
                 isScrolled
                   ? "border-white/10 bg-surface/70 backdrop-blur-2xl opacity-100 translate-y-0 relative"
                   : "border-transparent bg-transparent backdrop-blur-none opacity-0 -translate-y-2 pointer-events-none absolute"
@@ -103,7 +103,7 @@ export function Navbar() {
                   priority
                   fetchPriority="high"
                   sizes="(max-width: 768px) 120px, 150px"
-                  className="h-7 w-auto md:h-8"
+                  className="h-7 md:h-8 aspect-video object-contain"
                 />
               </Link>
 
@@ -134,7 +134,7 @@ export function Navbar() {
 
             {/* Mobile: always pill */}
             <nav
-              className={`md:hidden flex items-center gap-1 rounded-full border px-2 py-1.5 shadow-lg transition-all duration-300 mx-auto ${
+              className={`md:hidden flex items-center gap-1 rounded-full border px-2 py-1.5 shadow-lg transition-transform transition-opacity transition-colors duration-300 mx-auto ${
                 isScrolled
                   ? "border-white/10 bg-surface/70 backdrop-blur-2xl"
                   : "border-white/10 bg-white/5 backdrop-blur-xl"
@@ -149,7 +149,7 @@ export function Navbar() {
                   priority
                   fetchPriority="high"
                   sizes="100px"
-                  className="h-6 w-auto"
+                  className="h-6 aspect-video object-contain"
                 />
               </Link>
               <button
@@ -167,7 +167,7 @@ export function Navbar() {
       {/* Mobile Menu */}
       <AnimatePresence>
         {mobileMenuOpen && (
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
@@ -193,7 +193,7 @@ export function Navbar() {
                 {t("contact")}
               </Link>
             </div>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
     </header>

@@ -73,7 +73,7 @@ export function ProjectCard({
       ref={cardRef}
       onMouseMove={handleMouseMove}
       onClick={() => router.push(`/projects/${project.id}`)}
-      className="group/spotlight group relative flex-shrink-0 cursor-pointer overflow-hidden rounded-3xl border border-white/10 bg-surface/80 transition-all duration-500 hover:border-primary-500/30 w-[320px] sm:w-[360px] md:w-[400px] h-[460px] sm:h-[500px] md:h-[550px]"
+      className="group/spotlight group relative flex-shrink-0 cursor-pointer overflow-hidden rounded-3xl border border-white/10 bg-surface/80 transition-transform transition-opacity transition-colors duration-500 hover:border-primary-500/30 w-[320px] sm:w-[360px] md:w-[400px] h-[460px] sm:h-[500px] md:h-[550px]"
       style={
         {
           ["--mouse-x" as string]: `${mousePos.x}px`,
@@ -121,7 +121,7 @@ export function ProjectCard({
           <span className="font-mono text-5xl md:text-6xl font-bold tracking-tighter text-white/30 transition-colors duration-500 group-hover:text-white/10">
             #{padIndex(index)}
           </span>
-          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/5 text-primary-400 backdrop-blur-md transition-all duration-300 group-hover:bg-primary-600/20 group-hover:text-primary-300 group-hover:scale-110 pointer-events-auto">
+          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/5 text-primary-400 backdrop-blur-md transition-transform transition-opacity transition-colors duration-300 group-hover:bg-primary-600/20 group-hover:text-primary-300 group-hover:scale-110 pointer-events-auto">
             <Icon className="h-6 w-6" aria-hidden />
           </div>
         </div>
@@ -133,7 +133,7 @@ export function ProjectCard({
           <h3 className="mb-2 text-2xl font-bold tracking-tight text-white transition-transform duration-300 group-hover:translate-x-1">
             {translatedTitle}
           </h3>
-          <div className="mt-4 flex items-center gap-2 text-sm font-medium text-text-secondary opacity-60 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-1 pointer-events-auto">
+          <div className="mt-4 flex items-center gap-2 text-sm font-medium text-text-secondary opacity-60 transition-transform transition-opacity transition-colors duration-300 group-hover:opacity-100 group-hover:translate-x-1 pointer-events-auto">
             <span>{t("view_project")}</span>
             <ArrowRight className="h-4 w-4 rtl:rotate-180" aria-hidden />
           </div>
