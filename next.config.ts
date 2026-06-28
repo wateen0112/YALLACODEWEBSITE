@@ -9,6 +9,7 @@ const bundleAnalyzer = withBundleAnalyzer({
 });
 
 const nextConfig: NextConfig = {
+  productionBrowserSourceMaps: true,
   images: {
     remotePatterns: [
       {

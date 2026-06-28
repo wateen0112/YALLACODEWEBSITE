@@ -32,11 +32,10 @@ function LogoCard({ company }: { company: typeof companies[0] }) {
         <Image
           src={company.src}
           alt={company.name}
-          width={128}
-          height={40}
-          sizes="128px"
+          fill
+          sizes="160px"
           loading="lazy"
-          className="object-contain max-h-10 w-auto opacity-60 group-hover:opacity-100 transition-opacity duration-300"
+          className="object-contain px-2 opacity-60 group-hover:opacity-100 transition-opacity duration-300"
         />
       </div>
       {/* Hover glow overlay */}

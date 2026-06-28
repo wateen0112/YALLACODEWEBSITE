@@ -1,6 +1,7 @@
 "use client";
 
 import { useLocale, useTranslations } from "next-intl";
+import { useState } from "react";
 import { GlowButton } from "../ui/GlowButton";
 import { ArrowUpLeft, ArrowUpRight, Sparkles } from "lucide-react";
 
@@ -8,21 +9,29 @@ export function Hero() {
   const t = useTranslations("hero");
   const locale = useLocale();
   const isRtl = locale === "ar";
+  const [videoError, setVideoError] = useState(false);
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Video background */}
-      <video
-        src="https://res.cloudinary.com/dodxldns9/video/upload/v1782585308/bg_r7w2cs.mp4"
-        autoPlay
-        loop
-        muted
-        playsInline
-        poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1920' height='1080' viewBox='0 0 1920 1080'%3E%3Crect width='1920' height='1080' fill='%23020617'/%3E%3C/svg%3E"
-        aria-hidden="true"
-        role="presentation"
-        className="absolute inset-0 w-full h-full object-cover"
-      />
+      {!videoError && (
+        <video
+          src="https://res.cloudinary.com/dodxldns9/video/upload/v1782585308/bg_r7w2cs.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1920' height='1080' viewBox='0 0 1920 1080'%3E%3Crect width='1920' height='1080' fill='%23020617'/%3E%3C/svg%3E"
+          aria-hidden="true"
+          role="presentation"
+          className="absolute inset-0 w-full h-full object-cover"
+          onError={() => setVideoError(true)}
+        />
+      )}
+      {/* Fallback background shown when video fails to load */}
+      {videoError && (
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-surface to-background" aria-hidden="true" />
+      )}
 
       {/* Dark overlay for text readability */}
       <div className="absolute inset-0 bg-black/40" />

@@ -208,7 +208,7 @@ export function ParticleSphere({
 
   return (
     <div
-      className={`circle-shape overflow-visisble ${className}`}
+      className={`circle-shape ${className}`}
       style={{
         position: 'relative',
         width: '100%',
@@ -224,8 +224,7 @@ export function ParticleSphere({
           height: '100%',
           display: 'block',
           filter: glow ? `drop-shadow(0 0 80px ${color}73)` : 'none',
-          cursor: 'crosshair',
-          overflow: 'visible'
+          cursor: 'crosshair'
         }}
       />
     </div>
