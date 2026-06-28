@@ -9,7 +9,7 @@
 }
 
 *, *::before, *::after, .main-font {
-  font-family: "Cairo", "Kufam", "Noto Kufi Arabic", "Reem Kufi", "Revalia", sans-serif !important;
+  font-family: var(--font-cairo), var(--font-noto-kufi-arabic), "Kufam", "Reem Kufi", sans-serif;
 }
 .dark {
   --background: #020617;
@@ -20,7 +20,7 @@
 }
 
 @theme {
-  --font-main: "Cairo", "Kufam", "Noto Kufi Arabic", "Reem Kufi", "Revalia", sans-serif;
+  --font-main: var(--font-cairo), var(--font-noto-kufi-arabic), "Kufam", "Reem Kufi", sans-serif;
   --color-primary-200: #E9D5FF;
   --color-primary-300: #D8B4FE;
   --color-primary-400: #D946EF;

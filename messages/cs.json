@@ -142,7 +142,11 @@
     },
     "rights_reserved": "Všechna práva vyhrazena.",
     "privacy_policy": "Zásady ochrany osobních údajů",
-    "terms_of_service": "Podmínky služby"
+    "terms_of_service": "Podmínky služby",
+    "social_website": "Visit our website",
+    "social_email": "Send us an email",
+    "social_chat": "Chat with us",
+    "social_location": "Find our location"
   },
   "language": {
     "button_aria_label": "Vyberte jazyk",

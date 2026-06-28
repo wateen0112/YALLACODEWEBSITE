@@ -142,7 +142,11 @@
     },
     "rights_reserved": "Все права защищены.",
     "privacy_policy": "Политика конфиденциальности",
-    "terms_of_service": "Условия обслуживания"
+    "terms_of_service": "Условия обслуживания",
+    "social_website": "Visit our website",
+    "social_email": "Send us an email",
+    "social_chat": "Chat with us",
+    "social_location": "Find our location"
   },
   "language": {
     "button_aria_label": "Выбрать язык",

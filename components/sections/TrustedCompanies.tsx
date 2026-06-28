@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Handshake } from "lucide-react";
 
@@ -28,11 +29,14 @@ function LogoCard({ company }: { company: typeof companies[0] }) {
   return (
     <div className="group relative flex h-20 w-40 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.03] px-6 transition-all duration-300 hover:border-primary-500/30 hover:bg-white/[0.06] hover:scale-105">
       <div className="flex h-full w-full items-center justify-center">
-        <img
+        <Image
           src={company.src}
           alt={company.name}
+          width={128}
+          height={40}
+          sizes="128px"
           loading="lazy"
-          className="object-contain max-h-10 opacity-60 group-hover:opacity-100 transition-opacity duration-300"
+          className="object-contain max-h-10 w-auto opacity-60 group-hover:opacity-100 transition-opacity duration-300"
         />
       </div>
       {/* Hover glow overlay */}

@@ -142,7 +142,11 @@
     },
     "rights_reserved": "Alle Rechte vorbehalten.",
     "privacy_policy": "Datenschutzrichtlinie",
-    "terms_of_service": "Nutzungsbedingungen"
+    "terms_of_service": "Nutzungsbedingungen",
+    "social_website": "Visit our website",
+    "social_email": "Send us an email",
+    "social_chat": "Chat with us",
+    "social_location": "Find our location"
   },
   "language": {
     "button_aria_label": "Sprache auswählen",

@@ -1,5 +1,6 @@
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
+import { Cairo, Noto_Kufi_Arabic } from 'next/font/google';
 
 import { ThemeProvider } from '@/components/ui/ThemeProvider';
 import { SiteLoadOverlay } from '@/components/ui/SiteLoadOverlay';
@@ -8,6 +9,20 @@ import { CustomCursor } from '@/components/ui/CustomCursor';
 import '../globals.css';
 import { ReactNode } from 'react';
 import type { Metadata } from 'next';
+
+const cairo = Cairo({
+  subsets: ['latin'],
+  variable: '--font-cairo',
+  display: 'swap',
+  weight: ['200', '300', '400', '500', '600', '700', '800', '900', '1000'],
+});
+
+const notoKufiArabic = Noto_Kufi_Arabic({
+  subsets: ['arabic'],
+  variable: '--font-noto-kufi-arabic',
+  display: 'swap',
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+});
 
 export const metadata: Metadata = {
   title: 'YallaCode | Next-Gen Software',
@@ -25,15 +40,7 @@ export default async function LocaleLayout({
   const messages = await getMessages();
   const dir = locale === 'ar' ? 'rtl' : 'ltr';
   return (
-    <html lang={locale} dir={dir} suppressHydrationWarning>
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Kufam:ital,wght@0,400..900;1,400..900&family=Noto+Kufi+Arabic:wght@100..900&family=Reem+Kufi:wght@400..700&family=Revalia&display=swap"
-          rel="stylesheet"
-        />
-      </head>
+    <html lang={locale} dir={dir} suppressHydrationWarning className={`${cairo.variable} ${notoKufiArabic.variable}`}>
       <body className="font-main main-font transition-colors duration-300 antialiased bg-background text-text-primary">
         <NextIntlClientProvider messages={messages}>
           <SiteLoadOverlay>

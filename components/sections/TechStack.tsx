@@ -118,9 +118,12 @@ export function TechStackSection() {
             >
               {/* Logo */}
               <div className="relative w-12 h-12 md:w-14 md:h-14 flex items-center justify-center">
-                <img width={56} height={56}
+                <Image
                   src={tech.logo}
                   alt={tech.name}
+                  width={56}
+                  height={56}
+                  sizes="56px"
                   className="w-full h-full object-contain transition-all duration-300 group-hover:scale-110 group-hover:drop-shadow-[0_0_8px_rgba(168,85,247,0.4)]"
                   loading="lazy"
                   decoding="async"

@@ -72,7 +72,9 @@ export function LanguageSwitcher() {
             alt={`${currentLanguage.label} flag`}
             width={20}
             height={14}
+            sizes="20px"
             className="rounded-[2px] shadow-sm"
+            unoptimized
           />
         )}
         <span className="text-sm font-medium uppercase">{locale}</span>
@@ -142,7 +144,9 @@ export function LanguageSwitcher() {
                               alt={`${language.label} flag`}
                               width={24}
                               height={16}
+                              sizes="24px"
                               className="mr-2 inline-block rounded-[2px] shadow-sm"
+                              unoptimized
                             />
                             {language.sublabel}
                           </p>

@@ -142,7 +142,11 @@
     },
     "rights_reserved": "Alle rettigheder forbeholdes.",
     "privacy_policy": "Privatlivspolitik",
-    "terms_of_service": "Servicevilkår"
+    "terms_of_service": "Servicevilkår",
+    "social_website": "Visit our website",
+    "social_email": "Send us an email",
+    "social_chat": "Chat with us",
+    "social_location": "Find our location"
   },
   "language": {
     "button_aria_label": "Vælg sprog",

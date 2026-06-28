@@ -121,7 +121,7 @@ export default function ProjectDetailPage() {
                 alt={project.title}
                 fill
                 className="object-cover"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
                 priority
               />
               <div className="absolute top-4 left-4">

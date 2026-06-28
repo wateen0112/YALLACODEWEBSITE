@@ -142,7 +142,11 @@
     },
     "rights_reserved": "全著作権所有。",
     "privacy_policy": "プライバシーポリシー",
-    "terms_of_service": "利用規約"
+    "terms_of_service": "利用規約",
+    "social_website": "Visit our website",
+    "social_email": "Send us an email",
+    "social_chat": "Chat with us",
+    "social_location": "Find our location"
   },
   "language": {
     "button_aria_label": "言語を選択",

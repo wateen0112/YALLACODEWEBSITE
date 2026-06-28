@@ -142,7 +142,11 @@
     },
     "rights_reserved": "Όλα τα δικαιώματα διατηρούνται.",
     "privacy_policy": "Πολιτική Απορρήτου",
-    "terms_of_service": "Όροι Υπηρεσίας"
+    "terms_of_service": "Όροι Υπηρεσίας",
+    "social_website": "Visit our website",
+    "social_email": "Send us an email",
+    "social_chat": "Chat with us",
+    "social_location": "Find our location"
   },
   "language": {
     "button_aria_label": "Επιλογή γλώσσας",

@@ -268,7 +268,11 @@
     "privacy_policy": "Privacy Policy",
     "terms_of_service": "Terms of Service",
     "marquee": "Smart Business Engineering",
-    "marquee_accent": "& Innovation"
+    "marquee_accent": "& Innovation",
+    "social_website": "Visit our website",
+    "social_email": "Send us an email",
+    "social_chat": "Chat with us",
+    "social_location": "Find our location"
   },
   "contact": {
     "badge": "GET IN TOUCH",

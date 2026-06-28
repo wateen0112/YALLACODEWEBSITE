@@ -2,6 +2,7 @@
 
 import { FormEvent, useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
+import Image from "next/image";
 import type { Project } from "@/lib/projects";
 import { logger } from "@/lib/logger";
 
@@ -365,9 +366,12 @@ export default function InternalProjectsPage() {
                 {/* Product Image */}
                 <div className="w-24 h-24 rounded-lg overflow-hidden flex-shrink-0 bg-black/40 border border-primary-600/20">
                   {project.image ? (
-                    <img
+                    <Image
                       src={project.image}
                       alt={project.title}
+                      width={96}
+                      height={96}
+                      sizes="96px"
                       className="w-full h-full object-cover"
                     />
                   ) : (

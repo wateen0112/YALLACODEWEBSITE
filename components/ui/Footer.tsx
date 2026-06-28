@@ -31,13 +31,14 @@ export function Footer() {
               alt="YallaCode"
               width={730}
               height={194}
+              sizes="150px"
               className="h-10 w-auto mb-6"
             />
             <p className="text-text-secondary">{tFooter("description")}</p>
           </div>
 
           <div>
-            <h4 className="text-lg font-bold mb-6 text-white">{tFooter("pages_title")}</h4>
+            <h3 className="text-lg font-bold mb-6 text-white">{tFooter("pages_title")}</h3>
             <ul className="space-y-3">
               {footerLinks.map((link) => (
                 <li key={link.name}>
@@ -53,7 +54,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="text-lg font-bold mb-6 text-white">{t("services")}</h4>
+            <h3 className="text-lg font-bold mb-6 text-white">{t("services")}</h3>
             <ul className="space-y-3">
               {["web_mobile", "ai_ml", "cloud_architecture"].map((key) => (
                 <li key={key}>
@@ -69,15 +70,21 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="text-lg font-bold mb-6 text-white">{t("contact")}</h4>
+            <h3 className="text-lg font-bold mb-6 text-white">{t("contact")}</h3>
             <div className="flex gap-3">
-              {[Globe, Mail, MessageCircle, MapPin].map((Icon, i) => (
+              {[
+                { Icon: Globe, label: tFooter("social_website") },
+                { Icon: Mail, label: tFooter("social_email") },
+                { Icon: MessageCircle, label: tFooter("social_chat") },
+                { Icon: MapPin, label: tFooter("social_location") },
+              ].map(({ Icon, label }, i) => (
                 <a
                   key={i}
                   href="#"
+                  aria-label={label}
                   className="p-2.5 rounded-full bg-white/5 border border-white/10 text-primary-400 hover:bg-primary-600/15 hover:border-primary-500/30 transition-colors"
                 >
-                  <Icon className="w-5 h-5" />
+                  <Icon className="w-5 h-5" aria-hidden="true" />
                 </a>
               ))}
             </div>

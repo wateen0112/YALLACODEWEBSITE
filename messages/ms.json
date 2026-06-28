@@ -142,7 +142,11 @@
     },
     "rights_reserved": "Hak cipta terpelihara.",
     "privacy_policy": "Dasar Privasi",
-    "terms_of_service": "Terma Perkhidmatan"
+    "terms_of_service": "Terma Perkhidmatan",
+    "social_website": "Visit our website",
+    "social_email": "Send us an email",
+    "social_chat": "Chat with us",
+    "social_location": "Find our location"
   },
   "language": {
     "button_aria_label": "Pilih bahasa",

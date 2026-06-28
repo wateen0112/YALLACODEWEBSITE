@@ -54,6 +54,8 @@ export function Navbar() {
                   width={730}
                   height={194}
                   priority
+                  fetchPriority="high"
+                  sizes="(max-width: 768px) 120px, 150px"
                   className="h-7 w-auto md:h-8"
                 />
               </Link>
@@ -99,6 +101,8 @@ export function Navbar() {
                   width={730}
                   height={194}
                   priority
+                  fetchPriority="high"
+                  sizes="(max-width: 768px) 120px, 150px"
                   className="h-7 w-auto md:h-8"
                 />
               </Link>
@@ -143,6 +147,8 @@ export function Navbar() {
                   width={730}
                   height={194}
                   priority
+                  fetchPriority="high"
+                  sizes="100px"
                   className="h-6 w-auto"
                 />
               </Link>

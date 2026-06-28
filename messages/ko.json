@@ -142,7 +142,11 @@
     },
     "rights_reserved": "판권 소유.",
     "privacy_policy": "개인정보처리방침",
-    "terms_of_service": "이용약관"
+    "terms_of_service": "이용약관",
+    "social_website": "Visit our website",
+    "social_email": "Send us an email",
+    "social_chat": "Chat with us",
+    "social_location": "Find our location"
   },
   "language": {
     "button_aria_label": "언어 선택",

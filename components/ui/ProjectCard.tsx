@@ -14,6 +14,7 @@ import {
   Shield,
   type LucideIcon,
 } from "lucide-react";
+import Image from "next/image";
 import { Project } from "@/lib/projects";
 
 const iconMap: Record<string, LucideIcon> = {
@@ -91,10 +92,12 @@ export function ProjectCard({
 
       {/* Background image */}
       <div className="absolute inset-0 z-0 overflow-hidden">
-        <img
+        <Image
           src={project.image}
           alt={translatedTitle}
-          className="object-cover w-full h-full absolute inset-0 transition-transform duration-700 group-hover:scale-110"
+          fill
+          sizes="(max-width: 640px) 90vw, (max-width: 768px) 50vw, 400px"
+          className="object-cover transition-transform duration-700 group-hover:scale-110"
           loading="lazy"
           decoding="async"
         />

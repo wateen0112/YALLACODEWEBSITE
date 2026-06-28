@@ -142,7 +142,11 @@
     },
     "rights_reserved": "Всі права захищено.",
     "privacy_policy": "Політика конфіденційності",
-    "terms_of_service": "Умови обслуговування"
+    "terms_of_service": "Умови обслуговування",
+    "social_website": "Visit our website",
+    "social_email": "Send us an email",
+    "social_chat": "Chat with us",
+    "social_location": "Find our location"
   },
   "language": {
     "button_aria_label": "Вибрати мову",

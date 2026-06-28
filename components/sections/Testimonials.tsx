@@ -161,7 +161,7 @@ export function TestimonialsSection() {
                         {getInitials(name)}
                       </div>
                       <div>
-                        <h4 className="font-bold text-white text-sm">{name}</h4>
+                        <h3 className="font-bold text-white text-sm">{name}</h3>
                         <p className="text-xs text-text-secondary">
                           {t(roleKey)},{" "}
                           {t(companyKey)}
