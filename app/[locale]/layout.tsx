@@ -1,6 +1,6 @@
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
-import { Cairo, Noto_Kufi_Arabic } from 'next/font/google';
+import { Cairo } from 'next/font/google';
 
 import { ThemeProvider } from '@/components/ui/ThemeProvider';
 import { SiteLoadOverlay } from '@/components/ui/SiteLoadOverlay';
@@ -12,17 +12,10 @@ import { ReactNode } from 'react';
 import type { Metadata } from 'next';
 
 const cairo = Cairo({
-  subsets: ['latin'],
+  subsets: ['latin', 'arabic'],
   variable: '--font-cairo',
   display: 'swap',
-  weight: ['200', '300', '400', '500', '600', '700', '800', '900', '1000'],
-});
-
-const notoKufiArabic = Noto_Kufi_Arabic({
-  subsets: ['arabic'],
-  variable: '--font-noto-kufi-arabic',
-  display: 'swap',
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+  weight: ['400', '500', '600', '700', '800', '900'],
 });
 
 export const metadata: Metadata = {
@@ -41,7 +34,7 @@ export default async function LocaleLayout({
   const messages = await getMessages();
   const dir = locale === 'ar' ? 'rtl' : 'ltr';
   return (
-    <html lang={locale} dir={dir} suppressHydrationWarning className={`${cairo.variable} ${notoKufiArabic.variable}`}>
+    <html lang={locale} dir={dir} suppressHydrationWarning className={cairo.variable}>
       <head>
         <link rel="preconnect" href="https://res.cloudinary.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://res.cloudinary.com" />
