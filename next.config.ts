@@ -45,6 +45,15 @@ const nextConfig: NextConfig = {
         ],
       },
       {
+        source: '/og-image.png',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000',
+          },
+        ],
+      },
+      {
         source: '/logos/:path*',
         headers: [
           {
