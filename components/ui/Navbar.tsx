@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 
@@ -27,106 +27,95 @@ export function Navbar() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-      {/* Full-width wrapper — transparent at top, minimal when scrolled */}
-      <div
-        className={`w-full transition-all duration-300 ${
-          isScrolled
-            ? "bg-transparent border-b border-transparent"
-            : "bg-transparent border-b border-transparent"
-        }`}
-      >
+    <header className="fixed top-0 left-0 right-0 z-50">
+      <div className="w-full">
         <div className="container mx-auto px-4 md:px-8">
-          <div className="flex items-center py-3 md:py-4">
+          <div className="flex items-center justify-center py-3 md:py-4">
             {/* At top: full-width spread layout (no pill bg) */}
-            <div
-              className={`hidden md:flex w-full items-center justify-between transition-all duration-300 ${
-                isScrolled
-                  ? "opacity-0 pointer-events-none absolute"
-                  : "opacity-100 relative"
-              }`}
-            >
-              {/* Logo */}
-              <Link href="/" aria-label="YallaCode home" className="shrink-0">
-                <Image
-                  src="/logo.png"
-                  alt="YallaCode"
-                  width={730}
-                  height={194}
-                  priority
-                  className="h-7 w-auto md:h-8"
-                />
-              </Link>
-
-              {/* Links */}
-              <div className="flex items-center gap-1">
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.name}
-                    href={link.href}
-                    className="px-3 py-1.5 text-sm font-medium text-white/80 hover:text-white transition-colors rounded-full hover:bg-white/5"
-                  >
-                    {link.name}
-                  </Link>
-                ))}
-              </div>
-
-              {/* Right side */}
-              <div className="flex items-center gap-2">
-                <Link
-                  href="#contact"
-                  className="text-sm font-bold text-white hover:text-primary-300 transition-colors px-3 py-1.5"
-                >
-                  {t("contact")}
+            {!isScrolled && (
+              <div className="hidden md:flex w-full items-center justify-between">
+                {/* Logo */}
+                <Link href="/" aria-label="YallaCode home" className="shrink-0">
+                  <Image
+                    src="/logo.png"
+                    alt="YallaCode"
+                    width={730}
+                    height={194}
+                    priority
+                    fetchPriority="high"
+                    sizes="(max-width: 768px) 120px, 150px"
+                    className="h-7 md:h-8 w-auto aspect-video object-contain"
+                  />
                 </Link>
-                <LanguageSwitcher />
+
+                {/* Links */}
+                <div className="flex items-center gap-1">
+                  {navLinks.map((link) => (
+                    <Link
+                      key={link.name}
+                      href={link.href}
+                      className="px-3 py-1.5 text-sm font-medium text-white/80 hover:text-white transition-colors rounded-full hover:bg-white/5"
+                    >
+                      {link.name}
+                    </Link>
+                  ))}
+                </div>
+
+                {/* Right side */}
+                <div className="flex items-center gap-2">
+                  <Link
+                    href="#contact"
+                    className="text-sm font-bold text-white hover:text-primary-300 transition-colors px-3 py-1.5"
+                  >
+                    {t("contact")}
+                  </Link>
+                  <LanguageSwitcher />
+                </div>
               </div>
-            </div>
+            )}
 
             {/* Scrolled: centered floating pill */}
-            <nav
-              className={`hidden md:flex mx-auto items-center gap-1 md:gap-2 rounded-full border px-2 py-1.5 shadow-lg transition-all duration-300 ${
-                isScrolled
-                  ? "border-white/10 bg-surface/70 backdrop-blur-2xl opacity-100 translate-y-0 relative"
-                  : "border-transparent bg-transparent backdrop-blur-none opacity-0 -translate-y-2 pointer-events-none absolute"
-              }`}
-            >
-              {/* Logo */}
-              <Link href="/" aria-label="YallaCode home" className="shrink-0 pl-1 pr-1">
-                <Image
-                  src="/logo.png"
-                  alt="YallaCode"
-                  width={730}
-                  height={194}
-                  priority
-                  className="h-7 w-auto md:h-8"
-                />
-              </Link>
-
-              {/* Main links */}
-              <div className="flex items-center gap-1 px-2">
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.name}
-                    href={link.href}
-                    className="px-3 py-1.5 text-sm font-medium text-text-primary/90 hover:text-white transition-colors rounded-full hover:bg-white/5"
-                  >
-                    {link.name}
-                  </Link>
-                ))}
-              </div>
-
-              {/* Right side: contact + language */}
-              <div className="flex items-center gap-2 pl-1 pr-2">
-                <Link
-                  href="#contact"
-                  className="text-sm font-bold text-white hover:text-primary-300 transition-colors px-3 py-1.5"
-                >
-                  {t("contact")}
+            {isScrolled && (
+              <nav className="hidden md:flex mx-auto items-center rounded-full border shadow-lg transition-all duration-300 w-auto max-w-full justify-between gap-2 border-white/10 bg-surface/70 backdrop-blur-2xl px-4 py-1.5">
+                {/* Logo */}
+                <Link href="/" aria-label="YallaCode home" className="shrink-0 pl-1 pr-1">
+                  <Image
+                    src="/logo.png"
+                    alt="YallaCode"
+                    width={730}
+                    height={194}
+                    priority
+                    fetchPriority="high"
+                    sizes="(max-width: 768px) 120px, 150px"
+                    className="h-7 md:h-8 w-auto aspect-video object-contain"
+                  />
                 </Link>
-                <LanguageSwitcher />
-              </div>
-            </nav>
+
+                {/* Main links */}
+                <div className="flex items-center gap-1 px-1">
+                  {navLinks.map((link) => (
+                    <Link
+                      key={link.name}
+                      href={link.href}
+                      className="py-1.5 text-sm font-medium text-text-primary/90 hover:text-white transition-colors rounded-full hover:bg-white/5 px-1.5"
+                    >
+                      {link.name}
+                    </Link>
+                  ))}
+                </div>
+
+                {/* Right side: contact + language */}
+                <div className="flex items-center gap-2 pl-1 pr-2">
+                  <Link
+                    href="#contact"
+                    className="text-sm font-bold text-white hover:text-primary-300 transition-colors px-3 py-1.5"
+                  >
+                    {t("contact")}
+                  </Link>
+                  <LanguageSwitcher />
+                </div>
+              </nav>
+            )}
 
             {/* Mobile: always pill */}
             <nav
@@ -143,7 +132,9 @@ export function Navbar() {
                   width={730}
                   height={194}
                   priority
-                  className="h-6 w-auto"
+                  fetchPriority="high"
+                  sizes="100px"
+                  className="h-6 w-auto aspect-video object-contain"
                 />
               </Link>
               <button
@@ -161,7 +152,7 @@ export function Navbar() {
       {/* Mobile Menu */}
       <AnimatePresence>
         {mobileMenuOpen && (
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
@@ -187,7 +178,7 @@ export function Navbar() {
                 {t("contact")}
               </Link>
             </div>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
     </header>
