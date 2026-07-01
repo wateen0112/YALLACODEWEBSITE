@@ -43,90 +43,79 @@ body {
   overflow-x: hidden;
 }
 
-/* --- Scroll reveal animations (lightweight AOS replacement) --- */
-[data-aos="fade-up"] {
-  opacity: 0;
-  transform: translateY(30px);
-  transition-property: transform, opacity;
+/* --- Scroll reveal animations (CSS-only view-timeline AOS) --- */
+@keyframes aos-fade-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
-[data-aos="fade-up"].aos-animate {
-  opacity: 1;
-  transform: translateY(0);
+@keyframes aos-fade-down {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
-
-[data-aos="fade-down"] {
-  opacity: 0;
-  transform: translateY(-30px);
-  transition-property: transform, opacity;
+@keyframes aos-zoom-in {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
 }
-[data-aos="fade-down"].aos-animate {
-  opacity: 1;
-  transform: translateY(0);
+@keyframes aos-tilt-up {
+  from { opacity: 0; transform: perspective(1000px) rotateX(18deg) translateY(50px); }
+  to { opacity: 1; transform: perspective(1000px) rotateX(0deg) translateY(0); }
 }
-
-[data-aos="zoom-in"] {
-  opacity: 0;
-  transform: scale(0.9);
-  transition-property: transform, opacity;
+@keyframes aos-tilt-left {
+  from { opacity: 0; transform: perspective(1000px) rotateY(-14deg) translateX(-40px); }
+  to { opacity: 1; transform: perspective(1000px) rotateY(0deg) translateX(0); }
 }
-[data-aos="zoom-in"].aos-animate {
-  opacity: 1;
-  transform: scale(1);
+@keyframes aos-tilt-right {
+  from { opacity: 0; transform: perspective(1000px) rotateY(14deg) translateX(40px); }
+  to { opacity: 1; transform: perspective(1000px) rotateY(0deg) translateX(0); }
+}
+@keyframes aos-zoom-tilt {
+  from { opacity: 0; transform: perspective(1000px) scale(0.92) rotateX(10deg); }
+  to { opacity: 1; transform: perspective(1000px) scale(1) rotateX(0deg); }
 }
 
 [data-aos] {
-  transition-duration: 600ms;
-  transition-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
+  animation-duration: 600ms;
+  animation-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
+  animation-fill-mode: both;
+  animation-timeline: view();
+  animation-range: entry 0% cover 20%;
   will-change: transform, opacity;
 }
 
+[data-aos="fade-up"] { animation-name: aos-fade-up; }
+[data-aos="fade-down"] { animation-name: aos-fade-down; }
+[data-aos="zoom-in"] { animation-name: aos-zoom-in; }
+[data-aos="tilt-up"] { animation-name: aos-tilt-up; }
+[data-aos="tilt-left"] { animation-name: aos-tilt-left; }
+[data-aos="tilt-right"] { animation-name: aos-tilt-right; }
+[data-aos="zoom-tilt"] { animation-name: aos-zoom-tilt; }
+
+/* Stagger delays converted to animation-range offsets */
+[data-aos-delay="0"] { animation-range: entry 0% cover 20%; }
+[data-aos-delay="100"] { animation-range: entry 5% cover 25%; }
+[data-aos-delay="200"] { animation-range: entry 10% cover 30%; }
+[data-aos-delay="300"] { animation-range: entry 15% cover 35%; }
+[data-aos-delay="400"] { animation-range: entry 20% cover 40%; }
+[data-aos-delay="500"] { animation-range: entry 25% cover 45%; }
+[data-aos-delay="600"] { animation-range: entry 30% cover 50%; }
+[data-aos-delay="700"] { animation-range: entry 35% cover 55%; }
+[data-aos-delay="800"] { animation-range: entry 40% cover 60%; }
+
 @media (prefers-reduced-motion: reduce) {
   [data-aos] {
-    transition: none !important;
+    animation: none !important;
     opacity: 1 !important;
     transform: none !important;
   }
 }
 
-/* --- AOS custom 3D animations --- */
-[data-aos="tilt-up"] {
-  opacity: 0;
-  transform: perspective(1000px) rotateX(18deg) translateY(50px);
-  transition-property: transform, opacity;
-}
-[data-aos="tilt-up"].aos-animate {
-  opacity: 1;
-  transform: perspective(1000px) rotateX(0deg) translateY(0);
-}
-
-[data-aos="tilt-left"] {
-  opacity: 0;
-  transform: perspective(1000px) rotateY(-14deg) translateX(-40px);
-  transition-property: transform, opacity;
-}
-[data-aos="tilt-left"].aos-animate {
-  opacity: 1;
-  transform: perspective(1000px) rotateY(0deg) translateX(0);
-}
-
-[data-aos="tilt-right"] {
-  opacity: 0;
-  transform: perspective(1000px) rotateY(14deg) translateX(40px);
-  transition-property: transform, opacity;
-}
-[data-aos="tilt-right"].aos-animate {
-  opacity: 1;
-  transform: perspective(1000px) rotateY(0deg) translateX(0);
-}
-
-[data-aos="zoom-tilt"] {
-  opacity: 0;
-  transform: perspective(1000px) scale(0.92) rotateX(10deg);
-  transition-property: transform, opacity;
-}
-[data-aos="zoom-tilt"].aos-animate {
-  opacity: 1;
-  transform: perspective(1000px) scale(1) rotateX(0deg);
+/* Fallback for browsers without scroll-driven animation support */
+@supports not (animation-timeline: view()) {
+  [data-aos] {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
 }
 
 /* --- 3D helpers --- */

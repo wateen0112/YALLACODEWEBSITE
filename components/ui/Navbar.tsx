@@ -56,7 +56,7 @@ export function Navbar() {
                   priority
                   fetchPriority="high"
                   sizes="(max-width: 768px) 120px, 150px"
-                  className="h-7 md:h-8 aspect-video object-contain"
+                  className="h-7 md:h-8 w-auto aspect-video object-contain"
                 />
               </Link>
 
@@ -89,7 +89,7 @@ export function Navbar() {
             <nav
               className={`hidden md:flex mx-auto items-center rounded-full border shadow-lg transition-all duration-300 ${
                 isScrolled
-                  ? "w-1/2 max-w-3xl justify-between gap-1 border-white/10 bg-surface/70 backdrop-blur-2xl px-3 py-1.5 opacity-100 translate-y-0 relative"
+                  ? "w-fit max-w-full justify-between gap-2 border-white/10 bg-surface/70 backdrop-blur-2xl px-4 py-1.5 opacity-100 translate-y-0 relative"
                   : "w-auto gap-1 md:gap-2 border-transparent bg-transparent backdrop-blur-none px-2 py-1.5 opacity-0 -translate-y-2 pointer-events-none absolute"
               }`}
             >
@@ -103,7 +103,7 @@ export function Navbar() {
                   priority
                   fetchPriority="high"
                   sizes="(max-width: 768px) 120px, 150px"
-                  className="h-7 md:h-8 aspect-video object-contain"
+                  className="h-7 md:h-8 w-auto aspect-video object-contain"
                 />
               </Link>
 
@@ -149,7 +149,7 @@ export function Navbar() {
                   priority
                   fetchPriority="high"
                   sizes="100px"
-                  className="h-6 aspect-video object-contain"
+                  className="h-6 w-auto aspect-video object-contain"
                 />
               </Link>
               <button

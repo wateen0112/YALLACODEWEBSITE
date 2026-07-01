@@ -2,7 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { useLocale } from "next-intl";
-import { useRef, useLayoutEffect, useState } from "react";
+import { useRef, useLayoutEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { techStack } from "@/lib/tech-stack";
@@ -13,15 +13,6 @@ if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-function shuffleArray<T>(array: T[]): T[] {
-  const shuffled = [...array];
-  for (let i = shuffled.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-  }
-  return shuffled;
-}
-
 export function TechStackSection() {
   const t = useTranslations("home");
   const locale = useLocale();
@@ -30,7 +21,7 @@ export function TechStackSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
-  const [shuffledTech] = useState(() => shuffleArray(techStack));
+
 
   useLayoutEffect(() => {
     if (!sectionRef.current || !headerRef.current || !gridRef.current) return;
@@ -111,7 +102,7 @@ export function TechStackSection() {
           ref={gridRef}
           className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-6 gap-4 md:gap-5"
         >
-          {shuffledTech.map((tech) => (
+          {techStack.map((tech) => (
             <div
               key={tech.name}
               className="tech-card group relative flex flex-col items-center justify-center gap-3 rounded-2xl border border-white/10 bg-white/[0.03] p-4 md:p-5 backdrop-blur-sm transition-transform transition-opacity transition-colors duration-300 hover:bg-white/[0.08] hover:border-primary-500/30 hover:scale-105 hover:-translate-y-1 cursor-default"

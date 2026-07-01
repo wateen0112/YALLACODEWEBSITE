@@ -4,7 +4,7 @@ import { Cairo } from 'next/font/google';
 
 import { ThemeProvider } from '@/components/ui/ThemeProvider';
 import { SiteLoadOverlay } from '@/components/ui/SiteLoadOverlay';
-import { AOSProvider } from '@/components/ui/AOSProvider';
+
 import { CustomCursor } from '@/components/ui/CustomCursor';
 import { FramerMotionProvider } from '@/components/ui/FramerMotionProvider';
 import { SITE_CONFIG } from '@/lib/site-config';
@@ -167,12 +167,10 @@ export default async function LocaleLayout({
         <NextIntlClientProvider messages={messages}>
           <SiteLoadOverlay>
             <ThemeProvider attribute="class" forcedTheme="dark" defaultTheme="dark" enableSystem={false}>
-              <AOSProvider>
                 <FramerMotionProvider>
                   <CustomCursor />
                   {children}
                 </FramerMotionProvider>
-              </AOSProvider>
             </ThemeProvider>
           </SiteLoadOverlay>
         </NextIntlClientProvider>

@@ -98,7 +98,8 @@ export function ProjectCard({
           fill
           sizes="(max-width: 640px) 90vw, (max-width: 768px) 50vw, 400px"
           className="object-cover transition-transform duration-700 group-hover:scale-110"
-          loading="lazy"
+          priority
+          unoptimized={project.image.startsWith("http")}
           decoding="async"
         />
       </div>

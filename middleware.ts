@@ -1,7 +1,17 @@
+// middleware.ts
 import createMiddleware from 'next-intl/middleware';
 import { NextRequest, NextResponse } from 'next/server';
-import {DEFAULT_LOCALE, SUPPORTED_LOCALES} from '@/lib/locales';
+import { DEFAULT_LOCALE, SUPPORTED_LOCALES } from '@/lib/locales';
 import { ADMIN_SESSION_COOKIE, ADMIN_SESSION_TOKEN } from '@/lib/api-config';
+
+// ─── Suppress console logs in production ───
+if (process.env.NODE_ENV === 'production') {
+  console.log = () => {};
+  console.warn = () => {};
+  console.error = () => {};
+  console.info = () => {};
+  console.debug = () => {};
+}
 
 const intlMiddleware = createMiddleware({
   locales: [...SUPPORTED_LOCALES],
