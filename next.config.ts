@@ -10,6 +10,9 @@ const bundleAnalyzer = withBundleAnalyzer({
 
 const nextConfig: NextConfig = {
   productionBrowserSourceMaps: true,
+  compiler:{
+    removeConsole:true
+  },
   experimental: {
     inlineCss: true,
   },
