@@ -148,6 +148,26 @@
     "social_chat": "Chat with us",
     "social_location": "Find our location"
   },
+  "contact": {
+    "badge": "ЗВ'ЯЖІТЬСЯ З НАМИ",
+    "email_label": "Ел. пошта",
+    "location_label": "Місцезнаходження",
+    "location_value": "Глобально — Віддалено",
+    "form_title": "Надішліть нам повідомлення",
+    "placeholder_name": "Ваше ім'я",
+    "placeholder_email": "Ваша електронна пошта",
+    "placeholder_company": "Компанія (необов'язково)",
+    "placeholder_message": "Розкажіть нам про свій проєкт",
+    "error_name_required": "Ім'я обов'язкове",
+    "error_email_required": "Електронна пошта обов'язкова",
+    "error_email_invalid": "Введіть дійсну електронну пошту",
+    "error_message_required": "Повідомлення обов'язкове",
+    "sending": "Відправлення...",
+    "submit": "Надіслати повідомлення",
+    "success_title": "Повідомлення надіслано!",
+    "success_message": "Дякуємо за звернення. Ми відповімо протягом 24 годин.",
+    "send_another": "Надіслати ще одне повідомлення"
+  },
   "language": {
     "button_aria_label": "Вибрати мову",
     "dialog_title": "Виберіть вашу мову",
@@ -155,5 +175,9 @@
     "search_placeholder": "Пошук мов...",
     "suggested_title": "Рекомендовано для вас",
     "all_languages_title": "Всі мови"
+  },
+  "whatsapp": {
+    "aria_label": "Напишіть нам у WhatsApp",
+    "tooltip": "Напишіть нам"
   }
 }

@@ -148,6 +148,26 @@
     "social_chat": "Chat with us",
     "social_location": "Find our location"
   },
+  "contact": {
+    "badge": "HUBUNGI KAMI",
+    "email_label": "E-mel",
+    "location_label": "Lokasi",
+    "location_value": "Global — Jarak Jauh",
+    "form_title": "Hantar mesej kepada kami",
+    "placeholder_name": "Nama anda",
+    "placeholder_email": "E-mel anda",
+    "placeholder_company": "Syarikat (pilihan)",
+    "placeholder_message": "Beritahu kami tentang projek anda",
+    "error_name_required": "Nama diperlukan",
+    "error_email_required": "E-mel diperlukan",
+    "error_email_invalid": "Sila masukkan e-mel yang sah",
+    "error_message_required": "Mesej diperlukan",
+    "sending": "Menghantar...",
+    "submit": "Hantar Mesej",
+    "success_title": "Mesej Dihantar!",
+    "success_message": "Terima kasih kerana menghubungi kami. Kami akan menghubungi anda dalam tempoh 24 jam.",
+    "send_another": "Hantar mesej lain"
+  },
   "language": {
     "button_aria_label": "Pilih bahasa",
     "dialog_title": "Pilih Bahasa Anda",
@@ -155,5 +175,9 @@
     "search_placeholder": "Cari bahasa...",
     "suggested_title": "Dicadangkan Untuk Anda",
     "all_languages_title": "Semua Bahasa"
+  },
+  "whatsapp": {
+    "aria_label": "Berbual dengan kami di WhatsApp",
+    "tooltip": "Berbual dengan kami"
   }
 }

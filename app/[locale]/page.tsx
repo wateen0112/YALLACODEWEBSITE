@@ -2,6 +2,7 @@ import dynamic from "next/dynamic";
 
 import { Navbar } from "@/components/ui/Navbar";
 import { Footer } from "@/components/ui/Footer";
+import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { Hero } from "@/components/sections/Hero";
 import { StackSection } from "@/components/ui/StackSection";
 
@@ -98,6 +99,7 @@ export default function HomePage() {
       </main>
 
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 }

@@ -148,6 +148,26 @@
     "social_chat": "Chat with us",
     "social_location": "Find our location"
   },
+  "contact": {
+    "badge": "联系我们",
+    "email_label": "邮箱",
+    "location_label": "位置",
+    "location_value": "全球 — 远程优先",
+    "form_title": "给我们留言",
+    "placeholder_name": "您的姓名",
+    "placeholder_email": "您的邮箱",
+    "placeholder_company": "公司（选填）",
+    "placeholder_message": "请告诉我们您的项目",
+    "error_name_required": "姓名是必填项",
+    "error_email_required": "邮箱是必填项",
+    "error_email_invalid": "请输入有效的邮箱地址",
+    "error_message_required": "留言是必填项",
+    "sending": "正在发送...",
+    "submit": "发送信息",
+    "success_title": "消息已发送！",
+    "success_message": "感谢您的联系。我们将在 24 小时内回复您。",
+    "send_another": "再发送一条消息"
+  },
   "language": {
     "button_aria_label": "选择语言",
     "dialog_title": "选择您的语言",
@@ -155,5 +175,9 @@
     "search_placeholder": "搜索语言...",
     "suggested_title": "为您推荐",
     "all_languages_title": "所有语言"
+  },
+  "whatsapp": {
+    "aria_label": "通过 WhatsApp 与我们聊天",
+    "tooltip": "与我们聊天"
   }
 }

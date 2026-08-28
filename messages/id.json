@@ -148,6 +148,26 @@
     "social_chat": "Chat with us",
     "social_location": "Find our location"
   },
+  "contact": {
+    "badge": "HUBUNGI KAMI",
+    "email_label": "Email",
+    "location_label": "Lokasi",
+    "location_value": "Global — Remote First",
+    "form_title": "Kirim pesan kepada kami",
+    "placeholder_name": "Nama Anda",
+    "placeholder_email": "Email Anda",
+    "placeholder_company": "Perusahaan (opsional)",
+    "placeholder_message": "Ceritakan tentang proyek Anda",
+    "error_name_required": "Nama wajib diisi",
+    "error_email_required": "Email wajib diisi",
+    "error_email_invalid": "Masukkan email yang valid",
+    "error_message_required": "Pesan wajib diisi",
+    "sending": "Mengirim...",
+    "submit": "Kirim Pesan",
+    "success_title": "Pesan Terkirim!",
+    "success_message": "Terima kasih telah menghubungi kami. Kami akan kembali kepada Anda dalam 24 jam.",
+    "send_another": "Kirim pesan lain"
+  },
   "language": {
     "button_aria_label": "Pilih bahasa",
     "dialog_title": "Pilih Bahasa Anda",
@@ -155,5 +175,9 @@
     "search_placeholder": "Cari bahasa...",
     "suggested_title": "Disarankan Untuk Anda",
     "all_languages_title": "Semua Bahasa"
+  },
+  "whatsapp": {
+    "aria_label": "Ngobrol dengan kami di WhatsApp",
+    "tooltip": "Ngobrol dengan kami"
   }
 }

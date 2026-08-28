@@ -148,6 +148,26 @@
     "social_chat": "Chat with us",
     "social_location": "Find our location"
   },
+  "contact": {
+    "badge": "संपर्क करें",
+    "email_label": "ईमेल",
+    "location_label": "स्थान",
+    "location_value": "वैश्विक — रिमोट प्रथम",
+    "form_title": "हमें संदेश भेजें",
+    "placeholder_name": "आपका नाम",
+    "placeholder_email": "आपका ईमेल",
+    "placeholder_company": "कंपनी (वैकल्पिक)",
+    "placeholder_message": "हमें अपने प्रोजेक्ट के बारे में बताएं",
+    "error_name_required": "नाम आवश्यक है",
+    "error_email_required": "ईमेल आवश्यक है",
+    "error_email_invalid": "कृपया वैध ईमेल दर्ज करें",
+    "error_message_required": "संदेश आवश्यक है",
+    "sending": "भेजा जा रहा है...",
+    "submit": "संदेश भेजें",
+    "success_title": "संदेश भेज दिया गया!",
+    "success_message": "संपर्क करने के लिए धन्यवाद। हम 24 घंटे के भीतर आपसे संपर्क करेंगे।",
+    "send_another": "एक और संदेश भेजें"
+  },
   "language": {
     "button_aria_label": "भाषा चुनें",
     "dialog_title": "अपनी भाषा चुनें",
@@ -155,5 +175,9 @@
     "search_placeholder": "भाषाओं की खोज करें...",
     "suggested_title": "आपके लिए सुझाव",
     "all_languages_title": "सभी भाषाएं"
+  },
+  "whatsapp": {
+    "aria_label": "WhatsApp पर हमसे चैट करें",
+    "tooltip": "हमसे चैट करें"
   }
 }

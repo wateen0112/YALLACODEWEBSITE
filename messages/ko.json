@@ -148,6 +148,26 @@
     "social_chat": "Chat with us",
     "social_location": "Find our location"
   },
+  "contact": {
+    "badge": "문의하기",
+    "email_label": "이메일",
+    "location_label": "위치",
+    "location_value": "글로벌 — 원격 우선",
+    "form_title": "메시지를 보내주세요",
+    "placeholder_name": "이름",
+    "placeholder_email": "이메일",
+    "placeholder_company": "회사 (선택사항)",
+    "placeholder_message": "프로젝트에 대해 알려주세요",
+    "error_name_required": "이름은 필수입니다",
+    "error_email_required": "이메일은 필수입니다",
+    "error_email_invalid": "유효한 이메일을 입력해주세요",
+    "error_message_required": "메시지는 필수입니다",
+    "sending": "전송 중...",
+    "submit": "메시지 보내기",
+    "success_title": "메시지가 전송되었습니다!",
+    "success_message": "연락해 주셔서 감사합니다. 24시간 이내에 답변드리겠습니다.",
+    "send_another": "다른 메시지 보내기"
+  },
   "language": {
     "button_aria_label": "언어 선택",
     "dialog_title": "언어를 선택하세요",
@@ -155,5 +175,9 @@
     "search_placeholder": "언어 검색...",
     "suggested_title": "추천 언어",
     "all_languages_title": "모든 언어"
+  },
+  "whatsapp": {
+    "aria_label": "WhatsApp에서 채팅하기",
+    "tooltip": "채팅하기"
   }
 }

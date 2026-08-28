@@ -301,5 +301,9 @@
     "search_placeholder": "Search languages...",
     "suggested_title": "Suggested For You",
     "all_languages_title": "All Languages"
+  },
+  "whatsapp": {
+    "aria_label": "Chat with us on WhatsApp",
+    "tooltip": "Chat with us"
   }
 }

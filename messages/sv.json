@@ -148,6 +148,26 @@
     "social_chat": "Chat with us",
     "social_location": "Find our location"
   },
+  "contact": {
+    "badge": "KONTAKTA OSS",
+    "email_label": "E-post",
+    "location_label": "Plats",
+    "location_value": "Globalt — Distans",
+    "form_title": "Skicka oss ett meddelande",
+    "placeholder_name": "Ditt namn",
+    "placeholder_email": "Din e-post",
+    "placeholder_company": "Företag (valfritt)",
+    "placeholder_message": "Berätta om ditt projekt",
+    "error_name_required": "Namn krävs",
+    "error_email_required": "E-post krävs",
+    "error_email_invalid": "Ange en giltig e-postadress",
+    "error_message_required": "Meddelande krävs",
+    "sending": "Skickar...",
+    "submit": "Skicka meddelande",
+    "success_title": "Meddelande skickat!",
+    "success_message": "Tack för att du kontaktade oss. Vi återkommer inom 24 timmar.",
+    "send_another": "Skicka ett nytt meddelande"
+  },
   "language": {
     "button_aria_label": "Välj språk",
     "dialog_title": "Välj ditt språk",
@@ -155,5 +175,9 @@
     "search_placeholder": "Sök språk...",
     "suggested_title": "Föreslaget för dig",
     "all_languages_title": "Alla språk"
+  },
+  "whatsapp": {
+    "aria_label": "Chatta med oss på WhatsApp",
+    "tooltip": "Chatta med oss"
   }
 }

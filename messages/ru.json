@@ -148,6 +148,26 @@
     "social_chat": "Chat with us",
     "social_location": "Find our location"
   },
+  "contact": {
+    "badge": "СВЯЖИТЕСЬ С НАМИ",
+    "email_label": "Эл. почта",
+    "location_label": "Местоположение",
+    "location_value": "Глобально — Удалённо",
+    "form_title": "Отправьте нам сообщение",
+    "placeholder_name": "Ваше имя",
+    "placeholder_email": "Ваш email",
+    "placeholder_company": "Компания (необязательно)",
+    "placeholder_message": "Расскажите о вашем проекте",
+    "error_name_required": "Имя обязательно",
+    "error_email_required": "Email обязателен",
+    "error_email_invalid": "Введите корректный email",
+    "error_message_required": "Сообщение обязательно",
+    "sending": "Отправка...",
+    "submit": "Отправить сообщение",
+    "success_title": "Сообщение отправлено!",
+    "success_message": "Спасибо за обращение. Мы ответим в течение 24 часов.",
+    "send_another": "Отправить ещё одно сообщение"
+  },
   "language": {
     "button_aria_label": "Выбрать язык",
     "dialog_title": "Выберите язык",
@@ -155,5 +175,9 @@
     "search_placeholder": "Поиск языков...",
     "suggested_title": "Рекомендуем вам",
     "all_languages_title": "Все языки"
+  },
+  "whatsapp": {
+    "aria_label": "Напишите нам в WhatsApp",
+    "tooltip": "Напишите нам"
   }
 }

@@ -148,6 +148,26 @@
     "social_chat": "Chat with us",
     "social_location": "Find our location"
   },
+  "contact": {
+    "badge": "FALE CONOSCO",
+    "email_label": "E-mail",
+    "location_label": "Localização",
+    "location_value": "Global — Remoto",
+    "form_title": "Envie-nos uma mensagem",
+    "placeholder_name": "Seu nome",
+    "placeholder_email": "Seu e-mail",
+    "placeholder_company": "Empresa (opcional)",
+    "placeholder_message": "Conte-nos sobre o seu projeto",
+    "error_name_required": "O nome é obrigatório",
+    "error_email_required": "O e-mail é obrigatório",
+    "error_email_invalid": "Insira um e-mail válido",
+    "error_message_required": "A mensagem é obrigatória",
+    "sending": "Enviando...",
+    "submit": "Enviar mensagem",
+    "success_title": "Mensagem enviada!",
+    "success_message": "Obrigado pelo contato. Responderemos em até 24 horas.",
+    "send_another": "Enviar outra mensagem"
+  },
   "language": {
     "button_aria_label": "Selecionar idioma",
     "dialog_title": "Selecione Seu Idioma",
@@ -155,5 +175,9 @@
     "search_placeholder": "Pesquisar idiomas...",
     "suggested_title": "Sugerido Para Você",
     "all_languages_title": "Todos os Idiomas"
+  },
+  "whatsapp": {
+    "aria_label": "Converse conosco no WhatsApp",
+    "tooltip": "Converse conosco"
   }
 }

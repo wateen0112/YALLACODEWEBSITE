@@ -148,6 +148,26 @@
     "social_chat": "Chat with us",
     "social_location": "Find our location"
   },
+  "contact": {
+    "badge": "お問い合わせ",
+    "email_label": "メール",
+    "location_label": "所在地",
+    "location_value": "グローバル — リモート優先",
+    "form_title": "メッセージを送る",
+    "placeholder_name": "お名前",
+    "placeholder_email": "メールアドレス",
+    "placeholder_company": "会社名（任意）",
+    "placeholder_message": "プロジェクトについて教えてください",
+    "error_name_required": "名前は必須です",
+    "error_email_required": "メールアドレスは必須です",
+    "error_email_invalid": "有効なメールアドレスを入力してください",
+    "error_message_required": "メッセージは必須です",
+    "sending": "送信中...",
+    "submit": "メッセージを送信",
+    "success_title": "送信しました！",
+    "success_message": "お問い合わせありがとうございます。24時間以内にご連絡いたします。",
+    "send_another": "別のメッセージを送る"
+  },
   "language": {
     "button_aria_label": "言語を選択",
     "dialog_title": "言語を選択してください",
@@ -155,5 +175,9 @@
     "search_placeholder": "言語を検索...",
     "suggested_title": "おすすめ",
     "all_languages_title": "すべての言語"
+  },
+  "whatsapp": {
+    "aria_label": "WhatsAppでチャットする",
+    "tooltip": "チャットする"
   }
 }

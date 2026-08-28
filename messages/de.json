@@ -148,6 +148,26 @@
     "social_chat": "Chat with us",
     "social_location": "Find our location"
   },
+  "contact": {
+    "badge": "NEHMEN SIE KONTAKT AUF",
+    "email_label": "E-Mail",
+    "location_label": "Standort",
+    "location_value": "Global — Remote zuerst",
+    "form_title": "Senden Sie uns eine Nachricht",
+    "placeholder_name": "Ihr Name",
+    "placeholder_email": "Ihre E-Mail",
+    "placeholder_company": "Unternehmen (optional)",
+    "placeholder_message": "Erzählen Sie uns von Ihrem Projekt",
+    "error_name_required": "Name ist erforderlich",
+    "error_email_required": "E-Mail ist erforderlich",
+    "error_email_invalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+    "error_message_required": "Nachricht ist erforderlich",
+    "sending": "Wird gesendet...",
+    "submit": "Nachricht senden",
+    "success_title": "Nachricht gesendet!",
+    "success_message": "Danke für Ihre Kontaktaufnahme. Wir melden uns innerhalb von 24 Stunden.",
+    "send_another": "Weitere Nachricht senden"
+  },
   "language": {
     "button_aria_label": "Sprache auswählen",
     "dialog_title": "Wählen Sie Ihre Sprache",
@@ -155,5 +175,9 @@
     "search_placeholder": "Sprachen suchen...",
     "suggested_title": "Für Sie empfohlen",
     "all_languages_title": "Alle Sprachen"
+  },
+  "whatsapp": {
+    "aria_label": "Chatten Sie mit uns auf WhatsApp",
+    "tooltip": "Chatten Sie mit uns"
   }
 }

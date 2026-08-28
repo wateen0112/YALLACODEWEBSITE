@@ -148,6 +148,26 @@
     "social_chat": "Chat with us",
     "social_location": "Find our location"
   },
+  "contact": {
+    "badge": "NEEM CONTACT OP",
+    "email_label": "E-mail",
+    "location_label": "Locatie",
+    "location_value": "Wereldwijd — Remote",
+    "form_title": "Stuur ons een bericht",
+    "placeholder_name": "Uw naam",
+    "placeholder_email": "Uw e-mail",
+    "placeholder_company": "Bedrijf (optioneel)",
+    "placeholder_message": "Vertel ons over uw project",
+    "error_name_required": "Naam is verplicht",
+    "error_email_required": "E-mail is verplicht",
+    "error_email_invalid": "Voer een geldig e-mailadres in",
+    "error_message_required": "Bericht is verplicht",
+    "sending": "Verzenden...",
+    "submit": "Bericht versturen",
+    "success_title": "Bericht verzonden!",
+    "success_message": "Bedankt voor uw bericht. We nemen binnen 24 uur contact met u op.",
+    "send_another": "Nog een bericht sturen"
+  },
   "language": {
     "button_aria_label": "Selecteer taal",
     "dialog_title": "Selecteer Uw Taal",
@@ -155,5 +175,9 @@
     "search_placeholder": "Zoek talen...",
     "suggested_title": "Aanbevolen Voor U",
     "all_languages_title": "Alle Talen"
+  },
+  "whatsapp": {
+    "aria_label": "Chat met ons op WhatsApp",
+    "tooltip": "Chat met ons"
   }
 }

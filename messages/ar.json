@@ -274,6 +274,26 @@
     "social_chat": "Chat with us",
     "social_location": "Find our location"
   },
+  "contact": {
+    "badge": "تواصل معنا",
+    "email_label": "البريد الإلكتروني",
+    "location_label": "الموقع",
+    "location_value": "عالمي — عمل عن بُعد أولًا",
+    "form_title": "أرسل لنا رسالة",
+    "placeholder_name": "اسمك",
+    "placeholder_email": "بريدك الإلكتروني",
+    "placeholder_company": "الشركة (اختياري)",
+    "placeholder_message": "أخبرنا عن مشروعك",
+    "error_name_required": "الاسم مطلوب",
+    "error_email_required": "البريد الإلكتروني مطلوب",
+    "error_email_invalid": "يرجى إدخال بريد إلكتروني صحيح",
+    "error_message_required": "الرسالة مطلوبة",
+    "sending": "جارٍ الإرسال...",
+    "submit": "إرسال الرسالة",
+    "success_title": "تم إرسال الرسالة!",
+    "success_message": "شكرًا لتواصلك معنا. سنرد عليك خلال 24 ساعة.",
+    "send_another": "إرسال رسالة أخرى"
+  },
   "language": {
     "button_aria_label": "اختر اللغة",
     "dialog_title": "اختر لغتك",
@@ -281,5 +301,9 @@
     "search_placeholder": "ابحث عن اللغات...",
     "suggested_title": "مقترح لك",
     "all_languages_title": "كل اللغات"
+  },
+  "whatsapp": {
+    "aria_label": "تحدث معنا عبر واتساب",
+    "tooltip": "تحدث معنا"
   }
 }

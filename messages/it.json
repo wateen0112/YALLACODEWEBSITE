@@ -148,6 +148,26 @@
     "social_chat": "Chat with us",
     "social_location": "Find our location"
   },
+  "contact": {
+    "badge": "CONTATTACI",
+    "email_label": "Email",
+    "location_label": "Posizione",
+    "location_value": "Globale — Remote first",
+    "form_title": "Inviaci un messaggio",
+    "placeholder_name": "Il tuo nome",
+    "placeholder_email": "La tua email",
+    "placeholder_company": "Azienda (facoltativo)",
+    "placeholder_message": "Parlaci del tuo progetto",
+    "error_name_required": "Il nome è obbligatorio",
+    "error_email_required": "L'email è obbligatoria",
+    "error_email_invalid": "Inserisci un'email valida",
+    "error_message_required": "Il messaggio è obbligatorio",
+    "sending": "Invio...",
+    "submit": "Invia messaggio",
+    "success_title": "Messaggio inviato!",
+    "success_message": "Grazie per averci contattato. Ti risponderemo entro 24 ore.",
+    "send_another": "Invia un altro messaggio"
+  },
   "language": {
     "button_aria_label": "Seleziona la lingua",
     "dialog_title": "Seleziona la tua lingua",
@@ -155,5 +175,9 @@
     "search_placeholder": "Cerca lingue...",
     "suggested_title": "Consigliate per te",
     "all_languages_title": "Tutte le lingue"
+  },
+  "whatsapp": {
+    "aria_label": "Chatta con noi su WhatsApp",
+    "tooltip": "Chatta con noi"
   }
 }

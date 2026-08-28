@@ -148,6 +148,26 @@
     "social_chat": "Chat with us",
     "social_location": "Find our location"
   },
+  "contact": {
+    "badge": "OTA YHTEYTTÄ",
+    "email_label": "Sähköposti",
+    "location_label": "Sijainti",
+    "location_value": "Maailmanlaajuinen — Etätyö",
+    "form_title": "Lähetä meille viesti",
+    "placeholder_name": "Nimesi",
+    "placeholder_email": "Sähköpostisi",
+    "placeholder_company": "Yritys (valinnainen)",
+    "placeholder_message": "Kerro meille projektistasi",
+    "error_name_required": "Nimi on pakollinen",
+    "error_email_required": "Sähköposti on pakollinen",
+    "error_email_invalid": "Anna kelvollinen sähköpostiosoite",
+    "error_message_required": "Viesti on pakollinen",
+    "sending": "Lähetetään...",
+    "submit": "Lähetä viesti",
+    "success_title": "Viesti lähetetty!",
+    "success_message": "Kiitos yhteydenotostasi. Vastaamme sinulle 24 tunnin kuluessa.",
+    "send_another": "Lähetä toinen viesti"
+  },
   "language": {
     "button_aria_label": "Valitse kieli",
     "dialog_title": "Valitse kielesi",
@@ -155,5 +175,9 @@
     "search_placeholder": "Etsi kieliä...",
     "suggested_title": "Suositellaan sinulle",
     "all_languages_title": "Kaikki kielet"
+  },
+  "whatsapp": {
+    "aria_label": "Keskustele kanssamme WhatsAppissa",
+    "tooltip": "Keskustele kanssamme"
   }
 }

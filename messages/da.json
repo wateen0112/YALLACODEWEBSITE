@@ -148,6 +148,26 @@
     "social_chat": "Chat with us",
     "social_location": "Find our location"
   },
+  "contact": {
+    "badge": "KOM I KONTAKT",
+    "email_label": "E-mail",
+    "location_label": "Beliggenhed",
+    "location_value": "Globalt — Fjernarbejde",
+    "form_title": "Send os en besked",
+    "placeholder_name": "Dit navn",
+    "placeholder_email": "Din e-mail",
+    "placeholder_company": "Virksomhed (valgfrit)",
+    "placeholder_message": "Fortæl os om dit projekt",
+    "error_name_required": "Navn er påkrævet",
+    "error_email_required": "E-mail er påkrævet",
+    "error_email_invalid": "Indtast en gyldig e-mail",
+    "error_message_required": "Besked er påkrævet",
+    "sending": "Sender...",
+    "submit": "Send besked",
+    "success_title": "Besked sendt!",
+    "success_message": "Tak for din henvendelse. Vi vender tilbage inden for 24 timer.",
+    "send_another": "Send endnu en besked"
+  },
   "language": {
     "button_aria_label": "Vælg sprog",
     "dialog_title": "Vælg dit sprog",
@@ -155,5 +175,9 @@
     "search_placeholder": "Søg efter sprog...",
     "suggested_title": "Foreslået Til Dig",
     "all_languages_title": "Alle Sprog"
+  },
+  "whatsapp": {
+    "aria_label": "Chat med os på WhatsApp",
+    "tooltip": "Chat med os"
   }
 }

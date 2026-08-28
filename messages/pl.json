@@ -148,6 +148,26 @@
     "social_chat": "Chat with us",
     "social_location": "Find our location"
   },
+  "contact": {
+    "badge": "SKONTAKTUJ SIĘ Z NAMI",
+    "email_label": "E-mail",
+    "location_label": "Lokalizacja",
+    "location_value": "Globalnie — Zdalnie",
+    "form_title": "Wyślij do nas wiadomość",
+    "placeholder_name": "Twoje imię",
+    "placeholder_email": "Twój e-mail",
+    "placeholder_company": "Firma (opcjonalnie)",
+    "placeholder_message": "Opowiedz nam o swoim projekcie",
+    "error_name_required": "Imię jest wymagane",
+    "error_email_required": "E-mail jest wymagany",
+    "error_email_invalid": "Podaj prawidłowy adres e-mail",
+    "error_message_required": "Wiadomość jest wymagana",
+    "sending": "Wysyłanie...",
+    "submit": "Wyślij wiadomość",
+    "success_title": "Wiadomość wysłana!",
+    "success_message": "Dziękujemy za kontakt. Odpowiemy w ciągu 24 godzin.",
+    "send_another": "Wyślij kolejną wiadomość"
+  },
   "language": {
     "button_aria_label": "Wybierz język",
     "dialog_title": "Wybierz swój język",
@@ -155,5 +175,9 @@
     "search_placeholder": "Szukaj języków...",
     "suggested_title": "Proponowane dla Ciebie",
     "all_languages_title": "Wszystkie języki"
+  },
+  "whatsapp": {
+    "aria_label": "Porozmawiaj z nami na WhatsApp",
+    "tooltip": "Porozmawiaj z nami"
   }
 }

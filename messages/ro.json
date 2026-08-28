@@ -148,6 +148,26 @@
     "social_chat": "Chat with us",
     "social_location": "Find our location"
   },
+  "contact": {
+    "badge": "CONTACTEAZĂ-NE",
+    "email_label": "E-mail",
+    "location_label": "Locație",
+    "location_value": "Global — Remote",
+    "form_title": "Trimite-ne un mesaj",
+    "placeholder_name": "Numele tău",
+    "placeholder_email": "E-mailul tău",
+    "placeholder_company": "Companie (opțional)",
+    "placeholder_message": "Spune-ne despre proiectul tău",
+    "error_name_required": "Numele este obligatoriu",
+    "error_email_required": "E-mailul este obligatoriu",
+    "error_email_invalid": "Te rugăm să introduci un e-mail valid",
+    "error_message_required": "Mesajul este obligatoriu",
+    "sending": "Se trimite...",
+    "submit": "Trimite mesajul",
+    "success_title": "Mesaj trimis!",
+    "success_message": "Mulțumim că ne-ai contactat. Îți vom răspunde în 24 de ore.",
+    "send_another": "Trimite alt mesaj"
+  },
   "language": {
     "button_aria_label": "Selectează limba",
     "dialog_title": "Selectează Limba Ta",
@@ -155,5 +175,9 @@
     "search_placeholder": "Caută limbi...",
     "suggested_title": "Sugerat Pentru Tine",
     "all_languages_title": "Toate Limbile"
+  },
+  "whatsapp": {
+    "aria_label": "Discută cu noi pe WhatsApp",
+    "tooltip": "Discută cu noi"
   }
 }

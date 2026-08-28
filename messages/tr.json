@@ -148,6 +148,26 @@
     "social_chat": "Chat with us",
     "social_location": "Find our location"
   },
+  "contact": {
+    "badge": "BİZE ULAŞIN",
+    "email_label": "E-posta",
+    "location_label": "Konum",
+    "location_value": "Küresel — Uzaktan Öncelikli",
+    "form_title": "Bize mesaj gönderin",
+    "placeholder_name": "Adınız",
+    "placeholder_email": "E-postanız",
+    "placeholder_company": "Şirket (isteğe bağlı)",
+    "placeholder_message": "Projenizden bahsedin",
+    "error_name_required": "Ad zorunludur",
+    "error_email_required": "E-posta zorunludur",
+    "error_email_invalid": "Lütfen geçerli bir e-posta girin",
+    "error_message_required": "Mesaj zorunludur",
+    "sending": "Gönderiliyor...",
+    "submit": "Mesaj Gönder",
+    "success_title": "Mesaj Gönderildi!",
+    "success_message": "Bize ulaştığınız için teşekkürler. 24 saat içinde size dönüş yapacağız.",
+    "send_another": "Başka bir mesaj gönder"
+  },
   "language": {
     "button_aria_label": "Dil seç",
     "dialog_title": "Dil Seçin",
@@ -155,5 +175,9 @@
     "search_placeholder": "Dillerde ara...",
     "suggested_title": "Sizin İçin Önerilenler",
     "all_languages_title": "Tüm Diller"
+  },
+  "whatsapp": {
+    "aria_label": "WhatsApp'ta bizimle sohbet edin",
+    "tooltip": "Bizimle sohbet edin"
   }
 }

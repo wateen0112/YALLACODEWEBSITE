@@ -148,6 +148,26 @@
     "social_chat": "Chat with us",
     "social_location": "Find our location"
   },
+  "contact": {
+    "badge": "ΕΠΙΚΟΙΝΩΝΙΑ",
+    "email_label": "Email",
+    "location_label": "Τοποθεσία",
+    "location_value": "Παγκόσμια — Απομακρυσμένα",
+    "form_title": "Στείλτε μας μήνυμα",
+    "placeholder_name": "Το όνομά σας",
+    "placeholder_email": "Το email σας",
+    "placeholder_company": "Εταιρεία (προαιρετικό)",
+    "placeholder_message": "Πείτε μας για το έργο σας",
+    "error_name_required": "Το όνομα είναι υποχρεωτικό",
+    "error_email_required": "Το email είναι υποχρεωτικό",
+    "error_email_invalid": "Παρακαλώ εισάγετε έγκυρο email",
+    "error_message_required": "Το μήνυμα είναι υποχρεωτικό",
+    "sending": "Αποστολή...",
+    "submit": "Αποστολή μηνύματος",
+    "success_title": "Το μήνυμα στάλθηκε!",
+    "success_message": "Ευχαριστούμε για την επικοινωνία. Θα σας απαντήσουμε εντός 24 ωρών.",
+    "send_another": "Στείλτε άλλο μήνυμα"
+  },
   "language": {
     "button_aria_label": "Επιλογή γλώσσας",
     "dialog_title": "Επιλέξτε τη Γλώσσα σας",
@@ -155,5 +175,9 @@
     "search_placeholder": "Αναζήτηση γλωσσών...",
     "suggested_title": "Προτεινόμενα για Εσάς",
     "all_languages_title": "Όλες οι Γλώσσες"
+  },
+  "whatsapp": {
+    "aria_label": "Συνομιλήστε μαζί μας στο WhatsApp",
+    "tooltip": "Συνομιλήστε μαζί μας"
   }
 }
