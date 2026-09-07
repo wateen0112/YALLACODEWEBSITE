@@ -87,7 +87,7 @@ export function StatsSection() {
             <h2
               data-aos="fade-up"
               data-aos-delay="100"
-              className="text-4xl md:text-6xl font-bold text-white mb-6"
+              className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight"
             >
               {t("trust_title")}
             </h2>

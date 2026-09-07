@@ -17,7 +17,7 @@ export function FAQSection() {
         <div className="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-16">
           {/* Left header */}
           <div data-aos="fade-up">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
               {t("faq_title")}
             </h2>
             <p className="text-text-secondary text-lg mb-6">

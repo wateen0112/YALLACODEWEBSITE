@@ -159,7 +159,7 @@ export function ProcessSection() {
               scale: 1,
             },
             {
-              color: "#A78BFA",
+              color: "#A78BVA",
               filter: "drop-shadow(0 0 10px rgba(167,139,250,0.6))",
               scale: 1.12,
               duration: activePeak - activeStart,
@@ -224,14 +224,14 @@ export function ProcessSection() {
     <section
       id="process"
       ref={sectionRef}
-      className="py-24 relative h-[100vh] overflow-y-scroll scrollbar-hide min-h-screen h-[260vh]"
+      className="py-16 pt-[300px] relative overflow-hidden"
     >
-      <div className="absolute bottom-0 right-0 h-[500px] w-[500px] bg-primary-600/10 rounded-full blur-[150px]" />
+      <div className="fixed bottom-0 right-0      h-[500px] w-[500px] bg-primary-600/10 rounded-full blur-[150px]" />
 
       <div className="container mx-auto px-4 md:px-8 relative z-10">
         <div ref={headerRef} className="max-w-3xl ">
-         
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">
+
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
             {t("process_title")}
           </h2>
         </div>

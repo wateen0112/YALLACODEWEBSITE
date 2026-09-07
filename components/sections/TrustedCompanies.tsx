@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { Handshake } from "lucide-react";
 
 const companies = [
@@ -23,7 +23,7 @@ const companies = [
   { name: "Azure", src: "/logos/Azure.png" },
 ];
 
-const doubled = [...companies, ...companies];
+const tripled = [...companies, ...companies, ...companies];
 
 function LogoCard({ company }: { company: typeof companies[0] }) {
   return (
@@ -48,27 +48,55 @@ function LogoCard({ company }: { company: typeof companies[0] }) {
 
 export function TrustedCompanies() {
   const t = useTranslations("home");
+  const locale = useLocale();
+  const isRtl = locale === "ar";
+
+  // For RTL, we need to reverse the animation direction
+  // The key insight: for RTL, we want the track to move left (negative X) just like LTR
+  // But we also need to reverse the order of items so they scroll correctly
+  // Actually, for a seamless loop in RTL:
+  // - LTR: items move right to left (translateX goes 0 -> -1/3)
+  // - RTL: items move left to right (translateX goes 0 -> +1/3)
+
+  const animationClass = isRtl ? "trusted-track-rtl" : "trusted-track";
+  const reverseAnimationClass = isRtl ? "trusted-track-reverse-rtl" : "trusted-track-reverse";
 
   return (
-    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden py-24">
+    <section className="relative py-24 overflow-hidden">
       {/* Inline keyframes for the infinite carousel */}
       <style>{`
         @keyframes trusted-scroll {
           0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
+          100% { transform: translateX(-33.3333%); }
         }
         @keyframes trusted-scroll-reverse {
-          0% { transform: translateX(-50%); }
+          0% { transform: translateX(-33.3333%); }
+          100% { transform: translateX(0); }
+        }
+        @keyframes trusted-scroll-rtl {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(33.3333%); }
+        }
+        @keyframes trusted-scroll-reverse-rtl {
+          0% { transform: translateX(33.3333%); }
           100% { transform: translateX(0); }
         }
         .trusted-track {
-          animation: trusted-scroll 40s linear infinite;
+          animation: trusted-scroll 60s linear infinite;
         }
         .trusted-track-reverse {
-          animation: trusted-scroll-reverse 45s linear infinite;
+          animation: trusted-scroll-reverse 65s linear infinite;
+        }
+        .trusted-track-rtl {
+          animation: trusted-scroll-rtl 60s linear infinite;
+        }
+        .trusted-track-reverse-rtl {
+          animation: trusted-scroll-reverse-rtl 65s linear infinite;
         }
         .trusted-track:hover,
-        .trusted-track-reverse:hover {
+        .trusted-track-reverse:hover,
+        .trusted-track-rtl:hover,
+        .trusted-track-reverse-rtl:hover {
           animation-play-state: paused;
         }
       `}</style>
@@ -78,7 +106,7 @@ export function TrustedCompanies() {
 
       <div className="container mx-auto px-4 md:px-8 relative z-10">
         {/* Section header */}
-        <div className="text-start mx-auto mb-16 md:mb-20">
+        <div className={`mb-16 md:mb-20 ${isRtl ? "rtl:text-right" : "text-left"}`}>
           <div
             data-aos="fade-down"
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-sm text-text-secondary mb-6"
@@ -90,7 +118,7 @@ export function TrustedCompanies() {
           <h2
             data-aos="fade-up"
             data-aos-delay="100"
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight"
           >
             {t("trusted_title")}
           </h2>
@@ -105,26 +133,25 @@ export function TrustedCompanies() {
         </div>
       </div>
 
-      {/* Infinite logo carousel — Row 1 (left to right) */}
+      {/* Infinite logo carousel - Row 1 */}
       <div data-aos="fade-up" data-aos-delay="300" className="relative w-full">
-        {/* Left fade mask */}
-        <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-background to-transparent z-10" />
-        {/* Right fade mask */}
-        <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-background to-transparent z-10" />
+        {/* Fade masks */}
+        <div className={`pointer-events-none absolute top-0 bottom-0 w-16 md:w-32 z-10 ${isRtl ? "right-0 bg-gradient-to-l from-background to-transparent" : "left-0 bg-gradient-to-r from-background to-transparent"}`} />
+        <div className={`pointer-events-none absolute top-0 bottom-0 w-16 md:w-32 z-10 ${isRtl ? "left-0 bg-gradient-to-r from-background to-transparent" : "right-0 bg-gradient-to-l from-background to-transparent"}`} />
 
         <div className="overflow-hidden py-4">
-          <div className="trusted-track flex w-max items-center gap-6 md:gap-10">
-            {doubled.map((company, index) => (
-              <LogoCard key={`${company.name}-${index}`} company={company} />
+          <div className={`${animationClass} flex w-max items-center gap-6 md:gap-10`}>
+            {tripled.map((company, index) => (
+              <LogoCard key={`row1-${company.name}-${index}`} company={company} />
             ))}
           </div>
         </div>
 
-        {/* Second row — reversed direction */}
+        {/* Second row - reversed direction */}
         <div className="overflow-hidden py-4 mt-4">
-          <div className="trusted-track-reverse flex w-max items-center gap-6 md:gap-10">
-            {[...doubled].reverse().map((company, index) => (
-              <LogoCard key={`${company.name}-reverse-${index}`} company={company} />
+          <div className={`${reverseAnimationClass} flex w-max items-center gap-6 md:gap-10`}>
+            {tripled.map((company, index) => (
+              <LogoCard key={`row2-${company.name}-${index}`} company={company} />
             ))}
           </div>
         </div>

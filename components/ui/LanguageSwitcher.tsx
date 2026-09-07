@@ -145,7 +145,7 @@ export function LanguageSwitcher() {
                               width={24}
                               height={16}
                               sizes="24px"
-                              className="mr-2 inline-block rounded-[2px] shadow-sm"
+                              className="mx-2 inline-block rounded-[2px] shadow-sm"
                               unoptimized
                             />
                             {language.sublabel}
@@ -181,7 +181,7 @@ export function LanguageSwitcher() {
                             alt={`${language.label} flag`}
                             width={24}
                             height={16}
-                            className="mr-2 inline-block rounded-[2px] shadow-sm"
+                            className="mx-2 inline-block rounded-[2px] shadow-sm"
                           />
                           {language.sublabel}
                         </p>

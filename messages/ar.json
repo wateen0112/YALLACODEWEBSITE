@@ -3,8 +3,8 @@
     "home": "الرئيسية",
     "services": "الخدمات",
     "projects": "المشاريع",
-    "about": "حول",
-    "contact": "اتصال",
+    "about": "من نحن ",
+    "contact": "تواصل معنا ",
     "how_it_works": "كيف نعمل",
     "blog": "المدونة",
     "testimonials": "آراء العملاء",
@@ -262,7 +262,7 @@
     "pages": {
       "home": "الرئيسية",
       "projects": "المشاريع",
-      "about": "حول"
+      "about": "من نحن "
     },
     "rights_reserved": "جميع الحقوق محفوظة.",
     "privacy_policy": "سياسة الخصوصية",

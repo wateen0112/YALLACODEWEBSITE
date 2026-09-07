@@ -74,7 +74,7 @@ export function TechStackSection() {
     <section
       id="tech-stack"
       ref={sectionRef}
-      className="relative h-[100vh] pb-20 overflow-y-scroll scrollbar-hide  bg-background "
+      className="relative py-24 overflow-hidden bg-background"
     >
       {/* Ambient glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[500px] rounded-full bg-primary-600/8 blur-[160px]" />
@@ -83,13 +83,13 @@ export function TechStackSection() {
         {/* Section header */}
         <div
           ref={headerRef}
-          className={`max-w-xl mb-16 md:mb-20 ${isRtl ? "text-end mr-auto" : "text-start"}`}
+          className={`max-w-xl mb-16 md:mb-20 ${isRtl ? "text-end ml-auto" : "text-start"}`}
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-sm text-text-secondary mb-6">
             <Cpu className="h-4 w-4 text-primary-400" />
             <span>{t("techstack_badge")}</span>
           </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-4">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-4 leading-tight">
             {t("techstack_title")}
           </h2>
           <p className="text-xl text-text-secondary max-w-md">

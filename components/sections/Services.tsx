@@ -25,7 +25,7 @@ export function ServicesSection() {
             <h2
               data-aos="fade-up"
               data-aos-delay="100"
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6"
+              className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight"
             >
               {t("services_title")}
             </h2>
