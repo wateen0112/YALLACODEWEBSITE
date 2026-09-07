@@ -62,13 +62,13 @@ export function ProjectsSection() {
           </p>
         </div>
 
-        {/* Horizontal card track */}
-        <div className="flex gap-6 md:gap-10 overflow-x-auto pb-8 scrollbar-hide">
-          <div className="w-[8vw] md:w-[10vw] flex-shrink-0" />
-          {displayProjects.map((project, i) => (
-            <ProjectCard key={project.id} project={project} index={i} />
-          ))}
-          <div className="w-[8vw] md:w-[10vw] flex-shrink-0" />
+        {/* Horizontal card track — break out of container for edge-to-edge scroll */}
+        <div className="-mx-4 md:-mx-8">
+          <div className="flex gap-6 md:gap-10 overflow-x-auto pb-8 px-4 md:px-8 scrollbar-hide">
+            {displayProjects.map((project, i) => (
+              <ProjectCard key={project.id} project={project} index={i} />
+            ))}
+          </div>
         </div>
 
         {/* Loading / error states */}

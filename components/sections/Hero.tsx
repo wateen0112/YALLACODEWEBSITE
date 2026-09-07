@@ -16,19 +16,19 @@ export function Hero() {
     <section className="relative min-h-[100vh] flex items-center justify-center overflow-hidden">
       {/* Video background */}
       {!videoError && (
-        // <video
-        //   src="https://res.cloudinary.com/dodxldns9/video/upload/v1782585308/bg_r7w2cs.mp4"
-        //   autoPlay
-        //   loop
-        //   muted
-        //   playsInline
-        //   poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1920' height='1080' viewBox='0 0 1920' height='1080'%3E%3Crect width='1920' height='1080' fill='%23020617'/%3E%3C/svg%3E"
-        //   aria-hidden="true"
-        //   role="presentation"
-        //   className="absolute inset-0 w-full h-full object-cover"
-        //   onError={() => setVideoError(true)}
-        // />
-        <></>
+        <video
+          src="/assets/bg.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1920' height='1080' viewBox='0 0 1920' height='1080'%3E%3Crect width='1920' height='1080' fill='%23020617'/%3E%3C/svg%3E"
+          aria-hidden="true"
+          role="presentation"
+          className="absolute inset-0 w-full h-full object-cover"
+          onError={() => setVideoError(true)}
+        />
+        
       )}
       {/* Fallback background shown when video fails to load */}
       {videoError && (
