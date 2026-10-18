@@ -2,9 +2,9 @@ export const SITE_CONFIG = {
   name: "YallaCode",
   tagline: "Next-Gen Software & AI Solutions",
   url: "https://yallacode.tech",
-  email: "hello@yallacode.tech",
+  email: "info@yallacode.tech",
   phone: "",
-  location: "Global — Remote First",
+  location: "Syria — Aleepo — AlJamilia",
   description:
     "YallaCode is a full-stack software development and AI agency that builds scalable web apps, mobile apps, cloud infrastructure, and intelligent automation systems for startups and enterprises.",
   keywords: [
